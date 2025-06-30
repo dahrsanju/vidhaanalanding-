@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -17,6 +18,69 @@ import {
   CheckCircle,
   TrendingUp,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "AI Legal Use Cases | Real Success Stories & Case Studies | 70% Cost Reduction",
+  description:
+    "Explore real-world AI legal use cases with proven results. See how businesses reduced legal costs by 70%, improved compliance, and streamlined legal processes with our AI assistant. Real case studies included.",
+  keywords: [
+    "AI legal use cases",
+    "legal AI case studies",
+    "AI legal success stories",
+    "legal automation examples",
+    "contract management AI",
+    "legal compliance AI",
+    "litigation support AI",
+    "legal document automation",
+    "AI legal ROI",
+    "legal technology results",
+    "legal cost reduction",
+    "AI legal efficiency",
+    "legal process automation",
+    "legal AI benefits",
+  ],
+  openGraph: {
+    title: "AI Legal Use Cases | Real Success Stories & Case Studies",
+    description:
+      "See how our AI legal assistant transforms legal challenges into solutions with proven results across different scenarios.",
+    url: "https://vidhaana.com/use-cases",
+  },
+  alternates: {
+    canonical: "https://vidhaana.com/use-cases",
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "AI Legal Use Cases",
+  description: "Real-world use cases and success stories of AI legal assistance",
+  url: "https://vidhaana.com/use-cases",
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Legal AI Use Cases",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Contract Management",
+        description: "AI-powered contract review and management solutions",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Employment Law Compliance",
+        description: "HR legal compliance and dispute resolution",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Legal Document Drafting",
+        description: "Automated legal document creation and customization",
+      },
+    ],
+  },
+}
 
 export default function UseCasesPage() {
   const useCases = [
@@ -176,148 +240,157 @@ export default function UseCasesPage() {
   ]
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Real-World Use Cases</h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              See how our AI legal assistance transforms legal challenges into solutions across different scenarios
-            </p>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="bg-white">
+        {/* Hero Section */}
+        <section className="py-20 lg:py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Real-World AI Legal Success Stories</h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                See how our AI legal assistance transforms legal challenges into measurable business results across
+                different scenarios and industries
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Categories Overview */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-black mb-4">Use Case Categories</h2>
-            <p className="text-lg text-gray-600">Comprehensive solutions across all legal domains</p>
+        {/* Categories Overview */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-black mb-4">Use Case Categories</h2>
+              <p className="text-lg text-gray-600">
+                Comprehensive AI legal solutions across all legal domains and practice areas
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+              {categories.map((category, index) => (
+                <Card key={index} className="border-2 border-black text-center">
+                  <CardContent className="p-6">
+                    <category.icon className="h-8 w-8 mx-auto mb-3" />
+                    <h3 className="font-semibold mb-1">{category.name}</h3>
+                    <p className="text-sm text-gray-600">{category.count} Use Cases</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {categories.map((category, index) => (
-              <Card key={index} className="border-2 border-black text-center">
-                <CardContent className="p-6">
-                  <category.icon className="h-8 w-8 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-1">{category.name}</h3>
-                  <p className="text-sm text-gray-600">{category.count} Use Cases</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {useCases.map((useCase, index) => (
-              <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <useCase.icon className="h-8 w-8" />
-                      <div>
-                        <CardTitle className="text-lg font-bold">{useCase.title}</CardTitle>
-                        <p className="text-sm text-gray-600">
-                          {useCase.scenario} • {useCase.industry}
-                        </p>
+        {/* Use Cases Grid */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {useCases.map((useCase, index) => (
+                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <useCase.icon className="h-8 w-8" />
+                        <div>
+                          <CardTitle className="text-lg font-bold">{useCase.title}</CardTitle>
+                          <p className="text-sm text-gray-600">
+                            {useCase.scenario} • {useCase.industry}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-1 flex items-center">
-                      <AlertTriangle className="w-4 h-4 mr-1 text-red-600" />
-                      Challenge:
-                    </h4>
-                    <p className="text-gray-600 text-sm">{useCase.problem}</p>
-                  </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1 flex items-center">
+                        <AlertTriangle className="w-4 h-4 mr-1 text-red-600" />
+                        Challenge:
+                      </h4>
+                      <p className="text-gray-600 text-sm">{useCase.problem}</p>
+                    </div>
 
-                  <div>
-                    <h4 className="font-semibold text-sm mb-1 flex items-center">
-                      <Brain className="w-4 h-4 mr-1 text-blue-600" />
-                      AI Solution:
-                    </h4>
-                    <p className="text-gray-600 text-sm">{useCase.solution}</p>
-                  </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1 flex items-center">
+                        <Brain className="w-4 h-4 mr-1 text-blue-600" />
+                        AI Solution:
+                      </h4>
+                      <p className="text-gray-600 text-sm">{useCase.solution}</p>
+                    </div>
 
-                  <div>
-                    <h4 className="font-semibold text-sm mb-1 flex items-center">
-                      <CheckCircle className="w-4 h-4 mr-1 text-green-600" />
-                      Results:
-                    </h4>
-                    <p className="text-gray-600 text-sm">{useCase.outcome}</p>
-                  </div>
+                    <div>
+                      <h4 className="font-semibold text-sm mb-1 flex items-center">
+                        <CheckCircle className="w-4 h-4 mr-1 text-green-600" />
+                        Results:
+                      </h4>
+                      <p className="text-gray-600 text-sm">{useCase.outcome}</p>
+                    </div>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    {useCase.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="bg-gray-100 p-2 rounded text-center">
-                        <p className="text-xs font-semibold">{metric}</p>
-                      </div>
-                    ))}
-                  </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {useCase.metrics.map((metric, metricIndex) => (
+                        <div key={metricIndex} className="bg-gray-100 p-2 rounded text-center">
+                          <p className="text-xs font-semibold">{metric}</p>
+                        </div>
+                      ))}
+                    </div>
 
-                  <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
-                    <h4 className="font-semibold text-sm mb-1 flex items-center text-blue-800">
-                      <TrendingUp className="w-4 h-4 mr-1" />
-                      Timeline:
-                    </h4>
-                    <p className="text-sm text-blue-700">{useCase.timeline}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Metrics */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-black mb-4">Proven Results Across All Use Cases</h2>
-            <p className="text-lg text-gray-600">Consistent success metrics across different legal scenarios</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">65%</div>
-              <p className="text-gray-600">Average Cost Reduction</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">75%</div>
-              <p className="text-gray-600">Faster Processing Time</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">95%</div>
-              <p className="text-gray-600">Accuracy Rate</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-black mb-2">100%</div>
-              <p className="text-gray-600">Compliance Achievement</p>
+                    <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
+                      <h4 className="font-semibold text-sm mb-1 flex items-center text-blue-800">
+                        <TrendingUp className="w-4 h-4 mr-1" />
+                        Timeline:
+                      </h4>
+                      <p className="text-sm text-blue-700">{useCase.timeline}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Success Story?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join hundreds of satisfied clients who have transformed their legal processes with AI
-          </p>
-          <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
-            <Link href="/contact">Start Your Journey</Link>
-          </Button>
-        </div>
-      </section>
-    </div>
+        {/* Success Metrics */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-black mb-4">Proven Results Across All Use Cases</h2>
+              <p className="text-lg text-gray-600">
+                Consistent success metrics across different legal scenarios and industries
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-black mb-2">65%</div>
+                <p className="text-gray-600">Average Cost Reduction</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-black mb-2">75%</div>
+                <p className="text-gray-600">Faster Processing Time</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-black mb-2">95%</div>
+                <p className="text-gray-600">Accuracy Rate</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-black mb-2">100%</div>
+                <p className="text-gray-600">Compliance Achievement</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Success Story?</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Join hundreds of satisfied clients who have transformed their legal processes with AI and achieved
+              measurable results
+            </p>
+            <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
+              <Link href="/contact">Start Your Journey</Link>
+            </Button>
+          </div>
+        </section>
+      </div>
+    </>
   )
 }

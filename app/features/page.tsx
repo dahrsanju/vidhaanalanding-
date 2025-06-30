@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -15,6 +16,69 @@ import {
   RefreshCw,
   CheckCircle,
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "AI Legal Assistant Features | NLP, Research, Security & Analytics | Advanced Legal AI",
+  description:
+    "Discover advanced AI legal features including natural language processing, comprehensive legal research, document analysis, enterprise security, and multi-jurisdictional support. 95% accuracy guaranteed.",
+  keywords: [
+    "AI legal features",
+    "natural language processing legal",
+    "legal research AI",
+    "document analysis AI",
+    "legal AI security",
+    "multi-jurisdictional legal AI",
+    "legal analytics AI",
+    "automated legal workflows",
+    "legal AI technology",
+    "advanced legal features",
+    "AI contract analysis",
+    "legal document automation",
+    "AI legal research tools",
+    "legal compliance automation",
+  ],
+  openGraph: {
+    title: "AI Legal Assistant Features | Advanced Technology for Legal Professionals",
+    description:
+      "Cutting-edge AI features designed specifically for comprehensive legal assistance and professional workflows.",
+    url: "https://vidhaana.com/features",
+  },
+  alternates: {
+    canonical: "https://vidhaana.com/features",
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "AI Legal Assistant Features",
+  description: "Advanced AI features for comprehensive legal assistance",
+  url: "https://vidhaana.com/features",
+  mainEntity: {
+    "@type": "ItemList",
+    name: "AI Legal Features",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Natural Language Processing",
+        description: "Advanced NLP for legal document understanding",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Legal Research AI",
+        description: "Comprehensive legal database research capabilities",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Document Analysis",
+        description: "Automated legal document review and analysis",
+      },
+    ],
+  },
+}
 
 export default function FeaturesPage() {
   const features = [
@@ -142,137 +206,141 @@ export default function FeaturesPage() {
   ]
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Advanced AI Features</h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Cutting-edge artificial intelligence capabilities designed specifically for legal assistance
-            </p>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <div className="bg-white">
+        {/* Hero Section */}
+        <section className="py-20 lg:py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Advanced AI Legal Technology Features</h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Cutting-edge artificial intelligence capabilities designed specifically for comprehensive legal
+                assistance and professional workflows
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Features Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
+        {/* Features Grid */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {features.map((feature, index) => (
+                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center space-x-4">
+                      <feature.icon className="h-12 w-12" />
+                      <CardTitle className="text-xl font-bold">{feature.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <p className="text-gray-600">{feature.description}</p>
+
+                    <div>
+                      <h4 className="font-semibold mb-2">Core Capabilities:</h4>
+                      <ul className="grid grid-cols-2 gap-1">
+                        {feature.capabilities.map((capability, capIndex) => (
+                          <li key={capIndex} className="flex items-center text-sm text-gray-600">
+                            <CheckCircle className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
+                            {capability}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
+                      <h4 className="font-semibold mb-1 text-sm text-blue-800">Technical Details:</h4>
+                      <p className="text-sm text-blue-700">{feature.technicalDetails}</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-2">Key Benefits:</h4>
+                      <ul className="space-y-1">
+                        {feature.benefits.map((benefit, benefitIndex) => (
+                          <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
+                            <span className="w-2 h-2 bg-black rounded-full mr-2 flex-shrink-0"></span>
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Feature Comparison */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Why Our AI Features Stand Out</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Compare our advanced AI capabilities with traditional legal assistance methods
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="border-2 border-gray-300">
                 <CardHeader>
-                  <div className="flex items-center space-x-4">
-                    <feature.icon className="h-12 w-12" />
-                    <CardTitle className="text-xl font-bold">{feature.title}</CardTitle>
-                  </div>
+                  <CardTitle className="text-center">Traditional Legal Services</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-gray-600">{feature.description}</p>
-
-                  <div>
-                    <h4 className="font-semibold mb-2">Core Capabilities:</h4>
-                    <ul className="grid grid-cols-2 gap-1">
-                      {feature.capabilities.map((capability, capIndex) => (
-                        <li key={capIndex} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
-                          {capability}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
-                    <h4 className="font-semibold mb-1 text-sm text-blue-800">Technical Details:</h4>
-                    <p className="text-sm text-blue-700">{feature.technicalDetails}</p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold mb-2">Key Benefits:</h4>
-                    <ul className="space-y-1">
-                      {feature.benefits.map((benefit, benefitIndex) => (
-                        <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
-                          <span className="w-2 h-2 bg-black rounded-full mr-2 flex-shrink-0"></span>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-gray-600">• Limited availability (business hours)</p>
+                  <p className="text-sm text-gray-600">• High hourly rates ($300-$800/hour)</p>
+                  <p className="text-sm text-gray-600">• Slow response times (days/weeks)</p>
+                  <p className="text-sm text-gray-600">• Manual research processes</p>
+                  <p className="text-sm text-gray-600">• Human error potential</p>
+                  <p className="text-sm text-gray-600">• Limited scalability</p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Feature Comparison */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Why Our AI Features Stand Out</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Compare our advanced AI capabilities with traditional legal assistance methods
+              <Card className="border-2 border-black bg-black text-white">
+                <CardHeader>
+                  <CardTitle className="text-center">Our AI Legal Assistant</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm">• 24/7 availability</p>
+                  <p className="text-sm">• Cost-effective pricing</p>
+                  <p className="text-sm">• Instant responses</p>
+                  <p className="text-sm">• Automated research & analysis</p>
+                  <p className="text-sm">• Consistent accuracy</p>
+                  <p className="text-sm">• Unlimited scalability</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-gray-300">
+                <CardHeader>
+                  <CardTitle className="text-center">Basic Legal Software</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-gray-600">• Limited AI capabilities</p>
+                  <p className="text-sm text-gray-600">• Basic document templates</p>
+                  <p className="text-sm text-gray-600">• No personalized guidance</p>
+                  <p className="text-sm text-gray-600">• Limited legal knowledge</p>
+                  <p className="text-sm text-gray-600">• No real-time updates</p>
+                  <p className="text-sm text-gray-600">• Generic solutions</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience the Future of Legal Assistance</h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto">
+              Discover how our advanced AI features can transform your legal workflow and improve efficiency
             </p>
+            <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
+              <Link href="/contact">Try Our AI Features</Link>
+            </Button>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 border-gray-300">
-              <CardHeader>
-                <CardTitle className="text-center">Traditional Legal Services</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-gray-600">• Limited availability (business hours)</p>
-                <p className="text-sm text-gray-600">• High hourly rates ($300-$800/hour)</p>
-                <p className="text-sm text-gray-600">• Slow response times (days/weeks)</p>
-                <p className="text-sm text-gray-600">• Manual research processes</p>
-                <p className="text-sm text-gray-600">• Human error potential</p>
-                <p className="text-sm text-gray-600">• Limited scalability</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-black bg-black text-white">
-              <CardHeader>
-                <CardTitle className="text-center">Our AI Legal Assistant</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm">• 24/7 availability</p>
-                <p className="text-sm">• Cost-effective pricing</p>
-                <p className="text-sm">• Instant responses</p>
-                <p className="text-sm">• Automated research & analysis</p>
-                <p className="text-sm">• Consistent accuracy</p>
-                <p className="text-sm">• Unlimited scalability</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-gray-300">
-              <CardHeader>
-                <CardTitle className="text-center">Basic Legal Software</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-gray-600">• Limited AI capabilities</p>
-                <p className="text-sm text-gray-600">• Basic document templates</p>
-                <p className="text-sm text-gray-600">• No personalized guidance</p>
-                <p className="text-sm text-gray-600">• Limited legal knowledge</p>
-                <p className="text-sm text-gray-600">• No real-time updates</p>
-                <p className="text-sm text-gray-600">• Generic solutions</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience the Future of Legal Assistance</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Discover how our advanced AI features can transform your legal workflow
-          </p>
-          <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
-            <Link href="/contact">Try Our AI Features</Link>
-          </Button>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }

@@ -197,7 +197,9 @@ export default function FeaturesPage() {
                 <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} text-white group-hover:scale-110 transition-transform`}>
+                      <div
+                        className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} text-white group-hover:scale-110 transition-transform`}
+                      >
                         <feature.icon className="h-8 w-8" />
                       </div>
                       <CardTitle className="text-xl font-bold text-black">{feature.title}</CardTitle>
@@ -332,4 +334,24 @@ export default function FeaturesPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Experience the Future of
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-\
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Legal Assistance
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Start your free trial today and discover the power of AI-driven legal solutions
+            </p>
+            <div className="mt-8">
+              <a
+                href="/contact"
+                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-8 rounded-full hover:shadow-lg transition-all duration-200"
+              >
+                Get Started Now
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}

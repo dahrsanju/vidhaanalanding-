@@ -151,13 +151,15 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
-                    <div className="inline-flex p-4 rounded-2xl bg-black text-white mb-4 group-hover:scale-110 transition-transform">
+                    <div
+                      className={`inline-flex p-4 rounded-2xl bg-black text-white mb-4 group-hover:scale-110 transition-transform`}
+                    >
                       <service.icon className="h-8 w-8" />
                     </div>
                     <CardTitle className="text-xl font-bold text-black">{service.title}</CardTitle>
@@ -180,7 +182,7 @@ export default function ServicesPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
@@ -248,7 +250,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Ready to Get

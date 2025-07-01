@@ -186,11 +186,11 @@ export default function HomePage() {
                     <span className="font-medium">4.8/5 (1,247+ reviews)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-black" />
+                    <Users className="w-4 h-4" />
                     <span>10,000+ businesses trust us</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Shield className="w-4 h-4 text-black" />
+                    <Shield className="w-4 h-4" />
                     <span>SOC 2 Certified</span>
                   </div>
                 </div>
@@ -502,10 +502,10 @@ export default function HomePage() {
                 <div key={index} className="relative group">
                   <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-lg">
                     <div className="inline-flex p-4 rounded-2xl bg-gray-100 mb-6">
-                      <feature.icon className="w-8 h-8 text-black" />
+                      <feature.icon className="w-8 h-8" />
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-4 text-black">{feature.title}</h3>
+                    <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
                     <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
 
                     <ul className="space-y-2">

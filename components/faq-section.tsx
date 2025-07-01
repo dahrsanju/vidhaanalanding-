@@ -62,11 +62,11 @@ export function FAQSection({
                     aria-expanded={openItems.includes(index)}
                     aria-controls={`faq-answer-${index}`}
                   >
-                    <h3 className="text-lg font-semibold pr-4 text-black">{faq.question}</h3>
+                    <h3 className="text-lg font-semibold pr-4">{faq.question}</h3>
                     {openItems.includes(index) ? (
-                      <ChevronUp className="w-5 h-5 flex-shrink-0 text-black" aria-hidden="true" />
+                      <ChevronUp className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 flex-shrink-0 text-black" aria-hidden="true" />
+                      <ChevronDown className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                     )}
                   </button>
 

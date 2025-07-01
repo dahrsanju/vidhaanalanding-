@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { FileText, Users, Building, Home, Briefcase, Shield } from "lucide-react"
+import { FileText, Users, Building, Home, Briefcase, Shield, Sparkles, ArrowRight, CheckCircle } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "AI Legal Services | Contract Analysis, Compliance & Legal Research | 24/7 Support",
@@ -93,49 +93,74 @@ export default function ServicesPage() {
       description:
         "AI-powered analysis of contracts, agreements, and legal documents with detailed insights and recommendations.",
       features: ["Contract analysis", "Risk assessment", "Clause recommendations", "Compliance checking"],
+      color: "from-blue-500 to-blue-600",
     },
     {
       icon: Users,
       title: "Family Law Assistance",
       description: "Guidance on family-related legal matters including divorce, custody, and domestic relations.",
       features: ["Divorce proceedings", "Child custody", "Adoption guidance", "Domestic relations"],
+      color: "from-green-500 to-green-600",
     },
     {
       icon: Building,
       title: "Business Law Support",
       description: "Comprehensive business legal assistance for startups and established companies.",
       features: ["Business formation", "Employment law", "Intellectual property", "Commercial contracts"],
+      color: "from-purple-500 to-purple-600",
     },
     {
       icon: Home,
       title: "Real Estate Law",
       description: "Expert guidance on property transactions, landlord-tenant issues, and real estate disputes.",
       features: ["Property transactions", "Lease agreements", "Zoning issues", "Property disputes"],
+      color: "from-orange-500 to-orange-600",
     },
     {
       icon: Briefcase,
       title: "Employment Law",
       description: "Assistance with workplace issues, employment contracts, and labor law matters.",
       features: ["Employment contracts", "Workplace disputes", "Discrimination issues", "Wage and hour law"],
+      color: "from-red-500 to-red-600",
     },
     {
       icon: Shield,
       title: "Criminal Law Guidance",
       description: "Initial guidance and information about criminal law matters and procedures.",
       features: ["Legal procedures", "Rights information", "Court processes", "Defense strategies"],
+      color: "from-teal-500 to-teal-600",
     },
   ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="bg-white">
+      <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="py-20 lg:py-32">
+        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Comprehensive AI Legal Services</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Professional Legal Services
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                Comprehensive AI
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Legal Services
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Professional AI-powered legal assistance across multiple practice areas, available 24/7 with expert
                 guidance and comprehensive support
               </p>
@@ -144,21 +169,25 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
-                    <service.icon className="h-12 w-12 mb-4" />
-                    <CardTitle className="text-xl font-bold">{service.title}</CardTitle>
+                    <div
+                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-110 transition-transform`}
+                    >
+                      <service.icon className="h-8 w-8" />
+                    </div>
+                    <CardTitle className="text-xl font-bold text-black">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <ul className="space-y-2">
+                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                    <ul className="space-y-3">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <span className="w-2 h-2 bg-black rounded-full mr-2"></span>
+                          <CheckCircle className="w-4 h-4 text-green-600 mr-3 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -171,59 +200,103 @@ export default function ServicesPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-20">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">How Our AI Legal Services Work</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                How Our AI
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Legal Services Work
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Getting professional legal assistance has never been easier or more accessible
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  1
+              {[
+                {
+                  step: "1",
+                  title: "Describe Your Legal Issue",
+                  description: "Tell us about your legal question or upload documents for comprehensive analysis",
+                },
+                {
+                  step: "2",
+                  title: "AI Analysis & Research",
+                  description: "Our AI analyzes your case using comprehensive legal databases and case law",
+                },
+                {
+                  step: "3",
+                  title: "Get Expert Guidance",
+                  description: "Receive detailed legal guidance and actionable next steps recommendations",
+                },
+              ].map((step, index) => (
+                <div key={index} className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-r from-black to-gray-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-black">{step.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{step.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Describe Your Legal Issue</h3>
-                <p className="text-gray-600">
-                  Tell us about your legal question or upload documents for comprehensive analysis
-                </p>
-              </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  2
+        {/* Stats Section */}
+        <section className="py-16 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results Across All Services</h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Consistent excellence in AI-powered legal assistance
+              </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { number: "95%", label: "Accuracy Rate" },
+                { number: "70%", label: "Cost Reduction" },
+                { number: "24/7", label: "Availability" },
+                { number: "1,247+", label: "Happy Clients" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-4xl lg:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-gray-300">{stat.label}</div>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">AI Analysis & Research</h3>
-                <p className="text-gray-600">
-                  Our AI analyzes your case using comprehensive legal databases and case law
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  3
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Get Expert Guidance</h3>
-                <p className="text-gray-600">
-                  Receive detailed legal guidance and actionable next steps recommendations
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Professional Legal Assistance?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
+              Ready to Get
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Professional Legal Assistance?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
               Contact us today to discuss your legal needs and see how our AI can provide expert guidance
             </p>
-            <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
-              <Link href="/contact">Get Legal Assistance Now</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg h-auto">
+                <Link href="/contact" className="flex items-center">
+                  Get Legal Assistance Now
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg h-auto bg-transparent"
+              >
+                <Link href="/features">Explore Features</Link>
+              </Button>
+            </div>
           </div>
         </section>
       </div>

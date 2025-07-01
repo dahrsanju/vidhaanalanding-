@@ -1,21 +1,6 @@
 import type { Metadata } from "next"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import {
-  Brain,
-  Search,
-  MessageSquare,
-  FileCheck,
-  Shield,
-  Globe,
-  Clock,
-  Zap,
-  Users,
-  BarChart3,
-  RefreshCw,
-  CheckCircle,
-} from "lucide-react"
+import { Brain, Search, MessageSquare, FileCheck, Shield, Globe, CheckCircle, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "AI Legal Assistant Features | NLP, Research, Security & Analytics | Advanced Legal AI",
@@ -96,6 +81,7 @@ export default function FeaturesPage() {
       technicalDetails:
         "Powered by transformer-based models trained on millions of legal documents, achieving 95% accuracy in legal text interpretation.",
       benefits: ["Faster document review", "Reduced human error", "Consistent analysis quality", "24/7 availability"],
+      color: "from-blue-500 to-blue-600",
     },
     {
       icon: Search,
@@ -116,6 +102,7 @@ export default function FeaturesPage() {
         "Cross-jurisdictional analysis",
         "Precedent tracking",
       ],
+      color: "from-green-500 to-green-600",
     },
     {
       icon: MessageSquare,
@@ -131,6 +118,7 @@ export default function FeaturesPage() {
         "Cost-effective consultation",
         "Continuous availability",
       ],
+      color: "from-purple-500 to-purple-600",
     },
     {
       icon: FileCheck,
@@ -140,6 +128,7 @@ export default function FeaturesPage() {
       capabilities: ["Risk identification", "Compliance verification", "Clause recommendations", "Version comparison"],
       technicalDetails: "Advanced document processing with OCR, semantic analysis, and risk scoring algorithms.",
       benefits: ["Faster document processing", "Risk mitigation", "Compliance assurance", "Quality improvement"],
+      color: "from-orange-500 to-orange-600",
     },
     {
       icon: Shield,
@@ -150,6 +139,7 @@ export default function FeaturesPage() {
       technicalDetails:
         "AES-256 encryption, SOC 2 Type II compliance, GDPR compliant data handling, and zero-trust architecture.",
       benefits: ["Data protection", "Regulatory compliance", "Client confidentiality", "Secure communications"],
+      color: "from-red-500 to-red-600",
     },
     {
       icon: Globe,
@@ -159,62 +149,39 @@ export default function FeaturesPage() {
       capabilities: ["International law", "State-specific guidance", "Local regulations", "Cross-border issues"],
       technicalDetails: "Jurisdiction-aware AI models trained on legal systems from 50+ countries and all US states.",
       benefits: ["Global legal coverage", "Local law expertise", "Cross-border guidance", "Regulatory awareness"],
-    },
-    {
-      icon: Clock,
-      title: "Real-Time Legal Updates",
-      description: "Stay current with the latest legal developments, regulatory changes, and case law updates.",
-      capabilities: ["Automated monitoring", "Change notifications", "Impact analysis", "Update summaries"],
-      technicalDetails: "AI-powered legal news monitoring with natural language processing for relevance scoring.",
-      benefits: ["Stay legally current", "Proactive compliance", "Risk awareness", "Competitive advantage"],
-    },
-    {
-      icon: Zap,
-      title: "Automated Workflows",
-      description: "Streamline legal processes with intelligent automation and workflow optimization.",
-      capabilities: ["Process automation", "Task scheduling", "Deadline tracking", "Workflow optimization"],
-      technicalDetails:
-        "Intelligent workflow engine with machine learning-based process optimization and predictive scheduling.",
-      benefits: ["Increased efficiency", "Reduced manual work", "Better organization", "Deadline compliance"],
-    },
-    {
-      icon: Users,
-      title: "Collaborative Platform",
-      description: "Enable team collaboration with shared workspaces, document sharing, and communication tools.",
-      capabilities: ["Team workspaces", "Document sharing", "Communication tools", "Role-based access"],
-      technicalDetails:
-        "Cloud-based collaboration platform with real-time synchronization and granular permission controls.",
-      benefits: ["Enhanced teamwork", "Better communication", "Centralized resources", "Improved coordination"],
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics & Reporting",
-      description: "Comprehensive analytics and reporting tools to track legal metrics and performance indicators.",
-      capabilities: ["Performance metrics", "Custom reports", "Data visualization", "Trend analysis"],
-      technicalDetails: "Advanced analytics engine with machine learning-powered insights and customizable dashboards.",
-      benefits: ["Data-driven decisions", "Performance tracking", "Trend identification", "Strategic insights"],
-    },
-    {
-      icon: RefreshCw,
-      title: "Continuous Learning",
-      description: "AI system that continuously learns and improves from interactions and feedback.",
-      capabilities: ["Machine learning", "Feedback integration", "Performance optimization", "Adaptive responses"],
-      technicalDetails:
-        "Self-improving AI with reinforcement learning and continuous model updates based on user feedback.",
-      benefits: ["Improving accuracy", "Personalized experience", "Enhanced performance", "Adaptive intelligence"],
+      color: "from-teal-500 to-teal-600",
     },
   ]
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="bg-white">
+      <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="py-20 lg:py-32">
+        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Advanced AI Legal Technology Features</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Advanced AI Technology
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                Advanced AI Legal
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Technology Features
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Cutting-edge artificial intelligence capabilities designed specifically for comprehensive legal
                 assistance and professional workflows
               </p>
@@ -223,23 +190,25 @@ export default function FeaturesPage() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {features.map((feature, index) => (
-                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <feature.icon className="h-12 w-12" />
-                      <CardTitle className="text-xl font-bold">{feature.title}</CardTitle>
+                      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} text-white group-hover:scale-110 transition-transform`}>
+                        <feature.icon className="h-8 w-8" />
+                      </div>
+                      <CardTitle className="text-xl font-bold text-black">{feature.title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <p className="text-gray-600">{feature.description}</p>
+                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
 
                     <div>
-                      <h4 className="font-semibold mb-2">Core Capabilities:</h4>
-                      <ul className="grid grid-cols-2 gap-1">
+                      <h4 className="font-semibold mb-3 text-black">Core Capabilities:</h4>
+                      <ul className="grid grid-cols-2 gap-2">
                         {feature.capabilities.map((capability, capIndex) => (
                           <li key={capIndex} className="flex items-center text-sm text-gray-600">
                             <CheckCircle className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
@@ -249,17 +218,17 @@ export default function FeaturesPage() {
                       </ul>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded border-l-4 border-blue-500">
-                      <h4 className="font-semibold mb-1 text-sm text-blue-800">Technical Details:</h4>
-                      <p className="text-sm text-blue-700">{feature.technicalDetails}</p>
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl border-l-4 border-blue-500">
+                      <h4 className="font-semibold mb-2 text-sm text-blue-800">Technical Details:</h4>
+                      <p className="text-sm text-blue-700 leading-relaxed">{feature.technicalDetails}</p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2">Key Benefits:</h4>
-                      <ul className="space-y-1">
+                      <h4 className="font-semibold mb-3 text-black">Key Benefits:</h4>
+                      <ul className="space-y-2">
                         {feature.benefits.map((benefit, benefitIndex) => (
                           <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
-                            <span className="w-2 h-2 bg-black rounded-full mr-2 flex-shrink-0"></span>
+                            <CheckCircle className="w-3 h-3 mr-2 text-blue-600 flex-shrink-0" />
                             {benefit}
                           </li>
                         ))}
@@ -273,19 +242,24 @@ export default function FeaturesPage() {
         </section>
 
         {/* Feature Comparison */}
-        <section className="py-20">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Why Our AI Features Stand Out</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                Why Our AI Features
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Stand Out
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Compare our advanced AI capabilities with traditional legal assistance methods
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="border-2 border-gray-300">
+              <Card className="border-2 border-gray-300 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-center">Traditional Legal Services</CardTitle>
+                  <CardTitle className="text-center text-black">Traditional Legal Services</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-sm text-gray-600">• Limited availability (business hours)</p>
@@ -297,7 +271,7 @@ export default function FeaturesPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-black bg-black text-white">
+              <Card className="border-2 border-black bg-gradient-to-br from-black to-gray-800 text-white hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="text-center">Our AI Legal Assistant</CardTitle>
                 </CardHeader>
@@ -311,9 +285,9 @@ export default function FeaturesPage() {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-gray-300">
+              <Card className="border-2 border-gray-300 hover:shadow-lg transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-center">Basic Legal Software</CardTitle>
+                  <CardTitle className="text-center text-black">Basic Legal Software</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p className="text-sm text-gray-600">• Limited AI capabilities</p>
@@ -328,19 +302,34 @@ export default function FeaturesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience the Future of Legal Assistance</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Discover how our advanced AI features can transform your legal workflow and improve efficiency
-            </p>
-            <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
-              <Link href="/contact">Try Our AI Features</Link>
-            </Button>
+        {/* Stats Section */}
+        <section className="py-16 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven AI Performance</h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Our advanced features deliver consistent, measurable results
+              </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { number: "95%", label: "Accuracy Rate" },
+                { number: "50M+", label: "Documents Processed" },
+                { number: "200+", label: "Jurisdictions" },
+                { number: "24/7", label: "Availability" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-4xl lg:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-gray-300">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
-      </div>
-    </>
-  )
-}
+
+        {/* CTA Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
+              Experience the Future of
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-\

@@ -170,7 +170,7 @@ export default function HomePage() {
                   </h1>
                   <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                     Get professional legal guidance powered by advanced AI. Reduce costs by{" "}
-                    <span className="font-bold text-green-600">70%</span> while maintaining expert quality.{" "}
+                    <span className="font-bold text-black">70%</span> while maintaining expert quality.{" "}
                     <span className="font-semibold">Available 24/7</span> across all industries.
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export default function HomePage() {
                 {/* Trust Indicators */}
                 <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600">
                   <div className="flex items-center gap-2">
-                    <div className="flex text-yellow-400">
+                    <div className="flex text-black">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-current" />
                       ))}
@@ -224,9 +224,9 @@ export default function HomePage() {
                     {/* Mock AI Interface */}
                     <div className="bg-white rounded-2xl p-6 shadow-lg">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                        <div className="w-3 h-3 bg-gray-600 rounded-full"></div>
+                        <div className="w-3 h-3 bg-black rounded-full"></div>
                         <span className="text-sm text-gray-500 ml-2">Vidhaana AI Assistant</span>
                       </div>
                       <div className="space-y-4">
@@ -235,9 +235,9 @@ export default function HomePage() {
                             "Can you review this employment contract for potential risks?"
                           </p>
                         </div>
-                        <div className="bg-blue-50 rounded-lg p-3 border-l-4 border-blue-400">
-                          <p className="text-sm text-blue-800 font-medium">AI Analysis Complete ✓</p>
-                          <p className="text-xs text-blue-600 mt-1">
+                        <div className="bg-gray-50 rounded-lg p-3 border-l-4 border-black">
+                          <p className="text-sm text-black font-medium">AI Analysis Complete ✓</p>
+                          <p className="text-xs text-gray-600 mt-1">
                             Found 3 potential risks • Suggested 5 improvements • 95% confidence
                           </p>
                         </div>
@@ -245,12 +245,12 @@ export default function HomePage() {
                     </div>
 
                     {/* Floating Stats */}
-                    <div className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg">
-                      <div className="text-2xl font-bold text-green-600">70%</div>
+                    <div className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                      <div className="text-2xl font-bold text-black">70%</div>
                       <div className="text-xs text-gray-600">Cost Reduction</div>
                     </div>
-                    <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg">
-                      <div className="text-2xl font-bold text-blue-600">95%</div>
+                    <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                      <div className="text-2xl font-bold text-black">95%</div>
                       <div className="text-xs text-gray-600">Accuracy Rate</div>
                     </div>
                   </div>
@@ -303,29 +303,25 @@ export default function HomePage() {
                     icon: DollarSign,
                     title: "Reduce Legal Costs by 70%",
                     description: "Save thousands annually with AI-powered contract reviews and legal analysis",
-                    color: "text-green-600",
-                    bg: "bg-green-100 text-green-800",
+                    bg: "bg-gray-100 text-black",
                   },
                   {
                     icon: Clock,
                     title: "Get Instant Results",
                     description: "Receive comprehensive legal analysis in minutes, not days or weeks",
-                    color: "text-blue-600",
-                    bg: "bg-blue-100 text-blue-800",
+                    bg: "bg-gray-200 text-black",
                   },
                   {
                     icon: Shield,
                     title: "Enterprise-Grade Security",
                     description: "Your data is protected with SOC 2 compliance and end-to-end encryption",
-                    color: "text-purple-600",
-                    bg: "bg-purple-100 text-purple-800",
+                    bg: "bg-gray-300 text-black",
                   },
                   {
                     icon: Globe,
                     title: "Global Legal Coverage",
                     description: "Access legal guidance across 50+ countries and all US jurisdictions",
-                    color: "text-orange-600",
-                    bg: "bg-orange-100 text-orange-800",
+                    bg: "bg-gray-400 text-white",
                   },
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start gap-4 group">
@@ -345,7 +341,7 @@ export default function HomePage() {
                 <div className="bg-black rounded-3xl p-8 text-white">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
-                      <Brain className="w-8 h-8 text-blue-400" />
+                      <Brain className="w-8 h-8 text-white" />
                       <h3 className="text-2xl font-bold">AI Legal Analysis</h3>
                     </div>
 
@@ -353,30 +349,30 @@ export default function HomePage() {
                       <div className="bg-white/10 rounded-lg p-4">
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-sm">Contract Risk Assessment</span>
-                          <span className="text-green-400 font-bold">95%</span>
+                          <span className="text-white font-bold">95%</span>
                         </div>
                         <div className="w-full bg-white/20 rounded-full h-2">
-                          <div className="bg-green-400 h-2 rounded-full w-[95%]"></div>
+                          <div className="bg-white h-2 rounded-full w-[95%]"></div>
                         </div>
                       </div>
 
                       <div className="bg-white/10 rounded-lg p-4">
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-sm">Compliance Check</span>
-                          <span className="text-blue-400 font-bold">98%</span>
+                          <span className="text-white font-bold">98%</span>
                         </div>
                         <div className="w-full bg-white/20 rounded-full h-2">
-                          <div className="bg-blue-400 h-2 rounded-full w-[98%]"></div>
+                          <div className="bg-white h-2 rounded-full w-[98%]"></div>
                         </div>
                       </div>
 
                       <div className="bg-white/10 rounded-lg p-4">
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-sm">Legal Research</span>
-                          <span className="text-purple-400 font-bold">92%</span>
+                          <span className="text-white font-bold">92%</span>
                         </div>
                         <div className="w-full bg-white/20 rounded-full h-2">
-                          <div className="bg-purple-400 h-2 rounded-full w-[92%]"></div>
+                          <div className="bg-white h-2 rounded-full w-[92%]"></div>
                         </div>
                       </div>
                     </div>
@@ -391,7 +387,7 @@ export default function HomePage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium mb-6">
                 <Building2 className="w-4 h-4 mr-2" />
                 Trusted Across Industries
               </div>
@@ -410,42 +406,36 @@ export default function HomePage() {
                   icon: Building2,
                   title: "Corporate & Business",
                   description: "Contract analysis, compliance monitoring, and corporate governance",
-                  color: "black",
                   stats: "5,000+ companies",
                 },
                 {
                   icon: Stethoscope,
                   title: "Healthcare",
                   description: "HIPAA compliance, medical licensing, and healthcare regulations",
-                  color: "black",
                   stats: "1,200+ practices",
                 },
                 {
                   icon: Landmark,
                   title: "Financial Services",
                   description: "Banking regulations, securities law, and fintech compliance",
-                  color: "black",
                   stats: "800+ institutions",
                 },
                 {
                   icon: ShoppingCart,
                   title: "E-commerce & Retail",
                   description: "Consumer protection, privacy policies, and online compliance",
-                  color: "black",
                   stats: "2,000+ stores",
                 },
                 {
                   icon: Factory,
                   title: "Manufacturing",
                   description: "Product liability, safety compliance, and supply chain legal",
-                  color: "black",
                   stats: "600+ manufacturers",
                 },
                 {
                   icon: Truck,
                   title: "Transportation",
                   description: "Shipping regulations, liability coverage, and trade compliance",
-                  color: "black",
                   stats: "400+ logistics firms",
                 },
               ].map((industry, index) => (
@@ -474,7 +464,7 @@ export default function HomePage() {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
                 <Zap className="w-4 h-4 mr-2" />
                 Powered by Advanced AI
               </div>
@@ -482,7 +472,7 @@ export default function HomePage() {
                 Technology That
                 <span className="block text-black">Understands Law</span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Our AI doesn't just process text—it understands legal context, identifies risks, and provides actionable
                 insights
               </p>
@@ -510,18 +500,18 @@ export default function HomePage() {
                 },
               ].map((feature, index) => (
                 <div key={index} className="relative group">
-                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
-                    <div className="inline-flex p-4 rounded-2xl bg-white/10 mb-6">
+                  <div className="bg-white rounded-2xl p-8 border border-gray-200 hover:border-gray-300 transition-all duration-300 shadow-lg">
+                    <div className="inline-flex p-4 rounded-2xl bg-gray-100 mb-6">
                       <feature.icon className="w-8 h-8" />
                     </div>
 
                     <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                    <p className="text-gray-300 mb-6 leading-relaxed">{feature.description}</p>
+                    <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
 
                     <ul className="space-y-2">
                       {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center text-sm text-gray-400">
-                          <CheckCircle className="w-4 h-4 mr-3 text-green-400" />
+                        <li key={itemIndex} className="flex items-center text-sm text-gray-600">
+                          <CheckCircle className="w-4 h-4 mr-3 text-black" />
                           {item}
                         </li>
                       ))}
@@ -534,16 +524,16 @@ export default function HomePage() {
         </section>
 
         {/* Success Stories Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium mb-6">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Proven Results
               </div>
               <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6">
                 Real Success,
-                <span className="block text-green-600">Real Savings</span>
+                <span className="block text-black">Real Savings</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 See how businesses across industries are transforming their legal operations with AI
@@ -573,7 +563,7 @@ export default function HomePage() {
               ].map((story, index) => (
                 <div key={index} className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl">
+                    <div className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center text-white font-bold text-xl">
                       {story.company.charAt(0)}
                     </div>
                     <div>
@@ -584,28 +574,28 @@ export default function HomePage() {
 
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold text-red-800 mb-2">Challenge</h4>
+                      <h4 className="font-semibold text-black mb-2">Challenge</h4>
                       <p className="text-gray-700">{story.challenge}</p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-blue-800 mb-2">Solution</h4>
+                      <h4 className="font-semibold text-black mb-2">Solution</h4>
                       <p className="text-gray-700">{story.solution}</p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-green-800 mb-3">Results</h4>
+                      <h4 className="font-semibold text-black mb-3">Results</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                         {story.results.map((result, resultIndex) => (
-                          <div key={resultIndex} className="bg-green-50 rounded-lg p-3 text-center">
-                            <div className="font-bold text-green-800">{result}</div>
+                          <div key={resultIndex} className="bg-gray-50 rounded-lg p-3 text-center">
+                            <div className="font-bold text-black">{result}</div>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-blue-500">
-                      <Quote className="w-6 h-6 text-blue-500 mb-3" />
+                    <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-black">
+                      <Quote className="w-6 h-6 text-black mb-3" />
                       <p className="text-gray-700 italic mb-3">"{story.quote}"</p>
                       <p className="text-sm font-medium text-gray-900">— {story.author}</p>
                     </div>
@@ -627,7 +617,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative max-w-4xl mx-auto">
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-2 shadow-2xl">
+              <div className="relative bg-gray-800 rounded-3xl p-2 shadow-2xl">
                 <div className="bg-black rounded-2xl aspect-video flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 hover:bg-white/20 transition-colors cursor-pointer">
@@ -680,12 +670,12 @@ export default function HomePage() {
                   <CardContent className="p-8">
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-current text-yellow-400" />
+                        <Star key={i} className="w-5 h-5 fill-current text-black" />
                       ))}
                     </div>
                     <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.content}"</p>
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-bold">
                         {testimonial.name.charAt(0)}
                       </div>
                       <div>

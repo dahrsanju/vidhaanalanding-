@@ -57,16 +57,6 @@ export default function AboutPage() {
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 bg-white pt-32">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            ></div>
-          </div>
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
@@ -86,12 +76,12 @@ export default function AboutPage() {
         </section>
 
         {/* Mission, Vision, Values Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-blue-600 text-white mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 rounded-2xl bg-black text-white mb-6 group-hover:scale-110 transition-transform">
                     <Target className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-black">Our Mission</h3>
@@ -104,7 +94,7 @@ export default function AboutPage() {
 
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-purple-600 text-white mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 rounded-2xl bg-gray-800 text-white mb-6 group-hover:scale-110 transition-transform">
                     <Eye className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-black">Our Vision</h3>
@@ -117,7 +107,7 @@ export default function AboutPage() {
 
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-green-600 text-white mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 rounded-2xl bg-gray-600 text-white mb-6 group-hover:scale-110 transition-transform">
                     <Award className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-black">Our Values</h3>
@@ -132,18 +122,16 @@ export default function AboutPage() {
         </section>
 
         {/* AI Capabilities Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
+              <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium mb-6">
                 <Brain className="w-4 h-4 mr-2" />
                 Advanced AI Technology
               </div>
               <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 AI Legal Capabilities
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  That Actually Work
-                </span>
+                <span className="block text-black">That Actually Work</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Our advanced AI system is designed to provide comprehensive legal assistance with human-like
@@ -163,7 +151,7 @@ export default function AboutPage() {
                       "Multi-language support for global accessibility and reach",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start group">
-                        <CheckCircle className="w-5 h-5 text-green-600 mt-1 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                        <CheckCircle className="w-5 h-5 text-black mt-1 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
                         <span className="text-gray-600 leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -182,7 +170,7 @@ export default function AboutPage() {
                       "Continuous learning and database updates for current legal landscape",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start group">
-                        <CheckCircle className="w-5 h-5 text-blue-600 mt-1 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                        <CheckCircle className="w-5 h-5 text-gray-600 mt-1 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
                         <span className="text-gray-600 leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -222,17 +210,15 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-gray-200 text-black rounded-full text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />
               Expert Team
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Built by Legal and
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Technology Experts
-              </span>
+              <span className="block text-black">Technology Experts</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
               Our team combines decades of legal expertise with cutting-edge AI technology to create the most reliable
@@ -273,7 +259,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-black to-gray-900 text-white">
+        <section className="py-16 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">Ready to Experience the Future of Legal Assistance?</h2>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">

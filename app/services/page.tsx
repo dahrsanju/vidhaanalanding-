@@ -93,42 +93,36 @@ export default function ServicesPage() {
       description:
         "AI-powered analysis of contracts, agreements, and legal documents with detailed insights and recommendations.",
       features: ["Contract analysis", "Risk assessment", "Clause recommendations", "Compliance checking"],
-      color: "bg-blue-500",
     },
     {
       icon: Users,
       title: "Family Law Assistance",
       description: "Guidance on family-related legal matters including divorce, custody, and domestic relations.",
       features: ["Divorce proceedings", "Child custody", "Adoption guidance", "Domestic relations"],
-      color: "bg-green-500",
     },
     {
       icon: Building,
       title: "Business Law Support",
       description: "Comprehensive business legal assistance for startups and established companies.",
       features: ["Business formation", "Employment law", "Intellectual property", "Commercial contracts"],
-      color: "bg-purple-500",
     },
     {
       icon: Home,
       title: "Real Estate Law",
       description: "Expert guidance on property transactions, landlord-tenant issues, and real estate disputes.",
       features: ["Property transactions", "Lease agreements", "Zoning issues", "Property disputes"],
-      color: "bg-orange-500",
     },
     {
       icon: Briefcase,
       title: "Employment Law",
       description: "Assistance with workplace issues, employment contracts, and labor law matters.",
       features: ["Employment contracts", "Workplace disputes", "Discrimination issues", "Wage and hour law"],
-      color: "bg-red-500",
     },
     {
       icon: Shield,
       title: "Criminal Law Guidance",
       description: "Initial guidance and information about criminal law matters and procedures.",
       features: ["Legal procedures", "Rights information", "Court processes", "Defense strategies"],
-      color: "bg-teal-500",
     },
   ]
 
@@ -138,8 +132,6 @@ export default function ServicesPage() {
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 bg-white pt-32">
-          {/* Background Pattern */}
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
@@ -159,14 +151,14 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
                     <div
-                      className={`inline-flex p-4 rounded-2xl ${service.color} text-white mb-4 group-hover:scale-110 transition-transform`}
+                      className={`inline-flex p-4 rounded-2xl bg-black text-white mb-4 group-hover:scale-110 transition-transform`}
                     >
                       <service.icon className="h-8 w-8" />
                     </div>
@@ -177,7 +169,7 @@ export default function ServicesPage() {
                     <ul className="space-y-3">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 text-green-600 mr-3 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-black mr-3 flex-shrink-0" />
                           {feature}
                         </li>
                       ))}
@@ -190,14 +182,12 @@ export default function ServicesPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 How Our AI
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Legal Services Work
-                </span>
+                <span className="block text-black">Legal Services Work</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Getting professional legal assistance has never been easier or more accessible
@@ -223,7 +213,7 @@ export default function ServicesPage() {
                 },
               ].map((step, index) => (
                 <div key={index} className="text-center group">
-                  <div className="w-16 h-16 bg-gradient-to-r from-black to-gray-800 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform">
                     {step.step}
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-black">{step.title}</h3>
@@ -260,13 +250,11 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Ready to Get
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Professional Legal Assistance?
-              </span>
+              <span className="block text-black">Professional Legal Assistance?</span>
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
               Contact us today to discuss your legal needs and see how our AI can provide expert guidance

@@ -92,7 +92,6 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A tech startup reduced their legal expenses from $50,000 to $15,000 annually while improving contract quality and compliance.",
-      color: "blue-500",
     },
     {
       icon: Stethoscope,
@@ -108,7 +107,6 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A medical practice improved their compliance rate to 100% and avoided potential HIPAA violations worth $2.5M in penalties.",
-      color: "green-500",
     },
     {
       icon: Truck,
@@ -123,7 +121,6 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A logistics company reduced shipping disputes by 60% and improved international compliance across 15 countries.",
-      color: "teal-500",
     },
     {
       icon: ShoppingCart,
@@ -138,7 +135,6 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "An e-commerce platform achieved 99.9% policy compliance and reduced customer disputes by 45% after implementing AI legal guidance.",
-      color: "orange-500",
     },
     {
       icon: Landmark,
@@ -153,7 +149,6 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A fintech company reduced compliance costs by 55% while maintaining perfect regulatory standing across multiple jurisdictions.",
-      color: "purple-500",
     },
     {
       icon: Factory,
@@ -169,7 +164,6 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A manufacturing company improved safety compliance by 40% and reduced product liability claims by 30%.",
-      color: "red-500",
     },
   ]
 
@@ -205,9 +199,7 @@ export default function IndustriesPage() {
                 <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <div
-                        className={`inline-flex p-4 rounded-2xl bg-${industry.color} text-white group-hover:scale-110 transition-transform`}
-                      >
+                      <div className="inline-flex p-4 rounded-2xl bg-black text-white group-hover:scale-110 transition-transform">
                         <industry.icon className="h-8 w-8" />
                       </div>
                       <CardTitle className="text-2xl font-bold text-black">{industry.title}</CardTitle>
@@ -221,7 +213,7 @@ export default function IndustriesPage() {
                       <ul className="grid grid-cols-2 gap-2">
                         {industry.applications.map((app, appIndex) => (
                           <li key={appIndex} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
+                            <CheckCircle className="w-3 h-3 mr-2 text-black flex-shrink-0" />
                             {app}
                           </li>
                         ))}
@@ -233,19 +225,19 @@ export default function IndustriesPage() {
                       <ul className="space-y-2">
                         {industry.benefits.map((benefit, benefitIndex) => (
                           <li key={benefitIndex} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-3 h-3 mr-2 text-blue-600 flex-shrink-0" />
+                            <CheckCircle className="w-3 h-3 mr-2 text-black flex-shrink-0" />
                             {benefit}
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500">
-                      <h4 className="font-semibold mb-2 text-sm text-blue-800 flex items-center">
+                    <div className="bg-gray-50 p-4 rounded-xl border-l-4 border-black">
+                      <h4 className="font-semibold mb-2 text-sm text-black flex items-center">
                         <TrendingUp className="w-4 h-4 mr-2" />
                         Success Story:
                       </h4>
-                      <p className="text-sm text-blue-700 leading-relaxed">{industry.caseStudy}</p>
+                      <p className="text-sm text-gray-700 leading-relaxed">{industry.caseStudy}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -255,7 +247,7 @@ export default function IndustriesPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-white text-white bg-black">
+        <section className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted Across All Industries</h2>

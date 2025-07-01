@@ -76,7 +76,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mission, Vision, Values Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
@@ -122,7 +122,7 @@ export default function AboutPage() {
         </section>
 
         {/* AI Capabilities Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium mb-6">
@@ -170,7 +170,7 @@ export default function AboutPage() {
                       "Continuous learning and database updates for current legal landscape",
                     ].map((item, index) => (
                       <li key={index} className="flex items-start group">
-                        <CheckCircle className="w-5 h-5 text-gray-600 mt-1 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                        <CheckCircle className="w-5 h-5 text-black mt-1 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
                         <span className="text-gray-600 leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -210,9 +210,9 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-gray-200 text-black rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-black rounded-full text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />
               Expert Team
             </div>

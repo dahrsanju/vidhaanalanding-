@@ -51,7 +51,7 @@ export default function Header() {
                 width={100}
                 height={100}
                 priority
-                className={`transition-all duration-300 ${isScrolled ? "h-16 w-16" : "h-20 w-20"}`}
+                className={`transition-all duration-300 filter brightness-0 ${isScrolled ? "h-16 w-16" : "h-20 w-20"}`}
               />
             </Link>
 
@@ -72,7 +72,7 @@ export default function Header() {
               className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-colors hover:bg-gray-100"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
             </button>
           </div>
 

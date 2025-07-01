@@ -81,7 +81,7 @@ export default function FeaturesPage() {
       technicalDetails:
         "Powered by transformer-based models trained on millions of legal documents, achieving 95% accuracy in legal text interpretation.",
       benefits: ["Faster document review", "Reduced human error", "Consistent analysis quality", "24/7 availability"],
-      color: "from-blue-500 to-blue-600",
+      color: "bg-blue-500",
     },
     {
       icon: Search,
@@ -102,7 +102,7 @@ export default function FeaturesPage() {
         "Cross-jurisdictional analysis",
         "Precedent tracking",
       ],
-      color: "from-green-500 to-green-600",
+      color: "bg-green-500",
     },
     {
       icon: MessageSquare,
@@ -118,7 +118,7 @@ export default function FeaturesPage() {
         "Cost-effective consultation",
         "Continuous availability",
       ],
-      color: "from-purple-500 to-purple-600",
+      color: "bg-purple-500",
     },
     {
       icon: FileCheck,
@@ -128,7 +128,7 @@ export default function FeaturesPage() {
       capabilities: ["Risk identification", "Compliance verification", "Clause recommendations", "Version comparison"],
       technicalDetails: "Advanced document processing with OCR, semantic analysis, and risk scoring algorithms.",
       benefits: ["Faster document processing", "Risk mitigation", "Compliance assurance", "Quality improvement"],
-      color: "from-orange-500 to-orange-600",
+      color: "bg-orange-500",
     },
     {
       icon: Shield,
@@ -139,7 +139,7 @@ export default function FeaturesPage() {
       technicalDetails:
         "AES-256 encryption, SOC 2 Type II compliance, GDPR compliant data handling, and zero-trust architecture.",
       benefits: ["Data protection", "Regulatory compliance", "Client confidentiality", "Secure communications"],
-      color: "from-red-500 to-red-600",
+      color: "bg-red-500",
     },
     {
       icon: Globe,
@@ -149,7 +149,7 @@ export default function FeaturesPage() {
       capabilities: ["International law", "State-specific guidance", "Local regulations", "Cross-border issues"],
       technicalDetails: "Jurisdiction-aware AI models trained on legal systems from 50+ countries and all US states.",
       benefits: ["Global legal coverage", "Local law expertise", "Cross-border guidance", "Regulatory awareness"],
-      color: "from-teal-500 to-teal-600",
+      color: "bg-teal-500",
     },
   ]
 
@@ -158,7 +158,7 @@ export default function FeaturesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+        <section className="relative py-16 lg:py-24 bg-white pt-32">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
@@ -177,9 +177,7 @@ export default function FeaturesPage() {
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 Advanced AI Legal
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Technology Features
-                </span>
+                <span className="block text-black">Technology Features</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Cutting-edge artificial intelligence capabilities designed specifically for comprehensive legal
@@ -198,7 +196,7 @@ export default function FeaturesPage() {
                   <CardHeader>
                     <div className="flex items-center space-x-4">
                       <div
-                        className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.color} text-white group-hover:scale-110 transition-transform`}
+                        className={`inline-flex p-4 rounded-2xl ${feature.color} text-white group-hover:scale-110 transition-transform`}
                       >
                         <feature.icon className="h-8 w-8" />
                       </div>
@@ -244,7 +242,7 @@ export default function FeaturesPage() {
         </section>
 
         {/* Feature Comparison */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
@@ -344,7 +342,7 @@ export default function FeaturesPage() {
             <div className="mt-8">
               <a
                 href="/contact"
-                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 px-8 rounded-full hover:shadow-lg transition-all duration-200"
+                className="inline-block bg-black text-white font-bold py-3 px-8 rounded-full hover:shadow-lg transition-all duration-200"
               >
                 Get Started Now
               </a>

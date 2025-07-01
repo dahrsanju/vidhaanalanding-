@@ -92,7 +92,7 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A tech startup reduced their legal expenses from $50,000 to $15,000 annually while improving contract quality and compliance.",
-      color: "from-blue-500 to-blue-600",
+      color: "blue-500",
     },
     {
       icon: Stethoscope,
@@ -108,7 +108,7 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A medical practice improved their compliance rate to 100% and avoided potential HIPAA violations worth $2.5M in penalties.",
-      color: "from-green-500 to-green-600",
+      color: "green-500",
     },
     {
       icon: Truck,
@@ -123,7 +123,7 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A logistics company reduced shipping disputes by 60% and improved international compliance across 15 countries.",
-      color: "from-teal-500 to-teal-600",
+      color: "teal-500",
     },
     {
       icon: ShoppingCart,
@@ -138,7 +138,7 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "An e-commerce platform achieved 99.9% policy compliance and reduced customer disputes by 45% after implementing AI legal guidance.",
-      color: "from-orange-500 to-orange-600",
+      color: "orange-500",
     },
     {
       icon: Landmark,
@@ -153,7 +153,7 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A fintech company reduced compliance costs by 55% while maintaining perfect regulatory standing across multiple jurisdictions.",
-      color: "from-purple-500 to-purple-600",
+      color: "purple-500",
     },
     {
       icon: Factory,
@@ -169,7 +169,7 @@ export default function IndustriesPage() {
       ],
       caseStudy:
         "A manufacturing company improved safety compliance by 40% and reduced product liability claims by 30%.",
-      color: "from-red-500 to-red-600",
+      color: "red-500",
     },
   ]
 
@@ -178,17 +178,7 @@ export default function IndustriesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            ></div>
-          </div>
-
+        <section className="relative py-16 lg:py-24 bg-white pt-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
@@ -197,9 +187,7 @@ export default function IndustriesPage() {
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 Industries We Serve with
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  AI Legal Solutions
-                </span>
+                <span className="block text-black">AI Legal Solutions</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Industry-specific AI-powered legal assistance tailored for your sector's unique challenges, regulations,
@@ -210,7 +198,7 @@ export default function IndustriesPage() {
         </section>
 
         {/* Industries Grid */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {industries.map((industry, index) => (
@@ -218,7 +206,7 @@ export default function IndustriesPage() {
                   <CardHeader>
                     <div className="flex items-center space-x-4">
                       <div
-                        className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${industry.color} text-white group-hover:scale-110 transition-transform`}
+                        className={`inline-flex p-4 rounded-2xl bg-${industry.color} text-white group-hover:scale-110 transition-transform`}
                       >
                         <industry.icon className="h-8 w-8" />
                       </div>
@@ -252,7 +240,7 @@ export default function IndustriesPage() {
                       </ul>
                     </div>
 
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl border-l-4 border-blue-500">
+                    <div className="bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500">
                       <h4 className="font-semibold mb-2 text-sm text-blue-800 flex items-center">
                         <TrendingUp className="w-4 h-4 mr-2" />
                         Success Story:
@@ -267,7 +255,7 @@ export default function IndustriesPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-black text-white">
+        <section className="py-16 bg-white text-white bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted Across All Industries</h2>
@@ -292,13 +280,11 @@ export default function IndustriesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Ready to Transform Your Industry with
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                AI Legal Solutions?
-              </span>
+              <span className="block text-black">AI Legal Solutions?</span>
             </h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
               Get industry-specific legal assistance tailored to your unique business needs and regulatory requirements

@@ -151,17 +151,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-20">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            ></div>
-          </div>
-
+        <section className="relative min-h-screen flex items-center bg-white pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Column - Content */}
@@ -176,9 +166,7 @@ export default function HomePage() {
                 <div className="space-y-6">
                   <h1 className="text-5xl lg:text-7xl font-bold text-black leading-tight">
                     Legal AI That
-                    <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                      Actually Works
-                    </span>
+                    <span className="block text-black">Actually Works</span>
                   </h1>
                   <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
                     Get professional legal guidance powered by advanced AI. Reduce costs by{" "}
@@ -231,8 +219,7 @@ export default function HomePage() {
 
               {/* Right Column - Visual */}
               <div className="relative">
-                <div className="relative bg-gradient-to-br from-black to-gray-800 rounded-3xl p-8 shadow-2xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl"></div>
+                <div className="relative bg-black rounded-3xl p-8 shadow-2xl">
                   <div className="relative">
                     {/* Mock AI Interface */}
                     <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -296,12 +283,12 @@ export default function HomePage() {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="py-16 bg-gradient-to-br from-white to-gray-50">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6">
                 Why Legal Professionals
-                <span className="block text-blue-600">Choose Vidhaana</span>
+                <span className="block text-black">Choose Vidhaana</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Experience the perfect blend of cutting-edge AI technology and comprehensive legal expertise
@@ -317,34 +304,32 @@ export default function HomePage() {
                     title: "Reduce Legal Costs by 70%",
                     description: "Save thousands annually with AI-powered contract reviews and legal analysis",
                     color: "text-green-600",
-                    bg: "bg-green-50",
+                    bg: "bg-green-100 text-green-800",
                   },
                   {
                     icon: Clock,
                     title: "Get Instant Results",
                     description: "Receive comprehensive legal analysis in minutes, not days or weeks",
                     color: "text-blue-600",
-                    bg: "bg-blue-50",
+                    bg: "bg-blue-100 text-blue-800",
                   },
                   {
                     icon: Shield,
                     title: "Enterprise-Grade Security",
                     description: "Your data is protected with SOC 2 compliance and end-to-end encryption",
                     color: "text-purple-600",
-                    bg: "bg-purple-50",
+                    bg: "bg-purple-100 text-purple-800",
                   },
                   {
                     icon: Globe,
                     title: "Global Legal Coverage",
                     description: "Access legal guidance across 50+ countries and all US jurisdictions",
                     color: "text-orange-600",
-                    bg: "bg-orange-50",
+                    bg: "bg-orange-100 text-orange-800",
                   },
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start gap-4 group">
-                    <div
-                      className={`p-3 rounded-xl ${benefit.bg} ${benefit.color} group-hover:scale-110 transition-transform`}
-                    >
+                    <div className={`p-3 rounded-xl ${benefit.bg} group-hover:scale-110 transition-transform`}>
                       <benefit.icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -357,7 +342,7 @@ export default function HomePage() {
 
               {/* Right - Visual */}
               <div className="relative">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 text-white">
+                <div className="bg-black rounded-3xl p-8 text-white">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <Brain className="w-8 h-8 text-blue-400" />
@@ -412,7 +397,7 @@ export default function HomePage() {
               </div>
               <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6">
                 One Platform,
-                <span className="block text-blue-600">Every Industry</span>
+                <span className="block text-black">Every Industry</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Specialized AI legal solutions tailored for your industry's unique challenges and regulations
@@ -425,42 +410,42 @@ export default function HomePage() {
                   icon: Building2,
                   title: "Corporate & Business",
                   description: "Contract analysis, compliance monitoring, and corporate governance",
-                  color: "from-blue-500 to-blue-600",
+                  color: "black",
                   stats: "5,000+ companies",
                 },
                 {
                   icon: Stethoscope,
                   title: "Healthcare",
                   description: "HIPAA compliance, medical licensing, and healthcare regulations",
-                  color: "from-green-500 to-green-600",
+                  color: "black",
                   stats: "1,200+ practices",
                 },
                 {
                   icon: Landmark,
                   title: "Financial Services",
                   description: "Banking regulations, securities law, and fintech compliance",
-                  color: "from-purple-500 to-purple-600",
+                  color: "black",
                   stats: "800+ institutions",
                 },
                 {
                   icon: ShoppingCart,
                   title: "E-commerce & Retail",
                   description: "Consumer protection, privacy policies, and online compliance",
-                  color: "from-orange-500 to-orange-600",
+                  color: "black",
                   stats: "2,000+ stores",
                 },
                 {
                   icon: Factory,
                   title: "Manufacturing",
                   description: "Product liability, safety compliance, and supply chain legal",
-                  color: "from-red-500 to-red-600",
+                  color: "black",
                   stats: "600+ manufacturers",
                 },
                 {
                   icon: Truck,
                   title: "Transportation",
                   description: "Shipping regulations, liability coverage, and trade compliance",
-                  color: "from-teal-500 to-teal-600",
+                  color: "black",
                   stats: "400+ logistics firms",
                 },
               ].map((industry, index) => (
@@ -468,7 +453,7 @@ export default function HomePage() {
                   key={index}
                   className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-gray-200"
                 >
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${industry.color} text-white mb-6`}>
+                  <div className={`inline-flex p-4 rounded-2xl bg-black text-white mb-6`}>
                     <industry.icon className="w-8 h-8" />
                   </div>
 
@@ -486,7 +471,7 @@ export default function HomePage() {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-900 to-black text-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
@@ -495,9 +480,7 @@ export default function HomePage() {
               </div>
               <h2 className="text-4xl lg:text-6xl font-bold mb-6">
                 Technology That
-                <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  Understands Law
-                </span>
+                <span className="block text-black">Understands Law</span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Our AI doesn't just process text—it understands legal context, identifies risks, and provides actionable
@@ -721,7 +704,7 @@ export default function HomePage() {
         <FAQSection faqs={faqs} />
 
         {/* Final CTA */}
-        <section className="py-16 bg-gradient-to-br from-black to-gray-900 text-white">
+        <section className="py-16 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">Ready to Transform Your Legal Operations?</h2>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">

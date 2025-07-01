@@ -93,42 +93,42 @@ export default function ServicesPage() {
       description:
         "AI-powered analysis of contracts, agreements, and legal documents with detailed insights and recommendations.",
       features: ["Contract analysis", "Risk assessment", "Clause recommendations", "Compliance checking"],
-      color: "from-blue-500 to-blue-600",
+      color: "bg-blue-500",
     },
     {
       icon: Users,
       title: "Family Law Assistance",
       description: "Guidance on family-related legal matters including divorce, custody, and domestic relations.",
       features: ["Divorce proceedings", "Child custody", "Adoption guidance", "Domestic relations"],
-      color: "from-green-500 to-green-600",
+      color: "bg-green-500",
     },
     {
       icon: Building,
       title: "Business Law Support",
       description: "Comprehensive business legal assistance for startups and established companies.",
       features: ["Business formation", "Employment law", "Intellectual property", "Commercial contracts"],
-      color: "from-purple-500 to-purple-600",
+      color: "bg-purple-500",
     },
     {
       icon: Home,
       title: "Real Estate Law",
       description: "Expert guidance on property transactions, landlord-tenant issues, and real estate disputes.",
       features: ["Property transactions", "Lease agreements", "Zoning issues", "Property disputes"],
-      color: "from-orange-500 to-orange-600",
+      color: "bg-orange-500",
     },
     {
       icon: Briefcase,
       title: "Employment Law",
       description: "Assistance with workplace issues, employment contracts, and labor law matters.",
       features: ["Employment contracts", "Workplace disputes", "Discrimination issues", "Wage and hour law"],
-      color: "from-red-500 to-red-600",
+      color: "bg-red-500",
     },
     {
       icon: Shield,
       title: "Criminal Law Guidance",
       description: "Initial guidance and information about criminal law matters and procedures.",
       features: ["Legal procedures", "Rights information", "Court processes", "Defense strategies"],
-      color: "from-teal-500 to-teal-600",
+      color: "bg-teal-500",
     },
   ]
 
@@ -137,16 +137,8 @@ export default function ServicesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+        <section className="relative py-16 lg:py-24 bg-white pt-32">
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            ></div>
-          </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
@@ -156,9 +148,7 @@ export default function ServicesPage() {
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 Comprehensive AI
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Legal Services
-                </span>
+                <span className="block text-black">Legal Services</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Professional AI-powered legal assistance across multiple practice areas, available 24/7 with expert
@@ -176,7 +166,7 @@ export default function ServicesPage() {
                 <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
                     <div
-                      className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-110 transition-transform`}
+                      className={`inline-flex p-4 rounded-2xl ${service.color} text-white mb-4 group-hover:scale-110 transition-transform`}
                     >
                       <service.icon className="h-8 w-8" />
                     </div>
@@ -200,7 +190,7 @@ export default function ServicesPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
@@ -270,7 +260,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Ready to Get

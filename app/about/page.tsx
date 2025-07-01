@@ -56,7 +56,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+        <section className="relative py-16 lg:py-24 bg-white pt-32">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
@@ -75,9 +75,7 @@ export default function AboutPage() {
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 Revolutionizing Legal
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Through AI Innovation
-                </span>
+                <span className="block text-black">Through AI Innovation</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Making professional legal guidance accessible to everyone through cutting-edge artificial intelligence
@@ -93,7 +91,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 text-white mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 rounded-2xl bg-blue-600 text-white mb-6 group-hover:scale-110 transition-transform">
                     <Target className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-black">Our Mission</h3>
@@ -106,7 +104,7 @@ export default function AboutPage() {
 
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 text-white mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 rounded-2xl bg-purple-600 text-white mb-6 group-hover:scale-110 transition-transform">
                     <Eye className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-black">Our Vision</h3>
@@ -119,7 +117,7 @@ export default function AboutPage() {
 
               <Card className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                 <CardContent className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white mb-6 group-hover:scale-110 transition-transform">
+                  <div className="inline-flex p-4 rounded-2xl bg-green-600 text-white mb-6 group-hover:scale-110 transition-transform">
                     <Award className="h-8 w-8" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-black">Our Values</h3>
@@ -134,7 +132,7 @@ export default function AboutPage() {
         </section>
 
         {/* AI Capabilities Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
@@ -224,7 +222,7 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">
               <Users className="w-4 h-4 mr-2" />

@@ -51,24 +51,12 @@ export default function LegalDisclaimerPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}
-            ></div>
-          </div>
-
+        <section className="relative py-16 lg:py-24 bg-white pt-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 Legal
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Disclaimer
-                </span>
+                <span className="block text-black">Disclaimer</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Important legal information about our AI legal assistance services and terms of use
@@ -80,7 +68,7 @@ export default function LegalDisclaimerPage() {
         {/* Disclaimer Content */}
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-black rounded-3xl p-8 md:p-12 shadow-lg">
+            <div className="bg-white border-2 border-black rounded-3xl p-8 md:p-12 shadow-lg">
               <div className="space-y-8">
                 <div>
                   <h2 className="text-2xl font-bold mb-4 text-black">No Attorney-Client Relationship</h2>
@@ -155,7 +143,7 @@ export default function LegalDisclaimerPage() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border-l-4 border-black">
+                <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-black">
                   <h3 className="text-lg font-semibold mb-2 text-black">Important Notice</h3>
                   <p className="text-gray-700 leading-relaxed">
                     By using Vidhaana's AI legal assistance platform, you acknowledge that you have read, understood,

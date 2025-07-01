@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { FAQSection } from "@/components/faq-section"
 import {
   Scale,
@@ -28,6 +28,10 @@ import {
   PenTool,
   Globe,
   Star,
+  ArrowRight,
+  TrendingUp,
+  Zap,
+  Target,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -145,6 +149,42 @@ const faqs = [
 ]
 
 export default function HomePage() {
+  const whyChooseFeatures = [
+    {
+      icon: Scale,
+      title: "Expert Legal Knowledge",
+      description:
+        "Access comprehensive legal information backed by extensive legal databases and case law from 50+ jurisdictions",
+      stat: "50M+",
+      statLabel: "Legal Documents",
+      gradient: "from-blue-500 to-purple-600",
+    },
+    {
+      icon: Clock,
+      title: "24/7 Availability",
+      description: "Get instant legal assistance whenever you need it, day or night, with immediate responses",
+      stat: "24/7",
+      statLabel: "Always Available",
+      gradient: "from-green-500 to-teal-600",
+    },
+    {
+      icon: Shield,
+      title: "Secure & Confidential",
+      description: "Your information is protected with enterprise-grade security and SOC 2 compliance",
+      stat: "100%",
+      statLabel: "Secure & Private",
+      gradient: "from-red-500 to-pink-600",
+    },
+    {
+      icon: Users,
+      title: "User-Friendly Interface",
+      description: "Simple interface designed for everyone, regardless of legal background or technical expertise",
+      stat: "95%",
+      statLabel: "User Satisfaction",
+      gradient: "from-orange-500 to-yellow-600",
+    },
+  ]
+
   const industries = [
     {
       icon: Building2,
@@ -152,6 +192,9 @@ export default function HomePage() {
       description:
         "Contract analysis, compliance monitoring, M&A due diligence, and corporate governance assistance for businesses of all sizes.",
       applications: ["Contract review", "Regulatory compliance", "Corporate structuring", "Risk assessment"],
+      color: "bg-blue-50 border-blue-200",
+      iconColor: "text-blue-600",
+      hoverColor: "hover:bg-blue-100",
     },
     {
       icon: Stethoscope,
@@ -159,6 +202,9 @@ export default function HomePage() {
       description:
         "HIPAA compliance, medical malpractice guidance, healthcare regulations, and patient rights protection.",
       applications: ["HIPAA compliance", "Medical licensing", "Patient consent forms", "Healthcare contracts"],
+      color: "bg-green-50 border-green-200",
+      iconColor: "text-green-600",
+      hoverColor: "hover:bg-green-100",
     },
     {
       icon: Truck,
@@ -166,24 +212,36 @@ export default function HomePage() {
       description:
         "Shipping regulations, liability issues, transportation contracts, and international trade compliance.",
       applications: ["Shipping agreements", "Liability coverage", "DOT regulations", "International trade"],
+      color: "bg-purple-50 border-purple-200",
+      iconColor: "text-purple-600",
+      hoverColor: "hover:bg-purple-100",
     },
     {
       icon: ShoppingCart,
       title: "E-commerce & Retail Legal",
       description: "Consumer protection laws, terms of service, privacy policies, and online business compliance.",
       applications: ["Terms of service", "Privacy policies", "Consumer rights", "Online disputes"],
+      color: "bg-orange-50 border-orange-200",
+      iconColor: "text-orange-600",
+      hoverColor: "hover:bg-orange-100",
     },
     {
       icon: Landmark,
       title: "Financial Services Legal",
       description: "Banking regulations, securities law, fintech compliance, and financial contract analysis.",
       applications: ["Banking compliance", "Securities regulations", "Loan agreements", "Investment policies"],
+      color: "bg-indigo-50 border-indigo-200",
+      iconColor: "text-indigo-600",
+      hoverColor: "hover:bg-indigo-100",
     },
     {
       icon: Factory,
       title: "Manufacturing Legal Support",
       description: "Product liability, safety regulations, employment law, and supply chain legal issues.",
       applications: ["Product liability", "Safety compliance", "Employment contracts", "Supply agreements"],
+      color: "bg-red-50 border-red-200",
+      iconColor: "text-red-600",
+      hoverColor: "hover:bg-red-100",
     },
   ]
 
@@ -199,6 +257,8 @@ export default function HomePage() {
         "Multi-language support",
         "Context understanding",
       ],
+      badge: "AI-Powered",
+      badgeColor: "bg-purple-100 text-purple-800",
     },
     {
       icon: Search,
@@ -211,6 +271,8 @@ export default function HomePage() {
         "Precedent identification",
         "Jurisdiction-specific guidance",
       ],
+      badge: "Global Coverage",
+      badgeColor: "bg-blue-100 text-blue-800",
     },
     {
       icon: MessageSquare,
@@ -218,6 +280,8 @@ export default function HomePage() {
       description:
         "Real-time AI-powered legal consultation that adapts to your specific situation and provides personalized, actionable guidance.",
       capabilities: ["24/7 availability", "Personalized responses", "Follow-up questions", "Contextual advice"],
+      badge: "Real-time",
+      badgeColor: "bg-green-100 text-green-800",
     },
     {
       icon: FileCheck,
@@ -225,6 +289,8 @@ export default function HomePage() {
       description:
         "Automated analysis of legal documents with comprehensive risk assessment, compliance checking, and improvement suggestions.",
       capabilities: ["Risk identification", "Compliance verification", "Clause recommendations", "Version comparison"],
+      badge: "Automated",
+      badgeColor: "bg-orange-100 text-orange-800",
     },
     {
       icon: Shield,
@@ -232,6 +298,8 @@ export default function HomePage() {
       description:
         "Enterprise-grade security with end-to-end encryption, SOC 2 compliance, ensuring your legal matters remain confidential.",
       capabilities: ["End-to-end encryption", "Secure data storage", "Privacy compliance", "Access controls"],
+      badge: "Enterprise-Grade",
+      badgeColor: "bg-red-100 text-red-800",
     },
     {
       icon: Globe,
@@ -239,6 +307,8 @@ export default function HomePage() {
       description:
         "Legal guidance across different jurisdictions with awareness of local laws, regulations, and legal procedures worldwide.",
       capabilities: ["International law", "State-specific guidance", "Local regulations", "Cross-border issues"],
+      badge: "Worldwide",
+      badgeColor: "bg-teal-100 text-teal-800",
     },
   ]
 
@@ -254,6 +324,8 @@ export default function HomePage() {
       outcome: "Reduced legal costs by 70% while maintaining contract quality and legal protection.",
       savings: "$14,000 annually",
       timeReduction: "85% faster processing",
+      category: "Business",
+      categoryColor: "bg-blue-100 text-blue-800",
     },
     {
       icon: UserCheck,
@@ -266,6 +338,8 @@ export default function HomePage() {
       outcome: "Faster resolution of HR issues and improved compliance with employment regulations.",
       savings: "60% fewer disputes",
       timeReduction: "90% faster resolution",
+      category: "HR & Employment",
+      categoryColor: "bg-green-100 text-green-800",
     },
     {
       icon: FileText,
@@ -277,6 +351,8 @@ export default function HomePage() {
       outcome: "Professional legal documents created in hours instead of weeks, saving thousands in legal fees.",
       savings: "$15,000 saved",
       timeReduction: "95% faster creation",
+      category: "Startup",
+      categoryColor: "bg-purple-100 text-purple-800",
     },
     {
       icon: Gavel,
@@ -288,6 +364,8 @@ export default function HomePage() {
       outcome: "Reduced research time by 60% and improved case preparation with comprehensive legal analysis.",
       savings: "40% more billable hours",
       timeReduction: "60% time savings",
+      category: "Legal Practice",
+      categoryColor: "bg-orange-100 text-orange-800",
     },
     {
       icon: BookOpen,
@@ -298,6 +376,8 @@ export default function HomePage() {
       outcome: "Maintained 100% compliance rate and avoided potential regulatory penalties worth millions.",
       savings: "$2.5M penalties avoided",
       timeReduction: "50% workload reduction",
+      category: "Healthcare",
+      categoryColor: "bg-red-100 text-red-800",
     },
     {
       icon: PenTool,
@@ -309,6 +389,8 @@ export default function HomePage() {
       outcome: "Successfully protected key innovations and avoided costly IP disputes through proactive guidance.",
       savings: "40% cost reduction",
       timeReduction: "Patent analysis in 1 day",
+      category: "IP & Tech",
+      categoryColor: "bg-teal-100 text-teal-800",
     },
   ]
 
@@ -391,204 +473,251 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why Choose Vidhaana Section */}
-        <section className="py-20 bg-gray-50" aria-labelledby="why-choose-heading">
+        {/* Why Choose Vidhaana Section - Redesigned */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="why-choose-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 id="why-choose-heading" className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Why Choose Vidhaana AI Legal Assistant?
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-4">
+                <Target className="w-4 h-4 mr-2" />
+                Why Choose Vidhaana
+              </div>
+              <h2 id="why-choose-heading" className="text-3xl md:text-5xl font-bold text-black mb-6">
+                The Future of Legal Assistance
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Our AI-powered platform combines cutting-edge technology with comprehensive legal expertise
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Experience the perfect blend of cutting-edge AI technology and comprehensive legal expertise
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <Card className="border-2 border-black hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <Scale className="h-12 w-12 mx-auto mb-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold mb-2">Expert Legal Knowledge</h3>
-                  <p className="text-gray-600">
-                    Access comprehensive legal information backed by extensive legal databases and case law from 50+
-                    jurisdictions
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-black hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <Clock className="h-12 w-12 mx-auto mb-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold mb-2">24/7 Availability</h3>
-                  <p className="text-gray-600">
-                    Get instant legal assistance whenever you need it, day or night, with immediate responses
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-black hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <Shield className="h-12 w-12 mx-auto mb-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold mb-2">Secure & Confidential</h3>
-                  <p className="text-gray-600">
-                    Your information is protected with enterprise-grade security and SOC 2 compliance
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-black hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <Users className="h-12 w-12 mx-auto mb-4" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold mb-2">User-Friendly Interface</h3>
-                  <p className="text-gray-600">
-                    Simple interface designed for everyone, regardless of legal background or technical expertise
-                  </p>
-                </CardContent>
-              </Card>
+              {whyChooseFeatures.map((feature, index) => (
+                <div key={index} className="group relative">
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl"
+                    style={{ background: `linear-gradient(135deg, var(--tw-gradient-stops))` }}
+                  ></div>
+                  <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${feature.gradient} mb-6`}>
+                      <feature.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <div className="text-right mb-4">
+                      <div className="text-3xl font-bold text-black">{feature.stat}</div>
+                      <div className="text-sm text-gray-500">{feature.statLabel}</div>
+                    </div>
+                    <h3 className="text-xl font-bold text-black mb-3">{feature.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    <div className="mt-6 flex items-center text-black font-medium group-hover:text-blue-600 transition-colors">
+                      <span className="text-sm">Learn more</span>
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* AI-Based Industries Section */}
-        <section className="py-20" aria-labelledby="industries-heading">
+        {/* AI-Based Industries Section - Redesigned */}
+        <section className="py-20 bg-white" aria-labelledby="industries-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 id="industries-heading" className="text-3xl md:text-4xl font-bold text-black mb-4">
-                AI Legal Assistance Across Industries
+              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+                <Building2 className="w-4 h-4 mr-2" />
+                Industries We Serve
+              </div>
+              <h2 id="industries-heading" className="text-3xl md:text-5xl font-bold text-black mb-6">
+                Specialized Legal AI Across Every Sector
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our AI-powered legal assistance serves diverse industries with specialized knowledge and tailored
-                solutions for every sector
+                Tailored solutions that understand the unique challenges and regulations of your industry
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industries.map((industry, index) => (
-                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center space-x-3 mb-4">
-                      <industry.icon className="h-12 w-12" aria-hidden="true" />
-                      <CardTitle className="text-xl font-bold">{industry.title}</CardTitle>
+                <div
+                  key={index}
+                  className={`group ${industry.color} ${industry.hoverColor} rounded-2xl p-8 transition-all duration-300 hover:scale-105 border-2 ${industry.color.includes("border") ? "" : "border-gray-100"}`}
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={`p-3 rounded-xl bg-white shadow-md ${industry.iconColor}`}>
+                      <industry.icon className="h-8 w-8" />
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4">{industry.description}</p>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm">Key Applications:</h4>
-                      <ul className="space-y-1" role="list">
-                        {industry.applications.map((app, appIndex) => (
-                          <li key={appIndex} className="flex items-center text-sm text-gray-600">
-                            <CheckCircle className="w-3 h-3 mr-2 text-green-600" aria-hidden="true" />
-                            {app}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-black">{index + 1}</div>
+                      <div className="text-xs text-gray-500">of 6</div>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-black mb-3">{industry.title}</h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed">{industry.description}</p>
+
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-sm text-black">Key Applications:</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {industry.applications.map((app, appIndex) => (
+                        <div key={appIndex} className="flex items-center text-sm text-gray-700">
+                          <div className="w-2 h-2 bg-black rounded-full mr-2 flex-shrink-0"></div>
+                          {app}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-white/50">
+                    <button className="flex items-center text-black font-medium hover:text-gray-700 transition-colors group">
+                      <span className="text-sm">Explore Solutions</span>
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* AI Features Section */}
-        <section className="py-20 bg-gray-50" aria-labelledby="features-heading">
+        {/* AI Features Section - Redesigned */}
+        <section
+          className="py-20 bg-gradient-to-br from-black to-gray-900 text-white"
+          aria-labelledby="features-heading"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Advanced AI Legal Technology
+              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
+                <Zap className="w-4 h-4 mr-2" />
+                Advanced Technology
+              </div>
+              <h2 id="features-heading" className="text-3xl md:text-5xl font-bold mb-6">
+                Cutting-Edge AI Legal Technology
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Cutting-edge artificial intelligence capabilities designed specifically for comprehensive legal
-                assistance
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover the powerful AI capabilities that make our legal assistant the most advanced in the industry
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {features.map((feature, index) => (
-                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <feature.icon className="h-12 w-12 mb-4" aria-hidden="true" />
-                    <CardTitle className="text-xl font-bold">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4">{feature.description}</p>
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-sm">Core Capabilities:</h4>
-                      <ul className="space-y-1" role="list">
-                        {feature.capabilities.map((capability, capIndex) => (
-                          <li key={capIndex} className="flex items-center text-sm text-gray-600">
-                            <span className="w-2 h-2 bg-black rounded-full mr-2" aria-hidden="true"></span>
-                            {capability}
-                          </li>
-                        ))}
-                      </ul>
+                <div key={index} className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="p-3 rounded-xl bg-white/10 backdrop-blur-sm">
+                        <feature.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${feature.badgeColor}`}>
+                        {feature.badge}
+                      </span>
                     </div>
-                  </CardContent>
-                </Card>
+
+                    <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
+                    <p className="text-gray-300 mb-6 leading-relaxed">{feature.description}</p>
+
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-sm text-white">Core Capabilities:</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {feature.capabilities.map((capability, capIndex) => (
+                          <div key={capIndex} className="flex items-center text-sm text-gray-300">
+                            <CheckCircle className="w-3 h-3 mr-2 text-green-400 flex-shrink-0" />
+                            {capability}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-6 pt-6 border-t border-white/10">
+                      <button className="flex items-center text-white font-medium hover:text-gray-300 transition-colors group">
+                        <span className="text-sm">Learn More</span>
+                        <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Use Cases Section */}
-        <section className="py-20" aria-labelledby="use-cases-heading">
+        {/* Use Cases Section - Redesigned */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="use-cases-heading">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 id="use-cases-heading" className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Real-World Success Stories
+              <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-4">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Real-World Success
+              </div>
+              <h2 id="use-cases-heading" className="text-3xl md:text-5xl font-bold text-black mb-6">
+                Transforming Legal Challenges into Success Stories
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See how our AI legal assistance transforms legal challenges into measurable business results across
-                different scenarios
+                See how our AI legal assistant delivers measurable results across different scenarios and industries
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {useCases.map((useCase, index) => (
-                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center space-x-3">
-                      <useCase.icon className="h-8 w-8" aria-hidden="true" />
-                      <div>
-                        <CardTitle className="text-lg font-bold">{useCase.title}</CardTitle>
-                        <p className="text-sm text-gray-600">{useCase.scenario}</p>
+                <div
+                  key={index}
+                  className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+                >
+                  <div className="p-8">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="p-3 rounded-xl bg-gray-100 group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                          <useCase.icon className="h-6 w-6" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-black">{useCase.title}</h3>
+                          <p className="text-sm text-gray-600">{useCase.scenario}</p>
+                        </div>
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${useCase.categoryColor}`}>
+                        {useCase.category}
+                      </span>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                        <h4 className="font-semibold text-sm mb-2 flex items-center text-red-800">
+                          <AlertTriangle className="w-4 h-4 mr-2" />
+                          Challenge
+                        </h4>
+                        <p className="text-red-700 text-sm">{useCase.problem}</p>
+                      </div>
+
+                      <div className="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400">
+                        <h4 className="font-semibold text-sm mb-2 flex items-center text-blue-800">
+                          <Brain className="w-4 h-4 mr-2" />
+                          AI Solution
+                        </h4>
+                        <p className="text-blue-700 text-sm">{useCase.solution}</p>
+                      </div>
+
+                      <div className="p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                        <h4 className="font-semibold text-sm mb-2 flex items-center text-green-800">
+                          <CheckCircle className="w-4 h-4 mr-2" />
+                          Results
+                        </h4>
+                        <p className="text-green-700 text-sm">{useCase.outcome}</p>
                       </div>
                     </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm mb-1 flex items-center">
-                        <AlertTriangle className="w-4 h-4 mr-1 text-red-600" aria-hidden="true" />
-                        Challenge:
-                      </h4>
-                      <p className="text-gray-600 text-sm">{useCase.problem}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-1 flex items-center">
-                        <Brain className="w-4 h-4 mr-1 text-blue-600" aria-hidden="true" />
-                        AI Solution:
-                      </h4>
-                      <p className="text-gray-600 text-sm">{useCase.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-1 flex items-center">
-                        <CheckCircle className="w-4 h-4 mr-1 text-green-600" aria-hidden="true" />
-                        Results:
-                      </h4>
-                      <p className="text-gray-600 text-sm">{useCase.outcome}</p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 mt-4">
-                      <div className="bg-green-50 p-3 rounded text-center border border-green-200">
-                        <p className="text-sm font-semibold text-green-800">{useCase.savings}</p>
-                        <p className="text-xs text-green-600">Cost Savings</p>
+
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div className="text-center p-4 bg-gradient-to-br from-green-100 to-green-200 rounded-xl">
+                        <div className="text-2xl font-bold text-green-800">{useCase.savings}</div>
+                        <div className="text-xs text-green-600">Cost Savings</div>
                       </div>
-                      <div className="bg-blue-50 p-3 rounded text-center border border-blue-200">
-                        <p className="text-sm font-semibold text-blue-800">{useCase.timeReduction}</p>
-                        <p className="text-xs text-blue-600">Time Saved</p>
+                      <div className="text-center p-4 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl">
+                        <div className="text-2xl font-bold text-blue-800">{useCase.timeReduction}</div>
+                        <div className="text-xs text-blue-600">Time Saved</div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+
+                    <button className="w-full flex items-center justify-center px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors group">
+                      <span>View Full Case Study</span>
+                      <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

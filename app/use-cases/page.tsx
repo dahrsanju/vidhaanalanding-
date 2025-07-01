@@ -11,12 +11,13 @@ import {
   PenTool,
   Building,
   Shield,
-  Home,
   Users,
   AlertTriangle,
   Brain,
   CheckCircle,
   TrendingUp,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -102,6 +103,7 @@ export default function UseCasesPage() {
         "100% compliance rate",
       ],
       timeline: "Implementation: 1 day, Results: Immediate",
+      color: "from-blue-500 to-blue-600",
     },
     {
       icon: UserCheck,
@@ -116,6 +118,7 @@ export default function UseCasesPage() {
         "Faster resolution of HR issues (3 days vs 3 weeks), improved compliance with employment regulations, reduced legal disputes by 60%, and standardized policies across all locations.",
       metrics: ["60% fewer disputes", "90% faster resolution", "100% policy compliance", "50% cost savings"],
       timeline: "Setup: 2 days, Full benefits: 30 days",
+      color: "from-green-500 to-green-600",
     },
     {
       icon: FileText,
@@ -130,6 +133,7 @@ export default function UseCasesPage() {
         "Professional legal documents created in hours instead of weeks, saving $15,000 in legal fees, faster time-to-market, and investor-ready documentation package.",
       metrics: ["$15,000 saved", "95% faster creation", "100% compliance", "Investor-ready docs"],
       timeline: "Document creation: 2-4 hours each",
+      color: "from-purple-500 to-purple-600",
     },
     {
       icon: Gavel,
@@ -144,6 +148,7 @@ export default function UseCasesPage() {
         "Reduced research time by 60%, improved case preparation quality, won 80% of cases (up from 65%), and increased billable hours for client work instead of research.",
       metrics: ["60% time savings", "80% win rate", "40% more billable hours", "95% research accuracy"],
       timeline: "Research: Hours vs days, Case prep: 50% faster",
+      color: "from-orange-500 to-orange-600",
     },
     {
       icon: BookOpen,
@@ -158,6 +163,7 @@ export default function UseCasesPage() {
         "Maintained 100% compliance rate, avoided potential regulatory penalties worth $2.5M, reduced compliance workload by 50%, and improved patient data security.",
       metrics: ["100% compliance", "$2.5M penalties avoided", "50% workload reduction", "Zero violations"],
       timeline: "Setup: 1 week, Ongoing monitoring: Real-time",
+      color: "from-red-500 to-red-600",
     },
     {
       icon: PenTool,
@@ -172,62 +178,7 @@ export default function UseCasesPage() {
         "Successfully protected 5 key innovations, avoided 3 potential IP disputes, reduced patent filing costs by 40%, and established strong IP portfolio for international expansion.",
       metrics: ["5 patents protected", "3 disputes avoided", "40% cost reduction", "Global IP strategy"],
       timeline: "Patent analysis: 1 day, Filing support: Ongoing",
-    },
-    {
-      icon: Building,
-      title: "Real Estate Transaction Support",
-      scenario: "Real Estate Developer",
-      industry: "Real Estate",
-      problem:
-        "Maria develops commercial properties and needs assistance with complex real estate transactions, zoning compliance, environmental regulations, and contract negotiations with multiple parties.",
-      solution:
-        "AI analyzes property transactions, reviews purchase agreements, ensures zoning compliance, identifies environmental risks, and provides negotiation strategies for better deal terms.",
-      outcome:
-        "Reduced transaction times by 35%, improved deal terms saving $500K per project, 100% zoning compliance, and faster due diligence process.",
-      metrics: ["35% faster transactions", "$500K saved per project", "100% compliance", "Zero delays"],
-      timeline: "Transaction analysis: 2-4 hours, Due diligence: 50% faster",
-    },
-    {
-      icon: Shield,
-      title: "Privacy & Data Protection",
-      scenario: "E-commerce Platform",
-      industry: "E-commerce",
-      problem:
-        "Lisa runs an international e-commerce platform and needs to comply with GDPR, CCPA, and other privacy regulations while handling customer data across multiple jurisdictions.",
-      solution:
-        "AI analyzes data handling practices, ensures privacy policy compliance, monitors regulatory changes, provides data breach response guidance, and creates jurisdiction-specific compliance strategies.",
-      outcome:
-        "Achieved 100% privacy compliance across 15 countries, reduced compliance costs by 45%, improved customer trust scores, and avoided potential fines worth $10M.",
-      metrics: ["100% compliance", "45% cost reduction", "15 countries covered", "$10M fines avoided"],
-      timeline: "Compliance audit: 1 week, Ongoing monitoring: Real-time",
-    },
-    {
-      icon: Home,
-      title: "Family Law Guidance",
-      scenario: "Individual Client",
-      industry: "Personal Legal",
-      problem:
-        "Robert is going through a divorce and needs guidance on child custody, asset division, and legal procedures but wants to minimize legal costs while ensuring fair representation.",
-      solution:
-        "AI provides guidance on family law procedures, helps prepare documentation, explains legal rights and options, and offers mediation strategies to reduce conflict and costs.",
-      outcome:
-        "Reduced legal fees by 55%, faster resolution (6 months vs 18 months), fair custody arrangement, and preserved family relationships through mediation guidance.",
-      metrics: ["55% cost reduction", "3x faster resolution", "Fair outcomes", "Preserved relationships"],
-      timeline: "Initial guidance: Immediate, Case support: Ongoing",
-    },
-    {
-      icon: Users,
-      title: "Corporate Governance",
-      scenario: "Board of Directors",
-      industry: "Corporate",
-      problem:
-        "The board of a growing company needs guidance on corporate governance, fiduciary duties, compliance with securities regulations, and risk management strategies.",
-      solution:
-        "AI provides corporate governance guidance, monitors regulatory requirements, assists with board resolutions, ensures compliance with securities laws, and offers risk assessment tools.",
-      outcome:
-        "Improved governance practices, 100% regulatory compliance, reduced corporate risks by 40%, and enhanced stakeholder confidence.",
-      metrics: ["100% compliance", "40% risk reduction", "Enhanced governance", "Stakeholder confidence"],
-      timeline: "Governance review: 1 week, Ongoing support: Real-time",
+      color: "from-teal-500 to-teal-600",
     },
   ]
 
@@ -242,13 +193,32 @@ export default function UseCasesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="bg-white">
+      <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="py-20 lg:py-32">
+        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Real-World AI Legal Success Stories</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Real Success Stories
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                Real-World AI Legal
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Success Stories
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 See how our AI legal assistance transforms legal challenges into measurable business results across
                 different scenarios and industries
               </p>
@@ -257,7 +227,7 @@ export default function UseCasesPage() {
         </section>
 
         {/* Categories Overview */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-black mb-4">Use Case Categories</h2>
@@ -268,10 +238,13 @@ export default function UseCasesPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               {categories.map((category, index) => (
-                <Card key={index} className="border-2 border-black text-center">
+                <Card
+                  key={index}
+                  className="border-2 border-black text-center hover:shadow-lg transition-all duration-300"
+                >
                   <CardContent className="p-6">
                     <category.icon className="h-8 w-8 mx-auto mb-3" />
-                    <h3 className="font-semibold mb-1">{category.name}</h3>
+                    <h3 className="font-semibold mb-1 text-black">{category.name}</h3>
                     <p className="text-sm text-gray-600">{category.count} Use Cases</p>
                   </CardContent>
                 </Card>
@@ -281,17 +254,21 @@ export default function UseCasesPage() {
         </section>
 
         {/* Use Cases Grid */}
-        <section className="py-20">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {useCases.map((useCase, index) => (
-                <Card key={index} className="border-2 border-black hover:shadow-lg transition-shadow">
+                <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
                   <CardHeader>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <useCase.icon className="h-8 w-8" />
+                        <div
+                          className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${useCase.color} text-white group-hover:scale-110 transition-transform`}
+                        >
+                          <useCase.icon className="h-6 w-6" />
+                        </div>
                         <div>
-                          <CardTitle className="text-lg font-bold">{useCase.title}</CardTitle>
+                          <CardTitle className="text-lg font-bold text-black">{useCase.title}</CardTitle>
                           <p className="text-sm text-gray-600">
                             {useCase.scenario} • {useCase.industry}
                           </p>
@@ -301,43 +278,43 @@ export default function UseCasesPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-sm mb-1 flex items-center">
-                        <AlertTriangle className="w-4 h-4 mr-1 text-red-600" />
+                      <h4 className="font-semibold text-sm mb-1 flex items-center text-red-800">
+                        <AlertTriangle className="w-4 h-4 mr-1" />
                         Challenge:
                       </h4>
-                      <p className="text-gray-600 text-sm">{useCase.problem}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{useCase.problem}</p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-sm mb-1 flex items-center">
-                        <Brain className="w-4 h-4 mr-1 text-blue-600" />
+                      <h4 className="font-semibold text-sm mb-1 flex items-center text-blue-800">
+                        <Brain className="w-4 h-4 mr-1" />
                         AI Solution:
                       </h4>
-                      <p className="text-gray-600 text-sm">{useCase.solution}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{useCase.solution}</p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-sm mb-1 flex items-center">
-                        <CheckCircle className="w-4 h-4 mr-1 text-green-600" />
+                      <h4 className="font-semibold text-sm mb-1 flex items-center text-green-800">
+                        <CheckCircle className="w-4 h-4 mr-1" />
                         Results:
                       </h4>
-                      <p className="text-gray-600 text-sm">{useCase.outcome}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{useCase.outcome}</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-2">
                       {useCase.metrics.map((metric, metricIndex) => (
                         <div key={metricIndex} className="bg-gray-100 p-2 rounded text-center">
-                          <p className="text-xs font-semibold">{metric}</p>
+                          <p className="text-xs font-semibold text-black">{metric}</p>
                         </div>
                       ))}
                     </div>
 
-                    <div className="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-xl border-l-4 border-blue-500">
                       <h4 className="font-semibold text-sm mb-1 flex items-center text-blue-800">
                         <TrendingUp className="w-4 h-4 mr-1" />
                         Timeline:
                       </h4>
-                      <p className="text-sm text-blue-700">{useCase.timeline}</p>
+                      <p className="text-sm text-blue-700 leading-relaxed">{useCase.timeline}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -347,47 +324,65 @@ export default function UseCasesPage() {
         </section>
 
         {/* Success Metrics */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-black mb-4">Proven Results Across All Use Cases</h2>
-              <p className="text-lg text-gray-600">
+              <h2 className="text-3xl font-bold mb-4">Proven Results Across All Use Cases</h2>
+              <p className="text-lg text-gray-300">
                 Consistent success metrics across different legal scenarios and industries
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-black mb-2">65%</div>
-                <p className="text-gray-600">Average Cost Reduction</p>
+                <div className="text-4xl font-bold mb-2">65%</div>
+                <p className="text-gray-300">Average Cost Reduction</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-black mb-2">75%</div>
-                <p className="text-gray-600">Faster Processing Time</p>
+                <div className="text-4xl font-bold mb-2">75%</div>
+                <p className="text-gray-300">Faster Processing Time</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-black mb-2">95%</div>
-                <p className="text-gray-600">Accuracy Rate</p>
+                <div className="text-4xl font-bold mb-2">95%</div>
+                <p className="text-gray-300">Accuracy Rate</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-black mb-2">100%</div>
-                <p className="text-gray-600">Compliance Achievement</p>
+                <div className="text-4xl font-bold mb-2">100%</div>
+                <p className="text-gray-300">Compliance Achievement</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Success Story?</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-6xl font-bold text-black mb-6">
+              Ready to Create Your
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Success Story?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
               Join hundreds of satisfied clients who have transformed their legal processes with AI and achieved
               measurable results
             </p>
-            <Button asChild className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
-              <Link href="/contact">Start Your Journey</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg h-auto">
+                <Link href="/contact" className="flex items-center">
+                  Start Your Journey
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg h-auto bg-transparent"
+              >
+                <Link href="/services">Explore Services</Link>
+              </Button>
+            </div>
           </div>
         </section>
       </div>

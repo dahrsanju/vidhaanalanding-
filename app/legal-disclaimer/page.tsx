@@ -49,13 +49,28 @@ export default function LegalDisclaimerPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="bg-white">
+      <div className="bg-white overflow-hidden">
         {/* Hero Section */}
-        <section className="py-20 lg:py-32">
+        <section className="relative py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-32">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23000000' fillOpacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              }}
+            ></div>
+          </div>
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">Legal Disclaimer</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                Legal
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Disclaimer
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Important legal information about our AI legal assistance services and terms of use
               </p>
             </div>
@@ -63,12 +78,12 @@ export default function LegalDisclaimerPage() {
         </section>
 
         {/* Disclaimer Content */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white border-2 border-black p-8 md:p-12">
+            <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-black rounded-3xl p-8 md:p-12 shadow-lg">
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">No Attorney-Client Relationship</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">No Attorney-Client Relationship</h2>
                   <p className="text-gray-700 leading-relaxed">
                     The use of Vidhaana's AI legal assistance platform does not create an attorney-client relationship
                     between you and Vidhaana, its operators, or any affiliated legal professionals. The information
@@ -78,7 +93,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Not a Substitute for Professional Legal Advice</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Not a Substitute for Professional Legal Advice</h2>
                   <p className="text-gray-700 leading-relaxed">
                     While our AI system is designed to provide helpful legal information, it cannot replace the
                     personalized advice of a qualified attorney. The law is complex and varies by jurisdiction. For
@@ -87,7 +102,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Accuracy and Completeness</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Accuracy and Completeness</h2>
                   <p className="text-gray-700 leading-relaxed">
                     We strive to provide accurate and up-to-date legal information through our AI system. However, we
                     cannot guarantee the accuracy, completeness, or timeliness of the information provided. Laws change
@@ -96,7 +111,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Limitation of Liability</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Limitation of Liability</h2>
                   <p className="text-gray-700 leading-relaxed">
                     Vidhaana and its operators shall not be liable for any damages, losses, or consequences arising from
                     the use of information provided through our platform. Users assume full responsibility for any
@@ -105,7 +120,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Confidentiality</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Confidentiality</h2>
                   <p className="text-gray-700 leading-relaxed">
                     While we implement security measures to protect your information, communications through our
                     platform may not be subject to attorney-client privilege. Do not share highly sensitive or
@@ -114,7 +129,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Jurisdictional Limitations</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Jurisdictional Limitations</h2>
                   <p className="text-gray-700 leading-relaxed">
                     Our AI system provides general legal information that may not be applicable to your specific
                     jurisdiction. Laws vary significantly between states, countries, and local jurisdictions. Always
@@ -123,7 +138,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Emergency Situations</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Emergency Situations</h2>
                   <p className="text-gray-700 leading-relaxed">
                     Our AI platform is not designed to handle emergency legal situations. If you are facing an immediate
                     legal emergency, contact local emergency services or seek immediate assistance from a qualified
@@ -132,7 +147,7 @@ export default function LegalDisclaimerPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Updates to This Disclaimer</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-black">Updates to This Disclaimer</h2>
                   <p className="text-gray-700 leading-relaxed">
                     We reserve the right to update this legal disclaimer at any time. Users are responsible for
                     reviewing this disclaimer periodically to stay informed of any changes. Continued use of our
@@ -140,9 +155,9 @@ export default function LegalDisclaimerPage() {
                   </p>
                 </div>
 
-                <div className="bg-gray-100 p-6 border-l-4 border-black">
-                  <h3 className="text-lg font-semibold mb-2">Important Notice</h3>
-                  <p className="text-gray-700">
+                <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border-l-4 border-black">
+                  <h3 className="text-lg font-semibold mb-2 text-black">Important Notice</h3>
+                  <p className="text-gray-700 leading-relaxed">
                     By using Vidhaana's AI legal assistance platform, you acknowledge that you have read, understood,
                     and agree to be bound by this legal disclaimer. If you do not agree with these terms, please do not
                     use our services.

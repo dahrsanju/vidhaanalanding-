@@ -150,8 +150,8 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="bg-white overflow-hidden">
-        {/* Hero Section - Enhanced */}
-        <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-white to-blue-50">
+        {/* Hero Section */}
+        <section className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-20">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div
@@ -162,7 +162,7 @@ export default function HomePage() {
             ></div>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left Column - Content */}
               <div className="space-y-8">
@@ -274,7 +274,7 @@ export default function HomePage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-black text-white">
+        <section className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {[
@@ -296,9 +296,9 @@ export default function HomePage() {
         </section>
 
         {/* Value Proposition Section */}
-        <section className="py-32 bg-gradient-to-br from-white to-gray-50">
+        <section className="py-16 bg-gradient-to-br from-white to-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6">
                 Why Legal Professionals
                 <span className="block text-blue-600">Choose Vidhaana</span>
@@ -308,7 +308,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
               {/* Left - Benefits */}
               <div className="space-y-8">
                 {[
@@ -402,10 +402,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Industries Section - Simplified */}
-        <section className="py-32 bg-white">
+        {/* Industries Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6">
                 <Building2 className="w-4 h-4 mr-2" />
                 Trusted Across Industries
@@ -485,10 +485,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Features Section - Streamlined */}
-        <section className="py-32 bg-gradient-to-br from-gray-900 to-black text-white">
+        {/* Features Section */}
+        <section className="py-16 bg-gradient-to-br from-gray-900 to-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
                 <Zap className="w-4 h-4 mr-2" />
                 Powered by Advanced AI
@@ -551,9 +551,9 @@ export default function HomePage() {
         </section>
 
         {/* Success Stories Section */}
-        <section className="py-32 bg-gradient-to-br from-blue-50 to-white">
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium mb-6">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Proven Results
@@ -634,9 +634,9 @@ export default function HomePage() {
         </section>
 
         {/* Demo Section */}
-        <section id="demo" className="py-32 bg-black text-white">
+        <section id="demo" className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-4xl lg:text-6xl font-bold mb-6">See Vidhaana in Action</h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
                 Watch how our AI analyzes a real contract in under 60 seconds
@@ -660,9 +660,9 @@ export default function HomePage() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-32 bg-white">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
               <h2 className="text-4xl lg:text-6xl font-bold text-black mb-6">Loved by Legal Professionals</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Join thousands of satisfied clients who trust Vidhaana for their legal needs
@@ -721,7 +721,7 @@ export default function HomePage() {
         <FAQSection faqs={faqs} />
 
         {/* Final CTA */}
-        <section className="py-32 bg-gradient-to-br from-black to-gray-900 text-white">
+        <section className="py-16 bg-gradient-to-br from-black to-gray-900 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl lg:text-6xl font-bold mb-6">Ready to Transform Your Legal Operations?</h2>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">

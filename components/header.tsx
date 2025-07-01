@@ -35,17 +35,24 @@ export default function Header() {
       </a>
 
       <header
-        className={`bg-white border-b-2 border-black sticky top-0 z-50 transition-shadow duration-200 ${
-          isScrolled ? "shadow-lg" : ""
+        className={`bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? "shadow-lg border-gray-300" : "shadow-sm"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             <Link
               href="/"
-              className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
+              className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
             >
-              <Image src="/logo.svg" alt="Vidhaana logo" width={100} height={100} priority className="h-24 w-24" />
+              <Image
+                src="/logo.svg"
+                alt="Vidhaana logo"
+                width={100}
+                height={100}
+                priority
+                className={`transition-all duration-300 ${isScrolled ? "h-16 w-16" : "h-20 w-20"}`}
+              />
             </Link>
 
             <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Primary Navigation">
@@ -53,7 +60,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-black hover:text-gray-600 font-medium transition-colors duration-200 border-b-2 border-transparent hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
+                  className="text-black hover:text-gray-600 font-medium transition-all duration-200 border-b-2 border-transparent hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded px-2 py-1"
                 >
                   {item.name}
                 </Link>
@@ -62,20 +69,21 @@ export default function Header() {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
+              className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-colors hover:bg-gray-100"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
+          {/* Mobile Menu */}
           {isMenuOpen && (
-            <nav className="md:hidden border-t border-black py-4">
+            <nav className="md:hidden border-t border-gray-200 py-4 bg-white/95 backdrop-blur-md">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block py-2 text-black hover:text-gray-600 font-medium"
+                  className="block py-3 px-2 text-black hover:text-gray-600 hover:bg-gray-50 font-medium transition-colors rounded"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

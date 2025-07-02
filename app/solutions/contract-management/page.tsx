@@ -5,37 +5,34 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import {
   FileText,
-  Search,
+  Brain,
+  Workflow,
   Shield,
-  Clock,
   Users,
   BarChart3,
   CheckCircle,
   ArrowRight,
-  Zap,
-  Target,
+  Clock,
   TrendingUp,
-  Database,
+  Zap,
   Eye,
-  Calendar,
-  Bell,
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Contract Management | Intelligent Contract Lifecycle Management | Vidhaana",
+  title: "AI Contract Management Platform | Automated Contract Lifecycle Management",
   description:
-    "Streamline contract lifecycle management with AI-powered analysis, automated workflows, and intelligent risk assessment. Reduce contract processing time by 80% and improve compliance by 95%.",
+    "Streamline contract management with AI-powered analysis, automated creation, and lifecycle management. Reduce contract processing time by 80% and ensure 95% compliance. Complete contract visibility and control.",
   keywords: [
     "contract management software",
     "AI contract analysis",
     "contract lifecycle management",
-    "automated contract review",
-    "contract intelligence",
-    "legal contract management",
-    "contract automation",
+    "automated contract creation",
     "contract risk assessment",
-    "contract compliance",
-    "contract management platform",
+    "contract compliance monitoring",
+    "contract analytics platform",
+    "legal contract automation",
+    "contract management system",
+    "intelligent contract platform",
   ],
   alternates: {
     canonical: "https://vidhaana.com/solutions/contract-management",
@@ -44,154 +41,193 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "AI Contract Management",
-  description: "Intelligent contract lifecycle management with AI-powered analysis and automation",
+  "@type": "SoftwareApplication",
+  name: "Vidhaana Contract Management Platform",
+  description: "AI-powered contract management and lifecycle automation platform",
+  url: "https://vidhaana.com/solutions/contract-management",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web-based",
+  offers: {
+    "@type": "Offer",
+    price: "Contact for pricing",
+    priceCurrency: "USD",
+  },
   provider: {
     "@type": "Organization",
     name: "Vidhaana",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Contract Management Features",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "AI Contract Analysis",
-          description: "Automated contract review and risk assessment",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Contract Lifecycle Management",
-          description: "End-to-end contract management from creation to renewal",
-        },
-      },
-    ],
   },
 }
 
 export default function ContractManagementPage() {
   const coreFeatures = [
     {
-      icon: Search,
+      icon: Brain,
       title: "AI-Powered Contract Analysis",
       description:
-        "Advanced AI algorithms analyze contracts for risks, obligations, and opportunities with 99.5% accuracy, identifying critical clauses and potential issues instantly.",
-      highlights: ["Risk identification", "Clause extraction", "Obligation tracking", "Compliance verification"],
+        "Advanced AI algorithms analyze contracts for risks, compliance issues, and optimization opportunities with 95% accuracy.",
+      highlights: [
+        "Risk scoring and identification",
+        "Clause recommendation engine",
+        "Compliance verification",
+        "Language optimization suggestions",
+      ],
     },
     {
-      icon: FileText,
+      icon: Zap,
       title: "Automated Contract Creation",
       description:
-        "Generate contracts using intelligent templates and AI-powered clause recommendations based on your specific requirements and industry standards.",
-      highlights: ["Smart templates", "Clause library", "Auto-population", "Version control"],
+        "Generate contracts automatically using AI-powered templates and intelligent clause libraries tailored to your business needs.",
+      highlights: [
+        "Smart template library",
+        "Dynamic clause insertion",
+        "Industry-specific templates",
+        "Custom template creation",
+      ],
     },
     {
-      icon: Clock,
-      title: "Lifecycle Management",
+      icon: Workflow,
+      title: "Complete Lifecycle Management",
       description:
-        "Manage the entire contract lifecycle from creation to renewal with automated workflows, milestone tracking, and intelligent notifications.",
-      highlights: ["Workflow automation", "Milestone tracking", "Renewal alerts", "Performance monitoring"],
+        "Manage the entire contract lifecycle from creation to renewal with automated workflows and milestone tracking.",
+      highlights: [
+        "Automated workflow management",
+        "Milestone and deadline tracking",
+        "Renewal notifications",
+        "Version control and history",
+      ],
     },
     {
       icon: Shield,
       title: "Risk Assessment & Mitigation",
       description:
-        "Proactively identify and assess contract risks with AI-powered scoring and receive actionable recommendations for risk mitigation.",
-      highlights: ["Risk scoring", "Impact analysis", "Mitigation strategies", "Compliance monitoring"],
+        "Proactive risk identification and mitigation strategies with predictive analytics and compliance monitoring.",
+      highlights: [
+        "Predictive risk modeling",
+        "Compliance gap analysis",
+        "Risk mitigation recommendations",
+        "Regulatory change monitoring",
+      ],
     },
     {
       icon: Users,
-      title: "Collaboration & Approval",
+      title: "Collaborative Review Process",
       description:
-        "Streamline contract collaboration with role-based access, approval workflows, and real-time commenting and negotiation tracking.",
-      highlights: ["Role-based access", "Approval workflows", "Real-time collaboration", "Negotiation tracking"],
+        "Streamlined collaboration tools for legal teams, stakeholders, and external parties with real-time editing and approval workflows.",
+      highlights: [
+        "Real-time collaboration",
+        "Approval workflow automation",
+        "Comment and annotation system",
+        "Stakeholder notifications",
+      ],
     },
     {
       icon: BarChart3,
-      title: "Contract Analytics & Reporting",
+      title: "Advanced Analytics & Reporting",
       description:
-        "Gain insights into contract performance, compliance status, and portfolio analytics with comprehensive dashboards and custom reports.",
-      highlights: ["Performance dashboards", "Compliance reporting", "Portfolio analytics", "Custom reports"],
+        "Comprehensive analytics dashboard providing insights into contract performance, compliance metrics, and cost optimization.",
+      highlights: [
+        "Contract performance metrics",
+        "Compliance reporting",
+        "Cost analysis and optimization",
+        "Custom dashboard creation",
+      ],
     },
   ]
 
   const contractTypes = [
     {
-      name: "Sales Contracts",
-      description: "Purchase agreements, service contracts, and sales terms",
-      features: ["Revenue recognition", "Payment terms", "Delivery obligations"],
+      type: "Sales Contracts",
+      description: "Revenue agreements, service contracts, and customer agreements",
+      features: [
+        "Revenue recognition automation",
+        "Payment term optimization",
+        "Customer risk assessment",
+        "Performance milestone tracking",
+      ],
+      benefits: "40% faster deal closure, 25% revenue increase",
     },
     {
-      name: "Employment Agreements",
-      description: "Employment contracts, NDAs, and compensation agreements",
-      features: ["Compliance tracking", "Benefit management", "Performance clauses"],
+      type: "Employment Agreements",
+      description: "Employment contracts, NDAs, and HR-related agreements",
+      features: [
+        "Compliance with labor laws",
+        "Compensation benchmarking",
+        "Benefits optimization",
+        "Termination clause management",
+      ],
+      benefits: "60% faster hiring, 100% compliance rate",
     },
     {
-      name: "Vendor Contracts",
-      description: "Supplier agreements, service level agreements, and procurement contracts",
-      features: ["SLA monitoring", "Performance metrics", "Cost optimization"],
+      type: "Vendor Contracts",
+      description: "Supplier agreements, service contracts, and procurement deals",
+      features: [
+        "Vendor performance tracking",
+        "Cost optimization analysis",
+        "SLA monitoring",
+        "Risk assessment automation",
+      ],
+      benefits: "30% cost savings, 50% better vendor performance",
     },
     {
-      name: "Partnership Agreements",
+      type: "Partnership Agreements",
       description: "Joint ventures, strategic partnerships, and collaboration agreements",
-      features: ["Revenue sharing", "IP protection", "Governance structures"],
+      features: [
+        "Partnership structure optimization",
+        "Revenue sharing automation",
+        "Performance metrics tracking",
+        "Dispute resolution management",
+      ],
+      benefits: "35% faster partnerships, 20% better outcomes",
     },
   ]
 
-  const benefits = [
+  const integrations = [
+    "Salesforce",
+    "Microsoft 365",
+    "Google Workspace",
+    "DocuSign",
+    "Adobe Sign",
+    "SAP",
+    "Oracle",
+    "NetSuite",
+    "HubSpot",
+    "Slack",
+    "Teams",
+    "Zoom",
+  ]
+
+  const implementationPhases = [
     {
-      icon: TrendingUp,
-      title: "80% Faster Processing",
-      description: "Reduce contract processing time from weeks to hours with AI automation.",
+      phase: 1,
+      title: "Contract Intake & Assessment",
+      description: "Import existing contracts and conduct comprehensive analysis of current contract portfolio.",
+      duration: "1-2 weeks",
     },
     {
-      icon: Target,
-      title: "95% Compliance Rate",
-      description: "Achieve superior compliance with automated monitoring and alerts.",
+      phase: 2,
+      title: "Template & Workflow Setup",
+      description: "Configure contract templates, approval workflows, and integration with existing systems.",
+      duration: "2-3 weeks",
     },
     {
-      icon: Zap,
-      title: "60% Cost Reduction",
-      description: "Lower contract management costs through intelligent automation.",
+      phase: 3,
+      title: "Team Training & Go-Live",
+      description: "Comprehensive team training and system activation with ongoing support and monitoring.",
+      duration: "1 week",
     },
     {
-      icon: Database,
-      title: "100% Visibility",
-      description: "Complete visibility into your contract portfolio and obligations.",
+      phase: 4,
+      title: "Optimization & Scaling",
+      description: "Performance optimization, advanced feature activation, and scaling across the organization.",
+      duration: "Ongoing",
     },
   ]
 
-  const workflowSteps = [
-    {
-      step: "01",
-      title: "Contract Intake",
-      description: "Upload or create contracts with AI-powered data extraction and categorization.",
-      icon: FileText,
-    },
-    {
-      step: "02",
-      title: "AI Analysis",
-      description: "Automated analysis identifies risks, obligations, and key terms instantly.",
-      icon: Search,
-    },
-    {
-      step: "03",
-      title: "Review & Approval",
-      description: "Streamlined review process with intelligent routing and approval workflows.",
-      icon: CheckCircle,
-    },
-    {
-      step: "04",
-      title: "Execution & Monitoring",
-      description: "Track performance, monitor compliance, and manage renewals automatically.",
-      icon: Eye,
-    },
+  const stats = [
+    { number: "80%", label: "Faster Processing", icon: Clock },
+    { number: "95%", label: "Compliance Rate", icon: Shield },
+    { number: "60%", label: "Cost Reduction", icon: TrendingUp },
+    { number: "100%", label: "Contract Visibility", icon: Eye },
   ]
 
   return (
@@ -200,122 +236,100 @@ export default function ContractManagementPage() {
 
       <div className="bg-white min-h-screen">
         {/* Hero Section */}
-        <section className="pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
+        <section className="pt-28 pb-16 monochrome-gradient">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs
               items={[{ label: "Solutions", href: "/solutions" }, { label: "Contract Management" }]}
               className="mb-8"
             />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
-                  <FileText className="w-4 h-4 mr-2" />
-                  Contract Management
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-                  Intelligent
-                  <span className="block">Contract</span>
-                  <span className="block">Lifecycle</span>
-                </h1>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Streamline contract management with AI-powered analysis, automated workflows, and intelligent risk
-                  assessment. Reduce processing time by 80% and improve compliance by 95%.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg">
-                    <Link href="/contact" className="flex items-center">
-                      Start Free Trial
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 text-lg bg-transparent"
-                  >
-                    <Link href="#features">Explore Features</Link>
-                  </Button>
-                </div>
+            <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
+                <FileText className="w-4 h-4 mr-2" />
+                Contract Management Platform
               </div>
-
-              <div className="relative">
-                <Card className="border-2 border-black shadow-lg">
-                  <CardContent className="p-8">
-                    <div className="space-y-6">
-                      <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-black">Contract Dashboard</h3>
-                        <div className="flex items-center gap-2 text-green-600">
-                          <CheckCircle className="w-5 h-5" />
-                          <span className="text-sm font-medium">All Current</span>
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">247</div>
-                          <div className="text-sm text-gray-600">Active Contracts</div>
-                        </div>
-                        <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">12</div>
-                          <div className="text-sm text-gray-600">Expiring Soon</div>
-                        </div>
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center gap-3">
-                            <Bell className="w-5 h-5 text-black" />
-                            <span className="text-sm">Vendor Contract Review</span>
-                          </div>
-                          <span className="text-xs text-gray-600">Due Today</span>
-                        </div>
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div className="flex items-center gap-3">
-                            <Calendar className="w-5 h-5 text-black" />
-                            <span className="text-sm">Partnership Renewal</span>
-                          </div>
-                          <span className="text-xs text-gray-600">30 days</span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+                AI-Powered Contract
+                <span className="block text-black">Lifecycle Management</span>
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+                Streamline your entire contract lifecycle with intelligent automation, risk assessment, and compliance
+                monitoring. Reduce processing time by 80% while ensuring 95% compliance across all contract types.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg">
+                  <Link href="/contact" className="flex items-center">
+                    Start Free Trial
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 text-lg bg-transparent"
+                >
+                  <Link href="#demo">Watch Demo</Link>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Core Features */}
-        <section id="features" className="py-16 bg-white">
+        {/* Stats Section */}
+        <section className="py-16 bg-black text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Contract Management Results</h2>
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Measurable improvements in contract processing efficiency and compliance
+              </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center group">
+                  <div className="inline-flex p-4 rounded-2xl bg-white/10 mb-4 group-hover:bg-white/20 transition-colors">
+                    <stat.icon className="w-8 h-8" />
+                  </div>
+                  <div className="text-4xl lg:text-5xl font-bold mb-2">{stat.number}</div>
+                  <div className="text-gray-300">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Core Features Section */}
+        <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Complete Contract Management Suite</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Complete Contract Management Features</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our AI-powered platform provides comprehensive contract management capabilities from creation to renewal
-                and everything in between.
+                Comprehensive AI-powered features to manage every aspect of your contract lifecycle
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {coreFeatures.map((feature, index) => (
-                <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
+                <Card key={index} className="monochrome-card h-full">
                   <CardHeader>
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="p-2 bg-black text-white rounded-lg">
-                        <feature.icon className="w-6 h-6" />
-                      </div>
-                      <CardTitle className="text-xl font-bold text-black">{feature.title}</CardTitle>
+                    <div className="inline-flex p-3 rounded-2xl bg-black text-white mb-4">
+                      <feature.icon className="h-6 w-6" />
                     </div>
+                    <CardTitle className="text-xl font-bold text-black">{feature.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
-                    <div className="space-y-2">
-                      {feature.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-700">{highlight}</span>
-                        </div>
-                      ))}
+                  <CardContent className="flex-1 flex flex-col">
+                    <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
+                    <div className="mt-auto">
+                      <h4 className="font-semibold mb-3 text-black">Key Highlights:</h4>
+                      <ul className="space-y-2">
+                        {feature.highlights.map((highlight, highlightIndex) => (
+                          <li key={highlightIndex} className="flex items-start text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-black mr-2 flex-shrink-0 mt-0.5" />
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </CardContent>
                 </Card>
@@ -324,42 +338,39 @@ export default function ContractManagementPage() {
           </div>
         </section>
 
-        {/* Contract Types */}
-        <section className="py-16 bg-gray-50">
+        {/* Contract Types Section */}
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Support for All Contract Types</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Specialized Contract Type Support</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our platform handles diverse contract types with specialized features and industry-specific templates.
+                Tailored features and workflows for different contract types and business requirements
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {contractTypes.map((type, index) => (
-                <Card key={index} className="border-2 border-black">
+              {contractTypes.map((contract, index) => (
+                <Card key={index} className="monochrome-card">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-black">{type.name}</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-black">{contract.type}</CardTitle>
+                    <p className="text-gray-600">{contract.description}</p>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{type.description}</p>
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-black mb-2">Key Features:</h4>
-                      <div className="space-y-2">
-                        {type.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-green-600" />
-                            <span className="text-sm text-gray-700">{feature}</span>
-                          </div>
+                    <div className="mb-6">
+                      <h4 className="font-semibold mb-3 text-black">Specialized Features:</h4>
+                      <ul className="space-y-2">
+                        {contract.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-start text-sm text-gray-600">
+                            <CheckCircle className="w-4 h-4 text-black mr-2 flex-shrink-0 mt-0.5" />
+                            {feature}
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
-                    >
-                      <Link href="/contact">Learn More</Link>
-                    </Button>
+                    <div className="monochrome-accent p-3 rounded-lg">
+                      <p className="text-sm font-medium text-black mb-1">Proven Results:</p>
+                      <p className="text-sm text-gray-700">{contract.benefits}</p>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -367,92 +378,49 @@ export default function ContractManagementPage() {
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Proven Results</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Organizations using our contract management platform achieve significant improvements in efficiency,
-                compliance, and cost reduction.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="border-2 border-gray-200 text-center">
-                  <CardContent className="p-8">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-full mb-4">
-                      <benefit.icon className="w-8 h-8" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-black mb-2">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Workflow */}
+        {/* Integrations Section */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Streamlined Workflow</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our intelligent workflow automates every step of the contract lifecycle, from initial creation to final
-                execution and ongoing management.
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Seamless Integrations</h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Connect with your existing tools and workflows for maximum efficiency
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {workflowSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-black text-white rounded-full text-xl font-bold mb-4">
-                    {step.step}
-                  </div>
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full mb-4">
-                    <step.icon className="w-6 h-6 text-black" />
-                  </div>
-                  <h3 className="text-xl font-bold text-black mb-3">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {integrations.map((integration, index) => (
+                <div
+                  key={index}
+                  className="bg-white border-2 border-black rounded-lg p-4 text-center hover:bg-black hover:text-white transition-colors"
+                >
+                  <p className="font-medium">{integration}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Integration */}
+        {/* Implementation Process */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Seamless Integrations</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Connect with your existing tools and systems for a unified contract management experience.
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Implementation Process</h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Streamlined implementation process to get your contract management system operational quickly
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-              {[
-                "Salesforce",
-                "Microsoft 365",
-                "DocuSign",
-                "SAP",
-                "Oracle",
-                "Slack",
-                "Teams",
-                "Jira",
-                "ServiceNow",
-                "NetSuite",
-                "HubSpot",
-                "Workday",
-              ].map((integration, index) => (
-                <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
-                  <CardContent className="p-4 text-center">
-                    <div className="w-12 h-12 bg-gray-200 rounded-lg mx-auto mb-2"></div>
-                    <span className="text-sm font-medium text-black">{integration}</span>
-                  </CardContent>
-                </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {implementationPhases.map((phase, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                    {phase.phase}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-black">{phase.title}</h3>
+                  <p className="text-gray-600 leading-relaxed mb-2">{phase.description}</p>
+                  <p className="text-sm text-black font-medium">{phase.duration}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -461,15 +429,14 @@ export default function ContractManagementPage() {
         {/* CTA Section */}
         <section className="py-16 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Transform Your Contract Management</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Transform Your Contract Management Today</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join leading organizations that have revolutionized their contract management with our AI-powered
-              platform.
+              Join thousands of organizations already streamlining their contract processes with AI-powered automation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">
                 <Link href="/contact" className="flex items-center">
-                  Start Free Trial
+                  Get Started Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
@@ -479,7 +446,7 @@ export default function ContractManagementPage() {
                 size="lg"
                 className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-3 text-lg bg-transparent"
               >
-                <Link href="/solutions">View All Solutions</Link>
+                <Link href="/pricing">View Pricing</Link>
               </Button>
             </div>
           </div>

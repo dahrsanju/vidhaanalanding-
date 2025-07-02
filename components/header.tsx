@@ -20,12 +20,11 @@ export default function Header() {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Solutions", href: "/solutions" },
     { name: "Industries", href: "/industries" },
-    { name: "Features", href: "/features" },
     { name: "Use Cases", href: "/use-cases" },
-    { name: "Contact", href: "/contact" },
-    { name: "Legal Disclaimer", href: "/legal-disclaimer" },
+    { name: "Features", href: "/features" },
+    { name: "Pricing", href: "/pricing" },
   ]
 
   return (

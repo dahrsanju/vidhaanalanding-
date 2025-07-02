@@ -5,14 +5,18 @@ import Link from "next/link"
 import {
   Building2,
   Stethoscope,
-  Truck,
-  ShoppingCart,
   Landmark,
-  Factory,
   CheckCircle,
   Sparkles,
   ArrowRight,
   TrendingUp,
+  Scale,
+  Users,
+  Home,
+  UserCheck,
+  Package,
+  Monitor,
+  GraduationCap,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -81,95 +85,198 @@ export default function IndustriesPage() {
   const industries = [
     {
       icon: Building2,
-      title: "Corporate & Business",
-      description: "Comprehensive legal support for businesses of all sizes, from startups to Fortune 500 companies.",
-      applications: ["Contract review", "Regulatory compliance", "Corporate structuring", "Risk assessment"],
+      title: "Corporate Legal",
+      description:
+        "Streamline corporate legal operations with AI-powered contract management, M&A support, and compliance monitoring.",
+      applications: [
+        "M&A Due Diligence",
+        "Contract Lifecycle Management",
+        "Regulatory Compliance",
+        "Corporate Governance",
+      ],
       benefits: [
-        "Reduce legal costs by up to 70%",
-        "Faster contract turnaround times",
-        "Improved compliance monitoring",
-        "24/7 legal guidance availability",
+        "80% faster due diligence processes",
+        "70% reduction in contract processing time",
+        "95% compliance accuracy rate",
+        "60% cost savings on legal operations",
       ],
       caseStudy:
-        "A tech startup reduced their legal expenses from $50,000 to $15,000 annually while improving contract quality and compliance.",
+        "A Fortune 500 company reduced M&A due diligence time from 6 months to 6 weeks while improving accuracy by 40%.",
       color: "blue-500",
+    },
+    {
+      icon: Scale,
+      title: "Law Firms",
+      description:
+        "Enhance legal practice efficiency with AI research, case analysis, brief drafting, and client management tools.",
+      applications: ["Legal Research Automation", "Brief & Motion Drafting", "Case Management", "Billing Optimization"],
+      benefits: [
+        "75% faster legal research",
+        "50% increase in billable hours",
+        "Enhanced case outcome quality",
+        "Improved client satisfaction",
+      ],
+      caseStudy:
+        "A mid-size law firm increased their billable hours by 40% while reducing research costs by $200,000 annually.",
+      color: "purple-500",
+    },
+    {
+      icon: Users,
+      title: "B2C Consumer",
+      description:
+        "Democratize legal access with AI-powered consumer legal guidance, document preparation, and dispute resolution.",
+      applications: [
+        "Personal Document Creation",
+        "Consumer Rights Guidance",
+        "Small Claims Support",
+        "Family Law Assistance",
+      ],
+      benefits: [
+        "90% cost savings vs traditional attorneys",
+        "24/7 legal guidance availability",
+        "Plain English legal explanations",
+        "Instant document generation",
+      ],
+      caseStudy:
+        "Over 50,000 consumers have saved an average of $2,500 each on legal services while getting faster resolutions.",
+      color: "green-500",
+    },
+    {
+      icon: Landmark,
+      title: "Financial Services",
+      description:
+        "Navigate complex financial regulations with AI compliance monitoring, risk management, and contract optimization.",
+      applications: ["Regulatory Compliance", "Loan Agreement Analysis", "AML Monitoring", "Securities Law Compliance"],
+      benefits: [
+        "99% regulatory compliance rate",
+        "75% faster loan processing",
+        "65% reduction in compliance risks",
+        "Automated regulatory reporting",
+      ],
+      caseStudy:
+        "A regional bank achieved 100% regulatory compliance and reduced loan processing time by 60% while cutting costs by 45%.",
+      color: "yellow-500",
     },
     {
       icon: Stethoscope,
       title: "Healthcare",
       description:
-        "Specialized AI assistance for healthcare providers, ensuring compliance with complex medical regulations.",
-      applications: ["HIPAA compliance", "Medical licensing", "Patient consent forms", "Healthcare contracts"],
+        "Ensure healthcare compliance with AI-powered HIPAA monitoring, malpractice risk assessment, and contract management.",
+      applications: ["HIPAA Compliance", "Malpractice Risk Assessment", "Healthcare Contracts", "Medical Licensing"],
       benefits: [
-        "Ensure HIPAA compliance",
-        "Streamline licensing processes",
-        "Reduce malpractice risks",
-        "Automated policy updates",
+        "100% HIPAA compliance achievement",
+        "$2.5M in penalties avoided",
+        "50% faster credentialing processes",
+        "Reduced malpractice insurance costs",
       ],
       caseStudy:
-        "A medical practice improved their compliance rate to 100% and avoided potential HIPAA violations worth $2.5M in penalties.",
-      color: "green-500",
+        "A healthcare network of 200+ providers maintained perfect HIPAA compliance and reduced legal costs by 55%.",
+      color: "red-500",
     },
     {
-      icon: Truck,
-      title: "Transportation & Logistics",
-      description: "Navigate complex transportation regulations and international trade laws with AI-powered guidance.",
-      applications: ["Shipping agreements", "Liability coverage", "DOT regulations", "International trade"],
+      icon: Home,
+      title: "Real Estate",
+      description:
+        "Streamline property transactions with AI contract analysis, title verification, and regulatory compliance checking.",
+      applications: [
+        "Purchase Agreement Analysis",
+        "Lease Optimization",
+        "Title Search Automation",
+        "Zoning Compliance",
+      ],
       benefits: [
-        "Simplified regulatory compliance",
-        "Reduced shipping disputes",
-        "International trade guidance",
-        "Liability risk assessment",
+        "85% faster property closings",
+        "40% reduction in transaction disputes",
+        "Comprehensive risk coverage",
+        "Automated compliance checking",
       ],
       caseStudy:
-        "A logistics company reduced shipping disputes by 60% and improved international compliance across 15 countries.",
-      color: "teal-500",
-    },
-    {
-      icon: ShoppingCart,
-      title: "E-commerce & Retail",
-      description: "Protect your online business with comprehensive legal guidance for digital commerce.",
-      applications: ["Terms of service", "Privacy policies", "Consumer rights", "Online disputes"],
-      benefits: [
-        "GDPR and privacy compliance",
-        "Reduced customer disputes",
-        "Platform policy alignment",
-        "International sales support",
-      ],
-      caseStudy:
-        "An e-commerce platform achieved 99.9% policy compliance and reduced customer disputes by 45% after implementing AI legal guidance.",
+        "A real estate firm reduced average closing time from 45 to 15 days while eliminating 60% of post-closing disputes.",
       color: "orange-500",
     },
     {
-      icon: Landmark,
-      title: "Financial Services",
-      description: "Navigate complex financial regulations with AI assistance tailored for the financial sector.",
-      applications: ["Banking compliance", "Securities regulations", "Loan agreements", "Investment policies"],
+      icon: UserCheck,
+      title: "Human Resources",
+      description:
+        "Optimize HR operations with AI-powered employment law compliance, policy management, and contract generation.",
+      applications: [
+        "Employment Contracts",
+        "Policy Compliance",
+        "Discrimination Risk Assessment",
+        "Benefits Administration",
+      ],
       benefits: [
-        "Regulatory compliance assurance",
-        "Risk management optimization",
-        "Faster loan processing",
-        "Investment policy guidance",
+        "90% improvement in policy compliance",
+        "70% reduction in HR-related disputes",
+        "Streamlined onboarding processes",
+        "Automated benefits compliance",
       ],
       caseStudy:
-        "A fintech company reduced compliance costs by 55% while maintaining perfect regulatory standing across multiple jurisdictions.",
-      color: "purple-500",
+        "An enterprise company reduced HR legal issues by 80% and improved employee satisfaction scores by 25%.",
+      color: "pink-500",
     },
     {
-      icon: Factory,
-      title: "Manufacturing",
+      icon: Package,
+      title: "Procurement & Supply Chain",
       description:
-        "Comprehensive legal support for manufacturing operations, safety compliance, and supply chain management.",
-      applications: ["Product liability", "Safety compliance", "Employment contracts", "Supply agreements"],
+        "Enhance procurement efficiency with AI contract analysis, supplier risk management, and compliance monitoring.",
+      applications: [
+        "Vendor Contract Analysis",
+        "Supply Chain Compliance",
+        "Trade Law Guidance",
+        "Supplier Risk Assessment",
+      ],
       benefits: [
-        "Enhanced safety compliance",
-        "Reduced product liability risks",
-        "Streamlined supply agreements",
-        "Employment law guidance",
+        "60% faster procurement cycles",
+        "Enhanced supplier compliance",
+        "Reduced supply chain risks",
+        "Automated contract negotiations",
       ],
       caseStudy:
-        "A manufacturing company improved safety compliance by 40% and reduced product liability claims by 30%.",
-      color: "red-500",
+        "A manufacturing company reduced procurement cycle time by 50% and improved supplier compliance by 85%.",
+      color: "indigo-500",
+    },
+    {
+      icon: Monitor,
+      title: "Technology & SaaS",
+      description:
+        "Navigate tech regulations with AI-powered privacy compliance, IP protection, and software licensing management.",
+      applications: [
+        "Privacy Policy Optimization",
+        "Data Protection Compliance",
+        "IP Protection",
+        "Software Licensing",
+      ],
+      benefits: [
+        "Full GDPR and CCPA compliance",
+        "Optimized IP protection strategies",
+        "Faster product launch cycles",
+        "Reduced regulatory risks",
+      ],
+      caseStudy:
+        "A SaaS company achieved full privacy compliance across 15 jurisdictions and reduced legal review time by 70%.",
+      color: "cyan-500",
+    },
+    {
+      icon: GraduationCap,
+      title: "Education",
+      description:
+        "Support educational institutions with AI compliance monitoring, policy management, and student privacy protection.",
+      applications: [
+        "FERPA Compliance",
+        "Title IX Management",
+        "Faculty Contracts",
+        "Educational Technology Compliance",
+      ],
+      benefits: [
+        "100% regulatory compliance",
+        "Streamlined policy management",
+        "Enhanced student privacy protection",
+        "Reduced administrative burden",
+      ],
+      caseStudy:
+        "A university system achieved perfect compliance across all campuses and reduced administrative legal costs by 45%.",
+      color: "emerald-500",
     },
   ]
 

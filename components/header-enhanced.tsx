@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-
-import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import { LogoFallback } from "./logo-fallback"
 
-export default function Header() {
+export default function HeaderEnhanced() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -41,13 +40,36 @@ export default function Header() {
       name: "Solutions",
       href: "/solutions",
       dropdown: [
-        { name: "By Industry", href: "/industries" },
-        { name: "Use Cases", href: "/use-cases" },
-        { name: "Features", href: "/features" },
+        { name: "Compliance Automation", href: "/solutions/compliance-automation" },
+        { name: "Contract Management", href: "/solutions/contract-management" },
+        { name: "Document Analysis", href: "/features/document-analysis" },
+        { name: "Legal Analytics", href: "/solutions/legal-analytics" },
+        { name: "Risk Assessment", href: "/solutions/risk-assessment" },
+      ],
+    },
+    {
+      name: "Industries",
+      href: "/industries",
+      dropdown: [
+        { name: "Corporate Legal", href: "/industries/corporate-legal" },
+        { name: "Healthcare", href: "/industries/healthcare" },
+        { name: "Financial Services", href: "/industries/financial-services" },
+        { name: "Law Firms", href: "/industries/law-firms" },
+        { name: "Technology", href: "/industries/technology" },
+        { name: "Real Estate", href: "/industries/real-estate" },
+      ],
+    },
+    {
+      name: "Features",
+      href: "/features",
+      dropdown: [
+        { name: "AI Document Analysis", href: "/features/document-analysis" },
+        { name: "Legal Research", href: "/features/legal-research" },
+        { name: "Compliance Monitoring", href: "/features/compliance" },
+        { name: "Contract Intelligence", href: "/features/contracts" },
       ],
     },
     { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
   ]
 
   const handleDropdownToggle = (itemName: string, event: React.MouseEvent) => {
@@ -81,31 +103,10 @@ export default function Header() {
               href="/"
               className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
             >
-              <Image
-                src="/logo.svg"
-                alt="Vidhaana AI Legal Assistant"
-                width={180}
-                height={60}
-                priority={true}
-                className={`transition-all duration-300 object-contain ${
-                  isScrolled ? "h-8 w-auto sm:h-10 md:h-12" : "h-10 w-auto sm:h-12 md:h-14 lg:h-16"
-                }`}
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  width: "auto",
-                }}
-                onError={(e) => {
-                  console.error("Logo failed to load:", e)
-                  // Fallback to text if image fails
-                  e.currentTarget.style.display = "none"
-                  e.currentTarget.parentElement!.innerHTML =
-                    '<span class="text-xl font-bold text-black">Vidhaana</span>'
-                }}
-              />
+              <LogoFallback variant="header" scrolled={isScrolled} priority={true} width={180} height={60} />
             </Link>
 
-            <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Primary Navigation">
+            <nav className="hidden lg:flex items-center space-x-6" role="navigation" aria-label="Primary Navigation">
               {navigation.map((item) => (
                 <div key={item.name} className="relative" ref={item.dropdown ? dropdownRef : undefined}>
                   {item.dropdown ? (
@@ -129,11 +130,11 @@ export default function Header() {
                       </button>
 
                       {activeDropdown === item.name && (
-                        <div className="absolute top-full left-0 mt-2 w-48 bg-white border-2 border-black rounded-lg shadow-xl z-50 animate-in fade-in-0 zoom-in-95 duration-200">
+                        <div className="absolute top-full left-0 mt-2 w-56 bg-white border-2 border-black rounded-lg shadow-xl z-50 animate-in fade-in-0 zoom-in-95 duration-200">
                           <div className="py-2">
                             <Link
                               href={item.href}
-                              className="block px-4 py-3 text-sm text-black hover:bg-gray-50 transition-colors border-b border-gray-100"
+                              className="block px-4 py-3 text-sm text-black hover:bg-gray-50 transition-colors border-b border-gray-100 font-medium"
                               onClick={() => setActiveDropdown(null)}
                             >
                               All {item.name}
@@ -173,7 +174,7 @@ export default function Header() {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-colors hover:bg-gray-100"
+              className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-colors hover:bg-gray-100"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -182,7 +183,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <nav className="md:hidden border-t border-gray-200 py-4 bg-white/95 backdrop-blur-md">
+            <nav className="lg:hidden border-t border-gray-200 py-4 bg-white/95 backdrop-blur-md">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <div className="flex items-center justify-between">

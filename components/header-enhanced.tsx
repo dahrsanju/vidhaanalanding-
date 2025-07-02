@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-
-import Image from "next/image"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import { LogoFallback } from "./logo-fallback"
 
-export default function Header() {
+export default function HeaderEnhanced() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -81,28 +80,7 @@ export default function Header() {
               href="/"
               className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
             >
-              <Image
-                src="/logo.svg"
-                alt="Vidhaana AI Legal Assistant"
-                width={180}
-                height={60}
-                priority={true}
-                className={`transition-all duration-300 object-contain ${
-                  isScrolled ? "h-8 w-auto sm:h-10 md:h-12" : "h-10 w-auto sm:h-12 md:h-14 lg:h-16"
-                }`}
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  width: "auto",
-                }}
-                onError={(e) => {
-                  console.error("Logo failed to load:", e)
-                  // Fallback to text if image fails
-                  e.currentTarget.style.display = "none"
-                  e.currentTarget.parentElement!.innerHTML =
-                    '<span class="text-xl font-bold text-black">Vidhaana</span>'
-                }}
-              />
+              <LogoFallback variant="header" scrolled={isScrolled} priority={true} width={180} height={60} />
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Primary Navigation">

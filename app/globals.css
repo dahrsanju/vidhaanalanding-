@@ -39,30 +39,57 @@
     max-width: 100%;
   }
 
-  /* Logo optimization for all screen sizes */
+  /* Enhanced logo optimization for all screen sizes */
   .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    min-height: 2rem;
   }
 
   .logo-responsive {
-    width: auto;
-    height: auto;
-    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
     transition: all 0.3s ease;
     object-fit: contain;
+    display: block;
   }
 
-  /* Responsive logo sizing for different breakpoints */
+  /* Ensure SVG logos render properly */
+  img[src$=".svg"] {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Logo fallback text styling */
+  .logo-fallback {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* Force logo visibility */
+  .logo-force-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  /* Responsive logo sizing with !important to override conflicts */
   @media (max-width: 480px) {
     .logo-header {
       height: 2rem !important;
       width: auto !important;
+      min-width: 4rem !important;
     }
     .logo-header-scrolled {
       height: 1.75rem !important;
       width: auto !important;
+      min-width: 3.5rem !important;
     }
   }
 
@@ -70,10 +97,12 @@
     .logo-header {
       height: 2.5rem !important;
       width: auto !important;
+      min-width: 5rem !important;
     }
     .logo-header-scrolled {
       height: 2rem !important;
       width: auto !important;
+      min-width: 4rem !important;
     }
   }
 
@@ -81,10 +110,12 @@
     .logo-header {
       height: 3rem !important;
       width: auto !important;
+      min-width: 6rem !important;
     }
     .logo-header-scrolled {
       height: 2.5rem !important;
       width: auto !important;
+      min-width: 5rem !important;
     }
   }
 
@@ -92,10 +123,12 @@
     .logo-header {
       height: 3.5rem !important;
       width: auto !important;
+      min-width: 7rem !important;
     }
     .logo-header-scrolled {
       height: 3rem !important;
       width: auto !important;
+      min-width: 6rem !important;
     }
   }
 
@@ -103,10 +136,12 @@
     .logo-header {
       height: 4rem !important;
       width: auto !important;
+      min-width: 8rem !important;
     }
     .logo-header-scrolled {
       height: 3.5rem !important;
       width: auto !important;
+      min-width: 7rem !important;
     }
   }
 
@@ -280,4 +315,10 @@ svg {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
+}
+
+/* Logo debugging and fallback styles */
+.logo-debug {
+  border: 1px solid red !important;
+  background-color: yellow !important;
 }

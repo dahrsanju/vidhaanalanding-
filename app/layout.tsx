@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import Header from "@/components/header"
+import HeaderEnhanced from "@/components/header-enhanced"
 import Footer from "@/components/footer"
 import { Analytics } from "@/components/analytics"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -127,6 +127,7 @@ const jsonLd = {
         url: "https://vidhaana.com/logo.svg",
         width: 180,
         height: 60,
+        encodingFormat: "image/svg+xml",
       },
       contactPoint: [
         {
@@ -270,11 +271,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
         {/* Preload critical resources */}
-        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" crossOrigin="anonymous" />
+        <link rel="prefetch" href="/logo.svg" />
       </head>
       <body className={`${inter.className} bg-white text-black antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
-          <Header />
+          <HeaderEnhanced />
           <main className="min-h-screen" role="main" id="main-content">
             {children}
           </main>

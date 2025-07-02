@@ -6,8 +6,8 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Image
                 src="/logo.svg"
@@ -41,23 +41,32 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/solutions" className="text-gray-300 hover:text-white transition-colors">
-                  All Solutions
+                <Link href="/solutions/ai-platform" className="text-gray-300 hover:text-white transition-colors">
+                  AI Legal Platform
                 </Link>
               </li>
               <li>
-                <Link href="/industries" className="text-gray-300 hover:text-white transition-colors">
-                  By Industry
+                <Link
+                  href="/solutions/document-intelligence"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Document Intelligence
                 </Link>
               </li>
               <li>
-                <Link href="/use-cases" className="text-gray-300 hover:text-white transition-colors">
-                  Use Cases
+                <Link
+                  href="/solutions/compliance-automation"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Compliance Automation
                 </Link>
               </li>
               <li>
-                <Link href="/features" className="text-gray-300 hover:text-white transition-colors">
-                  Features
+                <Link
+                  href="/solutions/contract-management"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Contract Management
                 </Link>
               </li>
             </ul>
@@ -69,6 +78,11 @@ export default function Footer() {
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>

@@ -1,283 +1,320 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import {
-  Building2,
-  Scale,
-  Users,
-  Landmark,
-  Stethoscope,
-  Home,
-  ArrowRight,
-  Sparkles,
-  CheckCircle,
   Brain,
+  FileText,
+  Shield,
+  BarChart3,
   Zap,
   Target,
-  TrendingUp,
+  CheckCircle,
+  ArrowRight,
+  Sparkles,
+  Users,
+  Globe,
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Legal Solutions by Industry | Corporate, Healthcare, Finance & More",
+  title: "AI Legal Solutions | Comprehensive Legal Technology Platform | Vidhaana",
   description:
-    "Comprehensive AI-powered legal solutions tailored for corporate legal, law firms, healthcare, financial services, real estate, HR, procurement, technology, and education sectors.",
-  alternates: { canonical: "https://vidhaana.com/solutions" },
+    "Discover Vidhaana's comprehensive AI legal solutions: document intelligence, compliance automation, legal analytics, contract management, and risk assessment. Transform your legal operations with cutting-edge AI technology.",
+  keywords: [
+    "AI legal solutions",
+    "legal technology platform",
+    "document intelligence",
+    "compliance automation",
+    "legal analytics",
+    "contract management AI",
+    "legal risk assessment",
+    "AI legal platform",
+    "legal workflow automation",
+    "legal technology solutions",
+  ],
+  alternates: {
+    canonical: "https://vidhaana.com/solutions",
+  },
 }
 
 export default function SolutionsPage() {
-  const industries = [
+  const solutions = [
     {
-      icon: Building2,
-      title: "Corporate Legal",
-      description: "Streamline corporate operations with AI contract management and compliance monitoring.",
-      keyFeatures: [
-        "M&A Due Diligence",
-        "Contract Lifecycle Management",
-        "Regulatory Compliance",
-        "Corporate Governance",
+      icon: Brain,
+      title: "AI Legal Platform",
+      description:
+        "Comprehensive AI-powered legal technology platform that unifies all your legal operations in one intelligent system.",
+      features: [
+        "Unified legal workflow management",
+        "Advanced AI engine with 99.5% accuracy",
+        "Multi-jurisdictional legal intelligence",
+        "Enterprise-grade security and compliance",
       ],
-      benefits: "70% faster contract processing, 95% compliance accuracy",
-      stats: { clients: "5,000+", savings: "$2.5M", efficiency: "80%" },
-      color: "from-blue-500 to-blue-600",
-      href: "/industries/corporate-legal",
+      benefits: "85% reduction in manual legal tasks",
+      href: "/solutions/ai-platform",
+      color: "bg-white border-gray-300",
     },
     {
-      icon: Scale,
-      title: "Law Firms",
-      description: "Enhance legal practice efficiency with AI research, case analysis, and client management.",
-      keyFeatures: ["Legal Research Automation", "Brief Drafting", "Case Management", "Billing Optimization"],
-      benefits: "80% faster research, 50% more billable hours",
-      stats: { clients: "2,500+", savings: "$1.8M", efficiency: "75%" },
-      color: "from-purple-500 to-purple-600",
-      href: "/industries/law-firms",
-    },
-    {
-      icon: Users,
-      title: "Consumer Legal",
-      description: "Democratize legal access with AI-powered consumer guidance and document preparation.",
-      keyFeatures: [
-        "Personal Document Creation",
-        "Consumer Rights Guidance",
-        "Small Claims Support",
-        "Family Law Assistance",
+      icon: FileText,
+      title: "Document Intelligence",
+      description:
+        "Advanced AI document analysis and processing that transforms how you handle legal documents and contracts.",
+      features: [
+        "Automated contract review and analysis",
+        "Risk identification and scoring",
+        "Clause extraction and comparison",
+        "Version control and change tracking",
       ],
-      benefits: "90% cost savings vs attorneys, 24/7 accessibility",
-      stats: { clients: "50,000+", savings: "$125M", efficiency: "95%" },
-      color: "from-green-500 to-green-600",
-      href: "/industries/consumer",
+      benefits: "10x faster document processing",
+      href: "/solutions/document-intelligence",
+      color: "bg-gray-50 border-gray-400",
     },
     {
-      icon: Landmark,
-      title: "Financial Services",
-      description: "Navigate complex regulations with AI compliance monitoring and risk management.",
-      keyFeatures: ["Regulatory Compliance", "Loan Agreement Analysis", "AML Monitoring", "Securities Law Compliance"],
-      benefits: "99% compliance rate, 75% faster loan processing",
-      stats: { clients: "800+", savings: "$3.2M", efficiency: "85%" },
-      color: "from-yellow-500 to-orange-500",
-      href: "/industries/financial-services",
-    },
-    {
-      icon: Stethoscope,
-      title: "Healthcare",
-      description: "Ensure healthcare compliance with AI-powered HIPAA monitoring and risk assessment.",
-      keyFeatures: ["HIPAA Compliance", "Malpractice Risk Assessment", "Healthcare Contracts", "Medical Licensing"],
-      benefits: "100% HIPAA compliance, $2.5M penalties avoided",
-      stats: { clients: "1,200+", savings: "$4.1M", efficiency: "90%" },
-      color: "from-red-500 to-pink-500",
-      href: "/industries/healthcare",
-    },
-    {
-      icon: Home,
-      title: "Real Estate",
-      description: "Streamline property transactions with AI contract analysis and compliance checking.",
-      keyFeatures: [
-        "Purchase Agreement Analysis",
-        "Lease Optimization",
-        "Title Search Automation",
-        "Zoning Compliance",
+      icon: Shield,
+      title: "Compliance Automation",
+      description:
+        "Intelligent compliance monitoring and automation that ensures regulatory adherence across all jurisdictions.",
+      features: [
+        "Real-time regulatory monitoring",
+        "Automated compliance checking",
+        "Risk alert notifications",
+        "Audit trail generation",
       ],
-      benefits: "85% faster closings, 40% fewer disputes",
-      stats: { clients: "3,000+", savings: "$1.5M", efficiency: "70%" },
-      color: "from-indigo-500 to-blue-500",
-      href: "/industries/real-estate",
+      benefits: "99% compliance accuracy",
+      href: "/solutions/compliance-automation",
+      color: "bg-white border-gray-300",
+    },
+    {
+      icon: BarChart3,
+      title: "Legal Analytics",
+      description:
+        "Powerful analytics and insights platform that transforms legal data into actionable business intelligence.",
+      features: [
+        "Performance dashboards and metrics",
+        "Predictive legal analytics",
+        "Cost optimization insights",
+        "Custom reporting and visualization",
+      ],
+      benefits: "40% improvement in legal decision-making",
+      href: "/solutions/legal-analytics",
+      color: "bg-gray-50 border-gray-400",
+    },
+    {
+      icon: Zap,
+      title: "Contract Management",
+      description: "End-to-end contract lifecycle management with AI-powered automation and intelligent insights.",
+      features: [
+        "Contract creation and templates",
+        "Automated renewal tracking",
+        "Performance monitoring",
+        "Vendor management integration",
+      ],
+      benefits: "75% faster contract cycles",
+      href: "/solutions/contract-management",
+      color: "bg-white border-gray-300",
+    },
+    {
+      icon: Target,
+      title: "Risk Assessment",
+      description:
+        "Proactive risk identification and mitigation powered by advanced AI analysis and predictive modeling.",
+      features: [
+        "Risk scoring algorithms",
+        "Predictive risk modeling",
+        "Mitigation strategy recommendations",
+        "Risk monitoring dashboards",
+      ],
+      benefits: "85% risk reduction",
+      href: "/solutions/risk-assessment",
+      color: "bg-gray-50 border-gray-400",
     },
   ]
 
+  const industries = [
+    { name: "Corporate Legal", clients: "5,000+", savings: "$2.5M" },
+    { name: "Law Firms", clients: "2,500+", savings: "$1.8M" },
+    { name: "Healthcare", clients: "1,200+", savings: "$4.1M" },
+    { name: "Financial Services", clients: "800+", savings: "$3.2M" },
+    { name: "Real Estate", clients: "3,000+", savings: "$1.5M" },
+    { name: "Technology", clients: "1,500+", savings: "$2.1M" },
+  ]
+
+  const stats = [
+    { number: "10,000+", label: "Active Users", icon: Users },
+    { number: "50M+", label: "Documents Processed", icon: FileText },
+    { number: "50+", label: "Jurisdictions", icon: Globe },
+    { number: "95%", label: "Accuracy Rate", icon: Target },
+  ]
+
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="pt-28 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "Solutions" }]} className="mb-8" />
 
           <div className="text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-black to-gray-800 text-white rounded-full text-sm font-medium mb-8 shadow-lg">
+            <div className="inline-flex items-center px-6 py-3 bg-black text-white rounded-full text-sm font-medium mb-8 shadow-lg">
               <Sparkles className="w-4 h-4 mr-2" />
-              Industry-Specific AI Solutions
+              Comprehensive AI Solutions
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
-              Transform Your Industry with
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                AI Legal Intelligence
-              </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
+              Transform Legal Operations
+              <span className="block text-black">with AI Intelligence</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Discover how our AI-powered legal assistant revolutionizes operations across industries with specialized
-              solutions, proven results, and measurable impact.
+              Discover our comprehensive suite of AI-powered legal solutions designed to revolutionize how legal
+              professionals work, from document analysis to compliance monitoring and beyond.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Key Benefits */}
+      {/* Solutions Grid */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                icon: Brain,
-                title: "Industry-Specific AI",
-                description: "Trained on sector-specific legal requirements and regulations",
-                metric: "50+ Industries",
-              },
-              {
-                icon: Zap,
-                title: "Proven Results",
-                description: "Average 70% cost reduction across all industries",
-                metric: "$500M+ Saved",
-              },
-              {
-                icon: Target,
-                title: "Tailored Solutions",
-                description: "Specialized AI applications for each sector",
-                metric: "200+ Use Cases",
-              },
-            ].map((benefit, index) => (
-              <div
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Complete AI Legal Solution Suite</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Six integrated solutions that work together to transform your entire legal operation
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {solutions.map((solution, index) => (
+              <Card
                 key={index}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:shadow-xl transition-all duration-300"
+                className={`${solution.color} border-2 hover:shadow-xl transition-all duration-300 h-full`}
               >
-                <div className="p-8 text-center">
-                  <div className="inline-flex p-4 rounded-2xl bg-black text-white mb-6 group-hover:scale-110 transition-transform">
-                    <benefit.icon className="w-8 h-8" />
+                <CardHeader>
+                  <div className="inline-flex p-3 rounded-2xl bg-black text-white mb-4">
+                    <solution.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-black">{benefit.title}</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">{benefit.description}</p>
-                  <div className="text-2xl font-bold text-black">{benefit.metric}</div>
-                </div>
-              </div>
+                  <CardTitle className="text-xl font-bold text-black">{solution.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col">
+                  <p className="text-gray-600 mb-6 leading-relaxed">{solution.description}</p>
+
+                  <div className="mb-6">
+                    <h4 className="font-semibold mb-3 text-black">Key Features:</h4>
+                    <ul className="space-y-2">
+                      {solution.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start text-sm text-gray-600">
+                          <CheckCircle className="w-4 h-4 text-black mr-2 flex-shrink-0 mt-0.5" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-auto space-y-4">
+                    <div className="bg-black text-white p-3 rounded-lg">
+                      <p className="text-sm font-medium">{solution.benefits}</p>
+                    </div>
+
+                    <Button asChild className="w-full bg-black text-white hover:bg-gray-800">
+                      <Link href={solution.href} className="flex items-center justify-center">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industries Grid */}
+      {/* Industry Results */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Solutions by Industry</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore AI-powered legal solutions designed specifically for your industry's unique challenges and
-              requirements.
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Proven Results Across Industries</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Our solutions deliver measurable impact across diverse legal sectors
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
-              >
-                {/* Gradient Background */}
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-5 group-hover:opacity-10 transition-opacity`}
-                ></div>
-
-                <div className="relative p-8">
-                  {/* Header */}
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div
-                      className={`p-4 rounded-2xl bg-gradient-to-br ${industry.color} text-white group-hover:scale-110 transition-transform shadow-lg`}
-                    >
-                      <industry.icon className="h-8 w-8" />
+              <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
+                <CardContent className="p-6 text-center">
+                  <h3 className="text-lg font-bold text-black mb-4">{industry.name}</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <div className="text-2xl font-bold text-black">{industry.clients}</div>
+                      <div className="text-sm text-gray-600">Clients Served</div>
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-black">{industry.title}</h3>
-                      <p className="text-gray-600">{industry.stats.clients} clients served</p>
+                      <div className="text-2xl font-bold text-black">{industry.savings}</div>
+                      <div className="text-sm text-gray-600">Average Savings</div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                  {/* Description */}
-                  <p className="text-gray-700 mb-6 leading-relaxed">{industry.description}</p>
+      {/* How It Works */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">How Our Solutions Work Together</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Integrated AI solutions that create a seamless legal technology ecosystem
+            </p>
+          </div>
 
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3 text-black">Key Features:</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {industry.keyFeatures.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm text-gray-600">
-                          <CheckCircle className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 rounded-xl">
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-black">{industry.stats.savings}</div>
-                      <div className="text-xs text-gray-600">Total Savings</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-black">{industry.stats.efficiency}</div>
-                      <div className="text-xs text-gray-600">Efficiency Gain</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-lg font-bold text-black">{industry.stats.clients}</div>
-                      <div className="text-xs text-gray-600">Happy Clients</div>
-                    </div>
-                  </div>
-
-                  {/* Benefits */}
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl mb-6 border-l-4 border-blue-500">
-                    <p className="text-sm font-medium text-blue-800">{industry.benefits}</p>
-                  </div>
-
-                  {/* CTA */}
-                  <Button
-                    asChild
-                    className={`w-full bg-gradient-to-r ${industry.color} text-white hover:shadow-lg transition-all`}
-                  >
-                    <Link href={industry.href} className="flex items-center justify-center">
-                      Explore Solutions
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </Button>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                step: "1",
+                title: "Assessment & Planning",
+                description: "Analyze your current legal operations and identify optimization opportunities",
+              },
+              {
+                step: "2",
+                title: "Solution Integration",
+                description: "Deploy and integrate AI solutions tailored to your specific needs",
+              },
+              {
+                step: "3",
+                title: "Training & Adoption",
+                description: "Comprehensive training and change management for seamless adoption",
+              },
+              {
+                step: "4",
+                title: "Optimization & Growth",
+                description: "Continuous optimization and expansion of AI capabilities",
+              },
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  {step.step}
                 </div>
+                <h3 className="text-xl font-semibold mb-4 text-black">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats */}
       <section className="py-16 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Proven Impact Across All Industries</h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Consistent performance and measurable outcomes that drive real business value
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Platform Performance</h2>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Proven results across thousands of legal professionals worldwide
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "10", label: "Industries Served", icon: Building2 },
-              { number: "200+", label: "AI Use Cases", icon: Brain },
-              { number: "70%", label: "Average Cost Reduction", icon: TrendingUp },
-              { number: "95%", label: "Accuracy Rate", icon: Target },
-            ].map((stat, index) => (
+            {stats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="inline-flex p-4 rounded-2xl bg-white/10 mb-4 group-hover:bg-white/20 transition-colors">
                   <stat.icon className="w-8 h-8" />
@@ -290,18 +327,18 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
+      {/* CTA */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Ready to Transform Your Industry?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Ready to Transform Your Legal Operations?</h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of businesses already revolutionizing their legal operations with AI-powered solutions
-            tailored specifically for their industry.
+            Discover how our comprehensive AI solutions can revolutionize your legal practice. Schedule a personalized
+            demo to see the technology in action.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg shadow-lg">
               <Link href="/contact" className="flex items-center">
-                Start Your Transformation
+                Schedule Demo
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
@@ -311,7 +348,7 @@ export default function SolutionsPage() {
               size="lg"
               className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg bg-transparent"
             >
-              <Link href="/use-cases">Explore Use Cases</Link>
+              <Link href="/pricing">View Pricing</Link>
             </Button>
           </div>
         </div>

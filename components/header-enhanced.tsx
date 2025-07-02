@@ -40,9 +40,12 @@ export default function HeaderEnhanced() {
       name: "Solutions",
       href: "/solutions",
       dropdown: [
-        { name: "By Industry", href: "/industries" },
-        { name: "Use Cases", href: "/use-cases" },
-        { name: "AI Features", href: "/features" },
+        { name: "AI Legal Platform", href: "/solutions/ai-platform" },
+        { name: "Document Intelligence", href: "/solutions/document-intelligence" },
+        { name: "Compliance Automation", href: "/solutions/compliance-automation" },
+        { name: "Legal Analytics", href: "/solutions/legal-analytics" },
+        { name: "Contract Management", href: "/solutions/contract-management" },
+        { name: "Risk Assessment", href: "/solutions/risk-assessment" },
       ],
     },
     {
@@ -68,8 +71,6 @@ export default function HeaderEnhanced() {
       ],
     },
     { name: "Pricing", href: "/pricing" },
-    { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
   ]
 
   const handleDropdownToggle = (itemName: string, event: React.MouseEvent) => {

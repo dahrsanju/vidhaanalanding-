@@ -270,7 +270,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 
         {/* Preload critical resources */}
-        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/logo-optimized.png" as="image" type="image/svg+xml" />
+        <link rel="preload" href="/logo-optimized.png" as="image" />
       </head>
       <body className={`${inter.className} bg-white text-black antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>

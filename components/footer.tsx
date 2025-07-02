@@ -9,7 +9,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <Image src="/logo.svg" alt="Vidhaana Logo" width={32} height={32} className="h-8 w-auto filter invert" />
+              <Image
+                src="/logo-optimized.png"
+                alt="Vidhaana Logo"
+                width={32}
+                height={32}
+                className="h-8 w-8 filter invert"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                }}
+              />
               <span className="text-xl font-bold">Vidhaana</span>
             </div>
             <p className="text-gray-300 text-sm max-w-md mb-4">

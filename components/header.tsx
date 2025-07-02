@@ -82,13 +82,13 @@ export default function Header() {
               className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
             >
               <Image
-                src="/logo-optimized.png"
-                alt="Vidhaana AI Legal Assistant Logo"
-                width={64}
-                height={64}
+                src="/logo.svg"
+                alt="Vidhaana AI Legal Assistant"
+                width={180}
+                height={60}
                 priority
                 className={`transition-all duration-300 ${
-                  isScrolled ? "h-10 w-10 sm:h-12 sm:w-12" : "h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16"
+                  isScrolled ? "h-8 w-auto sm:h-10 md:h-12" : "h-10 w-auto sm:h-12 md:h-14 lg:h-16"
                 }`}
                 style={{
                   maxWidth: "100%",

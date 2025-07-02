@@ -39,7 +39,7 @@
     max-width: 100%;
   }
 
-  /* Logo optimization */
+  /* Logo optimization for all screen sizes */
   .logo-container {
     display: flex;
     align-items: center;
@@ -51,39 +51,77 @@
     height: auto;
     max-width: 100%;
     transition: all 0.3s ease;
+    object-fit: contain;
   }
 
-  /* Responsive logo sizing */
-  @media (max-width: 640px) {
-    .logo-sm {
-      width: 2.5rem;
-      height: 2.5rem;
+  /* Responsive logo sizing for different breakpoints */
+  @media (max-width: 480px) {
+    .logo-header {
+      height: 2rem !important;
+      width: auto !important;
     }
-    .logo-md {
-      width: 3rem;
-      height: 3rem;
+    .logo-header-scrolled {
+      height: 1.75rem !important;
+      width: auto !important;
+    }
+  }
+
+  @media (min-width: 481px) and (max-width: 640px) {
+    .logo-header {
+      height: 2.5rem !important;
+      width: auto !important;
+    }
+    .logo-header-scrolled {
+      height: 2rem !important;
+      width: auto !important;
     }
   }
 
   @media (min-width: 641px) and (max-width: 768px) {
-    .logo-sm {
-      width: 3rem;
-      height: 3rem;
+    .logo-header {
+      height: 3rem !important;
+      width: auto !important;
     }
-    .logo-md {
-      width: 3.5rem;
-      height: 3.5rem;
+    .logo-header-scrolled {
+      height: 2.5rem !important;
+      width: auto !important;
     }
   }
 
-  @media (min-width: 769px) {
-    .logo-sm {
-      width: 3.5rem;
-      height: 3.5rem;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .logo-header {
+      height: 3.5rem !important;
+      width: auto !important;
     }
-    .logo-md {
-      width: 4rem;
-      height: 4rem;
+    .logo-header-scrolled {
+      height: 3rem !important;
+      width: auto !important;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .logo-header {
+      height: 4rem !important;
+      width: auto !important;
+    }
+    .logo-header-scrolled {
+      height: 3.5rem !important;
+      width: auto !important;
+    }
+  }
+
+  /* Footer logo sizing */
+  .logo-footer {
+    height: 2rem;
+    width: auto;
+    max-width: 8rem;
+  }
+
+  /* High DPI display optimization */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo-responsive {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
   }
 
@@ -208,7 +246,7 @@ a {
   }
 }
 
-/* Logo loading states */
+/* Logo loading states and error handling */
 .logo-loading {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
@@ -221,5 +259,25 @@ a {
   }
   100% {
     background-position: -200% 0;
+  }
+}
+
+/* SVG logo optimization */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Logo hover effects */
+.logo-hover:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Print styles for logo */
+@media print {
+  .logo-responsive {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
   }
 }

@@ -10,17 +10,16 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/logo-optimized.png"
+                src="/logo.svg"
                 alt="Vidhaana Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8 filter invert"
+                width={120}
+                height={40}
+                className="h-8 w-auto filter brightness-0 invert"
                 style={{
                   maxWidth: "100%",
                   height: "auto",
                 }}
               />
-              <span className="text-xl font-bold">Vidhaana</span>
             </div>
             <p className="text-gray-300 text-sm max-w-md mb-4">
               Professional AI-powered legal assistance providing accessible and reliable legal guidance for individuals

@@ -42,10 +42,33 @@ export default function HeaderEnhanced() {
       dropdown: [
         { name: "By Industry", href: "/industries" },
         { name: "Use Cases", href: "/use-cases" },
-        { name: "Features", href: "/features" },
+        { name: "AI Features", href: "/features" },
+      ],
+    },
+    {
+      name: "Industries",
+      href: "/industries",
+      dropdown: [
+        { name: "Corporate Legal", href: "/industries/corporate-legal" },
+        { name: "Law Firms", href: "/industries/law-firms" },
+        { name: "Healthcare", href: "/industries/healthcare" },
+        { name: "Financial Services", href: "/industries/financial-services" },
+        { name: "Real Estate", href: "/industries/real-estate" },
+        { name: "Technology", href: "/industries/technology" },
+      ],
+    },
+    {
+      name: "Features",
+      href: "/features",
+      dropdown: [
+        { name: "AI Document Analysis", href: "/features/document-analysis" },
+        { name: "Legal Research", href: "/features/legal-research" },
+        { name: "Compliance Monitoring", href: "/features/compliance" },
+        { name: "Contract Management", href: "/features/contracts" },
       ],
     },
     { name: "Pricing", href: "/pricing" },
+    { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
   ]
 
@@ -83,7 +106,7 @@ export default function HeaderEnhanced() {
               <LogoFallback variant="header" scrolled={isScrolled} priority={true} width={180} height={60} />
             </Link>
 
-            <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Primary Navigation">
+            <nav className="hidden lg:flex items-center space-x-6" role="navigation" aria-label="Primary Navigation">
               {navigation.map((item) => (
                 <div key={item.name} className="relative" ref={item.dropdown ? dropdownRef : undefined}>
                   {item.dropdown ? (
@@ -107,11 +130,11 @@ export default function HeaderEnhanced() {
                       </button>
 
                       {activeDropdown === item.name && (
-                        <div className="absolute top-full left-0 mt-2 w-48 bg-white border-2 border-black rounded-lg shadow-xl z-50 animate-in fade-in-0 zoom-in-95 duration-200">
+                        <div className="absolute top-full left-0 mt-2 w-56 bg-white border-2 border-black rounded-lg shadow-xl z-50 animate-in fade-in-0 zoom-in-95 duration-200">
                           <div className="py-2">
                             <Link
                               href={item.href}
-                              className="block px-4 py-3 text-sm text-black hover:bg-gray-50 transition-colors border-b border-gray-100"
+                              className="block px-4 py-3 text-sm text-black hover:bg-gray-50 transition-colors border-b border-gray-100 font-medium"
                               onClick={() => setActiveDropdown(null)}
                             >
                               All {item.name}
@@ -141,17 +164,14 @@ export default function HeaderEnhanced() {
                 </div>
               ))}
 
-              <Link
-                href="/contact"
-                className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors font-medium"
-              >
+              <Link href="/contact" className="monochrome-button px-6 py-2 rounded-full font-medium">
                 Get Started
               </Link>
             </nav>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-colors hover:bg-gray-100"
+              className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-colors hover:bg-gray-100"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -160,7 +180,7 @@ export default function HeaderEnhanced() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <nav className="md:hidden border-t border-gray-200 py-4 bg-white/95 backdrop-blur-md">
+            <nav className="lg:hidden border-t border-gray-200 py-4 bg-white/95 backdrop-blur-md">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <div className="flex items-center justify-between">
@@ -206,7 +226,7 @@ export default function HeaderEnhanced() {
               ))}
               <Link
                 href="/contact"
-                className="block mt-4 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors font-medium text-center"
+                className="block mt-4 monochrome-button px-6 py-3 rounded-full font-medium text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Started

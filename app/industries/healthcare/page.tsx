@@ -4,173 +4,178 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import {
-  Scale,
-  Search,
+  Stethoscope,
+  Shield,
   FileText,
   Users,
-  Clock,
+  AlertTriangle,
   CheckCircle,
   ArrowRight,
-  Brain,
-  Target,
-  TrendingUp,
-  DollarSign,
+  BarChart3,
+  Lock,
+  Eye,
+  Bell,
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Legal Solutions for Law Firms | Legal Practice Management AI | Vidhaana",
+  title: "AI Legal Solutions for Healthcare | HIPAA Compliance & Medical Legal AI | Vidhaana",
   description:
-    "Transform your law firm with AI-powered legal research, case management, document automation, and client service tools. Increase billable hours by 40% and reduce costs by 60%.",
+    "Specialized AI legal solutions for healthcare organizations. HIPAA compliance monitoring, medical malpractice risk assessment, healthcare contracts, and regulatory compliance automation.",
   keywords: [
-    "law firm AI solutions",
-    "legal practice management",
-    "AI legal research",
-    "law firm automation",
-    "legal case management AI",
-    "attorney productivity tools",
-    "legal document automation",
-    "law firm efficiency",
-    "legal billing optimization",
-    "AI legal assistant for lawyers",
+    "healthcare legal AI",
+    "HIPAA compliance automation",
+    "medical legal technology",
+    "healthcare contract management",
+    "medical malpractice AI",
+    "healthcare regulatory compliance",
+    "medical device legal AI",
+    "pharmaceutical compliance",
+    "healthcare privacy law",
+    "medical legal analytics",
   ],
   alternates: {
-    canonical: "https://vidhaana.com/industries/law-firms",
+    canonical: "https://vidhaana.com/industries/healthcare",
   },
 }
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "AI Legal Solutions for Law Firms",
-  description: "AI-powered solutions to enhance legal practice efficiency and client service for law firms",
+  name: "AI Legal Solutions for Healthcare",
+  description: "Specialized AI legal solutions for healthcare organizations and medical professionals",
   provider: {
     "@type": "Organization",
     name: "Vidhaana",
   },
-  areaServed: "Legal Services Industry",
+  areaServed: "Healthcare Industry",
 }
 
-export default function LawFirmsPage() {
+export default function HealthcarePage() {
   const useCases = [
     {
-      icon: Search,
-      title: "AI-Powered Legal Research",
+      icon: Shield,
+      title: "HIPAA Compliance Monitoring",
       description:
-        "Revolutionary legal research capabilities that analyze case law, statutes, and regulations with unprecedented speed and accuracy.",
+        "Continuous monitoring of HIPAA compliance across all healthcare operations with real-time alerts and automated reporting.",
       features: [
-        "Natural language case search",
-        "Precedent identification",
-        "Citation analysis",
-        "Research memo generation",
+        "Real-time privacy breach detection",
+        "Automated compliance reporting",
+        "Staff training compliance tracking",
+        "Audit trail maintenance",
       ],
-      benefits: "75% faster legal research, 90% accuracy improvement",
-      roi: "400% ROI through time savings",
+      benefits: "100% HIPAA compliance, 90% reduction in privacy violations",
+      roi: "400% ROI through avoided penalties",
+    },
+    {
+      icon: AlertTriangle,
+      title: "Medical Malpractice Risk Assessment",
+      description:
+        "AI-powered analysis of medical practices to identify potential malpractice risks and provide preventive recommendations.",
+      features: [
+        "Risk pattern identification",
+        "Predictive risk modeling",
+        "Clinical decision support",
+        "Documentation analysis",
+      ],
+      benefits: "75% reduction in malpractice claims, 60% lower insurance costs",
+      roi: "500% ROI in first year",
     },
     {
       icon: FileText,
-      title: "Document Automation & Drafting",
+      title: "Healthcare Contract Management",
       description:
-        "Intelligent document creation and review with AI-powered templates, clause libraries, and automated formatting.",
+        "Specialized contract management for healthcare providers, including vendor agreements, employment contracts, and patient agreements.",
       features: [
-        "Smart document templates",
-        "Automated clause insertion",
-        "Contract review and analysis",
-        "Document version control",
+        "Medical vendor contract analysis",
+        "Employment agreement compliance",
+        "Patient consent management",
+        "Insurance contract optimization",
       ],
-      benefits: "80% faster document creation, 95% error reduction",
-      roi: "350% ROI in first year",
+      benefits: "80% faster contract processing, 95% compliance accuracy",
+      roi: "300% ROI in 18 months",
     },
     {
       icon: Users,
-      title: "Case Management & Analytics",
+      title: "Medical Licensing & Credentialing",
       description:
-        "Comprehensive case management with AI insights, outcome prediction, and performance analytics for better case strategy.",
-      features: ["Case outcome prediction", "Timeline management", "Evidence organization", "Performance analytics"],
-      benefits: "60% better case outcomes, 50% improved efficiency",
-      roi: "450% ROI through better results",
+        "Automated tracking and management of medical licenses, certifications, and credentialing requirements.",
+      features: [
+        "License expiration tracking",
+        "Credentialing automation",
+        "Compliance verification",
+        "Renewal notifications",
+      ],
+      benefits: "100% license compliance, 70% faster credentialing",
+      roi: "250% ROI in 12 months",
     },
     {
-      icon: Clock,
-      title: "Time Tracking & Billing Optimization",
+      icon: Lock,
+      title: "Data Privacy & Security Compliance",
       description:
-        "Intelligent time tracking and billing optimization with automated time entry and billing code suggestions.",
+        "Comprehensive data privacy management ensuring compliance with HIPAA, HITECH, and state privacy laws.",
       features: [
-        "Automated time tracking",
-        "Billing code optimization",
-        "Revenue analytics",
-        "Client billing automation",
+        "Data mapping and classification",
+        "Privacy impact assessments",
+        "Breach notification automation",
+        "Patient consent management",
       ],
-      benefits: "40% increase in billable hours, 30% revenue growth",
-      roi: "500% ROI through increased revenue",
+      benefits: "99.9% data privacy compliance, zero privacy breaches",
+      roi: "600% ROI through avoided penalties",
     },
     {
-      icon: Brain,
-      title: "Client Communication & Service",
+      icon: BarChart3,
+      title: "Regulatory Compliance Analytics",
       description:
-        "Enhanced client service with AI-powered communication tools, status updates, and intelligent client portals.",
+        "Advanced analytics for healthcare regulatory compliance including FDA, CMS, and state health department requirements.",
       features: [
-        "Automated client updates",
-        "Intelligent client portals",
-        "Communication scheduling",
-        "Client satisfaction tracking",
+        "Regulatory change monitoring",
+        "Compliance performance metrics",
+        "Risk assessment dashboards",
+        "Audit preparation automation",
       ],
-      benefits: "95% client satisfaction, 70% faster response times",
-      roi: "300% ROI through client retention",
-    },
-    {
-      icon: Target,
-      title: "Practice Area Specialization",
-      description:
-        "Specialized AI tools for different practice areas including litigation, corporate law, family law, and more.",
-      features: [
-        "Practice-specific workflows",
-        "Specialized legal databases",
-        "Custom AI models",
-        "Industry-specific templates",
-      ],
-      benefits: "85% practice efficiency improvement, specialized expertise",
-      roi: "380% ROI through specialization",
+      benefits: "95% regulatory compliance, 80% faster audit preparation",
+      roi: "350% ROI in 24 months",
     },
   ]
 
-  const practiceAreas = [
+  const regulations = [
     {
-      name: "Litigation",
-      description: "AI-powered litigation support and case management",
-      features: ["Discovery automation", "Case strategy analysis", "Evidence management"],
+      name: "HIPAA",
+      description: "Health Insurance Portability and Accountability Act",
+      coverage: "Privacy and security of health information",
     },
     {
-      name: "Corporate Law",
-      description: "Corporate legal operations and transaction support",
-      features: ["M&A due diligence", "Contract management", "Compliance monitoring"],
+      name: "HITECH",
+      description: "Health Information Technology for Economic and Clinical Health Act",
+      coverage: "Electronic health records and breach notifications",
     },
     {
-      name: "Family Law",
-      description: "Family law practice management and client service",
-      features: ["Case documentation", "Settlement analysis", "Client communication"],
+      name: "FDA Regulations",
+      description: "Food and Drug Administration compliance",
+      coverage: "Medical devices, pharmaceuticals, and clinical trials",
     },
     {
-      name: "Real Estate",
-      description: "Real estate transaction and property law support",
-      features: ["Title analysis", "Contract review", "Closing automation"],
+      name: "CMS Guidelines",
+      description: "Centers for Medicare & Medicaid Services",
+      coverage: "Medicare and Medicaid compliance requirements",
     },
     {
-      name: "Employment Law",
-      description: "Employment law compliance and case management",
-      features: ["Policy analysis", "Compliance tracking", "Case documentation"],
+      name: "State Health Laws",
+      description: "State-specific healthcare regulations",
+      coverage: "Licensing, reporting, and operational requirements",
     },
     {
-      name: "Intellectual Property",
-      description: "IP portfolio management and prosecution support",
-      features: ["Patent analysis", "Trademark monitoring", "IP portfolio tracking"],
+      name: "Joint Commission",
+      description: "Healthcare accreditation standards",
+      coverage: "Quality and safety standards for healthcare organizations",
     },
   ]
 
   const stats = [
-    { number: "2,500+", label: "Law Firms", icon: Scale },
-    { number: "$1.8M", label: "Average Annual Savings", icon: DollarSign },
-    { number: "40%", label: "Increase in Billable Hours", icon: Clock },
-    { number: "75%", label: "Faster Legal Research", icon: Search },
+    { number: "1,200+", label: "Healthcare Organizations", icon: Stethoscope },
+    { number: "$4.1M", label: "Average Annual Savings", icon: BarChart3 },
+    { number: "100%", label: "HIPAA Compliance Rate", icon: Shield },
+    { number: "75%", label: "Risk Reduction", icon: AlertTriangle },
   ]
 
   return (
@@ -182,24 +187,24 @@ export default function LawFirmsPage() {
         <section className="pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs
-              items={[{ label: "Industries", href: "/industries" }, { label: "Law Firms" }]}
+              items={[{ label: "Industries", href: "/industries" }, { label: "Healthcare" }]}
               className="mb-8"
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
-                  <Scale className="w-4 h-4 mr-2" />
-                  Law Firm AI Solutions
+                  <Stethoscope className="w-4 h-4 mr-2" />
+                  Healthcare Legal AI
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-                  AI-Powered
-                  <span className="block">Legal Practice</span>
-                  <span className="block">Management</span>
+                  AI Legal Solutions
+                  <span className="block">for Healthcare</span>
+                  <span className="block">Organizations</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Transform your law firm with AI-powered legal research, case management, document automation, and
-                  client service tools. Increase billable hours by 40% while reducing operational costs.
+                  Specialized AI legal assistance for healthcare providers, ensuring HIPAA compliance, managing medical
+                  malpractice risks, and streamlining healthcare-specific legal operations.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg">
@@ -224,36 +229,36 @@ export default function LawFirmsPage() {
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-black">Law Firm Dashboard</h3>
+                        <h3 className="text-lg font-semibold text-black">Healthcare Compliance Dashboard</h3>
                         <div className="flex items-center gap-2 text-green-600">
-                          <TrendingUp className="w-5 h-5" />
-                          <span className="text-sm font-medium">+40% Efficiency</span>
+                          <CheckCircle className="w-5 h-5" />
+                          <span className="text-sm font-medium">100% Compliant</span>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">247</div>
-                          <div className="text-sm text-gray-600">Active Cases</div>
+                          <div className="text-2xl font-bold text-black">847</div>
+                          <div className="text-sm text-gray-600">Patients Protected</div>
                         </div>
                         <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">1,847</div>
-                          <div className="text-sm text-gray-600">Billable Hours</div>
+                          <div className="text-2xl font-bold text-black">0</div>
+                          <div className="text-sm text-gray-600">Privacy Breaches</div>
                         </div>
                       </div>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <Search className="w-5 h-5 text-black" />
-                            <span className="text-sm">Research Completed</span>
+                            <Bell className="w-5 h-5 text-black" />
+                            <span className="text-sm">License Renewal Due</span>
                           </div>
-                          <span className="text-xs text-green-600">75% Faster</span>
+                          <span className="text-xs text-gray-600">30 days</span>
                         </div>
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <FileText className="w-5 h-5 text-black" />
-                            <span className="text-sm">Documents Generated</span>
+                            <Eye className="w-5 h-5 text-black" />
+                            <span className="text-sm">Audit Preparation</span>
                           </div>
-                          <span className="text-xs text-green-600">80% Faster</span>
+                          <span className="text-xs text-green-600">Ready</span>
                         </div>
                       </div>
                     </div>
@@ -268,9 +273,9 @@ export default function LawFirmsPage() {
         <section className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results for Law Firms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results in Healthcare</h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Measurable impact across law firms of all sizes and practice areas
+                Measurable impact across healthcare organizations of all sizes
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -291,9 +296,9 @@ export default function LawFirmsPage() {
         <section id="use-cases" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">6 AI-Powered Use Cases for Law Firms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">6 AI-Powered Use Cases for Healthcare</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive AI solutions designed specifically for legal practice management and client service
+                Comprehensive AI solutions designed specifically for healthcare organizations and medical professionals
               </p>
             </div>
 
@@ -338,29 +343,25 @@ export default function LawFirmsPage() {
           </div>
         </section>
 
-        {/* Practice Areas Section */}
+        {/* Regulations Section */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Practice Area Specializations</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Healthcare Regulations Covered</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized AI solutions tailored for different legal practice areas and specializations
+                Comprehensive coverage of all major healthcare regulations and compliance requirements
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {practiceAreas.map((area, index) => (
+              {regulations.map((regulation, index) => (
                 <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-black mb-2">{area.name}</h3>
-                    <p className="text-sm text-gray-600 mb-4">{area.description}</p>
-                    <div className="space-y-2">
-                      {area.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                    <h3 className="text-lg font-bold text-black mb-2">{regulation.name}</h3>
+                    <p className="text-sm text-gray-600 mb-3">{regulation.description}</p>
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs font-medium text-black mb-1">Coverage:</p>
+                      <p className="text-xs text-gray-700">{regulation.coverage}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -375,7 +376,7 @@ export default function LawFirmsPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Implementation Process</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Our proven methodology ensures successful AI implementation in law firms of all sizes
+                Our proven methodology ensures successful AI implementation in healthcare organizations
               </p>
             </div>
 
@@ -383,23 +384,23 @@ export default function LawFirmsPage() {
               {[
                 {
                   step: "1",
-                  title: "Practice Assessment",
-                  description: "Comprehensive analysis of current legal practice operations and workflows",
+                  title: "Healthcare Assessment",
+                  description: "Comprehensive analysis of current healthcare compliance and legal operations",
                 },
                 {
                   step: "2",
                   title: "Custom Configuration",
-                  description: "Tailored AI solution setup based on your practice areas and client needs",
+                  description: "Tailored AI solution setup based on your specific healthcare requirements",
                 },
                 {
                   step: "3",
-                  title: "Team Training",
-                  description: "Comprehensive training for attorneys and staff on AI tools and workflows",
+                  title: "HIPAA Integration",
+                  description: "Secure integration with existing healthcare systems and HIPAA compliance",
                 },
                 {
                   step: "4",
                   title: "Ongoing Support",
-                  description: "Continuous optimization, performance monitoring, and dedicated legal support",
+                  description: "Continuous monitoring, optimization, and dedicated healthcare support",
                 },
               ].map((step, index) => (
                 <div key={index} className="text-center">
@@ -417,9 +418,11 @@ export default function LawFirmsPage() {
         {/* CTA Section */}
         <section className="py-16 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Law Firm?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Transform Your Healthcare Legal Operations?
+            </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join 2,500+ law firms already increasing efficiency and profitability with AI-powered legal solutions.
+              Join 1,200+ healthcare organizations already ensuring perfect compliance with AI-powered legal solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">

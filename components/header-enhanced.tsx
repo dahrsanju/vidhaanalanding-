@@ -40,11 +40,10 @@ export default function HeaderEnhanced() {
       name: "Solutions",
       href: "/solutions",
       dropdown: [
-        { name: "AI Legal Platform", href: "/solutions/ai-platform" },
-        { name: "Document Intelligence", href: "/solutions/document-intelligence" },
         { name: "Compliance Automation", href: "/solutions/compliance-automation" },
-        { name: "Legal Analytics", href: "/solutions/legal-analytics" },
         { name: "Contract Management", href: "/solutions/contract-management" },
+        { name: "Document Analysis", href: "/features/document-analysis" },
+        { name: "Legal Analytics", href: "/solutions/legal-analytics" },
         { name: "Risk Assessment", href: "/solutions/risk-assessment" },
       ],
     },
@@ -53,11 +52,11 @@ export default function HeaderEnhanced() {
       href: "/industries",
       dropdown: [
         { name: "Corporate Legal", href: "/industries/corporate-legal" },
-        { name: "Law Firms", href: "/industries/law-firms" },
         { name: "Healthcare", href: "/industries/healthcare" },
         { name: "Financial Services", href: "/industries/financial-services" },
-        { name: "Real Estate", href: "/industries/real-estate" },
+        { name: "Law Firms", href: "/industries/law-firms" },
         { name: "Technology", href: "/industries/technology" },
+        { name: "Real Estate", href: "/industries/real-estate" },
       ],
     },
     {
@@ -67,7 +66,7 @@ export default function HeaderEnhanced() {
         { name: "AI Document Analysis", href: "/features/document-analysis" },
         { name: "Legal Research", href: "/features/legal-research" },
         { name: "Compliance Monitoring", href: "/features/compliance" },
-        { name: "Contract Management", href: "/features/contracts" },
+        { name: "Contract Intelligence", href: "/features/contracts" },
       ],
     },
     { name: "Pricing", href: "/pricing" },
@@ -165,7 +164,10 @@ export default function HeaderEnhanced() {
                 </div>
               ))}
 
-              <Link href="/contact" className="monochrome-button px-6 py-2 rounded-full font-medium">
+              <Link
+                href="/contact"
+                className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors font-medium"
+              >
                 Get Started
               </Link>
             </nav>
@@ -227,7 +229,7 @@ export default function HeaderEnhanced() {
               ))}
               <Link
                 href="/contact"
-                className="block mt-4 monochrome-button px-6 py-3 rounded-full font-medium text-center"
+                className="block mt-4 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors font-medium text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Get Started

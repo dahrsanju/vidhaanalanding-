@@ -4,173 +4,178 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
 import {
-  Scale,
-  Search,
+  Landmark,
+  Shield,
   FileText,
-  Users,
-  Clock,
+  TrendingUp,
+  AlertTriangle,
   CheckCircle,
   ArrowRight,
-  Brain,
-  Target,
-  TrendingUp,
+  BarChart3,
+  Lock,
+  Eye,
   DollarSign,
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Legal Solutions for Law Firms | Legal Practice Management AI | Vidhaana",
+  title: "AI Legal Solutions for Financial Services | Banking & Finance Legal AI | Vidhaana",
   description:
-    "Transform your law firm with AI-powered legal research, case management, document automation, and client service tools. Increase billable hours by 40% and reduce costs by 60%.",
+    "Specialized AI legal solutions for financial institutions. Regulatory compliance automation, loan agreement analysis, AML monitoring, and securities law compliance for banks and financial services.",
   keywords: [
-    "law firm AI solutions",
-    "legal practice management",
-    "AI legal research",
-    "law firm automation",
-    "legal case management AI",
-    "attorney productivity tools",
-    "legal document automation",
-    "law firm efficiency",
-    "legal billing optimization",
-    "AI legal assistant for lawyers",
+    "financial services legal AI",
+    "banking compliance automation",
+    "financial regulatory AI",
+    "loan agreement analysis",
+    "AML compliance monitoring",
+    "securities law AI",
+    "banking legal technology",
+    "financial contract management",
+    "regulatory reporting automation",
+    "financial risk assessment AI",
   ],
   alternates: {
-    canonical: "https://vidhaana.com/industries/law-firms",
+    canonical: "https://vidhaana.com/industries/financial-services",
   },
 }
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "AI Legal Solutions for Law Firms",
-  description: "AI-powered solutions to enhance legal practice efficiency and client service for law firms",
+  name: "AI Legal Solutions for Financial Services",
+  description: "Specialized AI legal solutions for banks, credit unions, and financial institutions",
   provider: {
     "@type": "Organization",
     name: "Vidhaana",
   },
-  areaServed: "Legal Services Industry",
+  areaServed: "Financial Services Industry",
 }
 
-export default function LawFirmsPage() {
+export default function FinancialServicesPage() {
   const useCases = [
     {
-      icon: Search,
-      title: "AI-Powered Legal Research",
+      icon: Shield,
+      title: "Regulatory Compliance Automation",
       description:
-        "Revolutionary legal research capabilities that analyze case law, statutes, and regulations with unprecedented speed and accuracy.",
+        "Comprehensive compliance monitoring for banking regulations including Dodd-Frank, Basel III, and GDPR with real-time updates.",
       features: [
-        "Natural language case search",
-        "Precedent identification",
-        "Citation analysis",
-        "Research memo generation",
+        "Multi-jurisdiction compliance tracking",
+        "Automated regulatory reporting",
+        "Real-time regulation updates",
+        "Compliance risk scoring",
       ],
-      benefits: "75% faster legal research, 90% accuracy improvement",
-      roi: "400% ROI through time savings",
+      benefits: "99% regulatory compliance, 75% faster reporting",
+      roi: "450% ROI through avoided penalties",
     },
     {
       icon: FileText,
-      title: "Document Automation & Drafting",
+      title: "Loan Agreement Analysis",
       description:
-        "Intelligent document creation and review with AI-powered templates, clause libraries, and automated formatting.",
+        "AI-powered analysis of loan agreements, credit facilities, and lending documents with automated risk assessment.",
       features: [
-        "Smart document templates",
-        "Automated clause insertion",
-        "Contract review and analysis",
-        "Document version control",
+        "Credit risk evaluation",
+        "Loan term optimization",
+        "Collateral analysis",
+        "Default prediction modeling",
       ],
-      benefits: "80% faster document creation, 95% error reduction",
-      roi: "350% ROI in first year",
+      benefits: "60% faster loan processing, 40% reduction in defaults",
+      roi: "380% ROI in first year",
     },
     {
-      icon: Users,
-      title: "Case Management & Analytics",
+      icon: Eye,
+      title: "AML & Fraud Detection",
       description:
-        "Comprehensive case management with AI insights, outcome prediction, and performance analytics for better case strategy.",
-      features: ["Case outcome prediction", "Timeline management", "Evidence organization", "Performance analytics"],
-      benefits: "60% better case outcomes, 50% improved efficiency",
-      roi: "450% ROI through better results",
+        "Advanced anti-money laundering monitoring and fraud detection using AI pattern recognition and behavioral analysis.",
+      features: [
+        "Transaction pattern analysis",
+        "Suspicious activity detection",
+        "Customer due diligence automation",
+        "Regulatory reporting automation",
+      ],
+      benefits: "95% fraud detection accuracy, 80% false positive reduction",
+      roi: "600% ROI through prevented losses",
     },
     {
-      icon: Clock,
-      title: "Time Tracking & Billing Optimization",
+      icon: TrendingUp,
+      title: "Securities Law Compliance",
       description:
-        "Intelligent time tracking and billing optimization with automated time entry and billing code suggestions.",
+        "Automated compliance monitoring for securities regulations, trading activities, and investment advisory requirements.",
       features: [
-        "Automated time tracking",
-        "Billing code optimization",
-        "Revenue analytics",
-        "Client billing automation",
+        "Trading compliance monitoring",
+        "Investment advisory compliance",
+        "Market manipulation detection",
+        "Disclosure requirement tracking",
       ],
-      benefits: "40% increase in billable hours, 30% revenue growth",
-      roi: "500% ROI through increased revenue",
+      benefits: "100% securities compliance, 70% faster trade clearing",
+      roi: "350% ROI in 18 months",
     },
     {
-      icon: Brain,
-      title: "Client Communication & Service",
+      icon: Lock,
+      title: "Data Privacy & Protection",
       description:
-        "Enhanced client service with AI-powered communication tools, status updates, and intelligent client portals.",
+        "Comprehensive data privacy management ensuring compliance with financial privacy laws and customer data protection.",
       features: [
-        "Automated client updates",
-        "Intelligent client portals",
-        "Communication scheduling",
-        "Client satisfaction tracking",
+        "Customer data mapping",
+        "Privacy impact assessments",
+        "Consent management",
+        "Data breach response automation",
       ],
-      benefits: "95% client satisfaction, 70% faster response times",
-      roi: "300% ROI through client retention",
+      benefits: "99.9% data privacy compliance, zero data breaches",
+      roi: "500% ROI through avoided penalties",
     },
     {
-      icon: Target,
-      title: "Practice Area Specialization",
+      icon: BarChart3,
+      title: "Risk Management Analytics",
       description:
-        "Specialized AI tools for different practice areas including litigation, corporate law, family law, and more.",
+        "Advanced risk analytics for credit risk, operational risk, and market risk with predictive modeling and reporting.",
       features: [
-        "Practice-specific workflows",
-        "Specialized legal databases",
-        "Custom AI models",
-        "Industry-specific templates",
+        "Credit risk modeling",
+        "Operational risk assessment",
+        "Market risk analysis",
+        "Stress testing automation",
       ],
-      benefits: "85% practice efficiency improvement, specialized expertise",
-      roi: "380% ROI through specialization",
+      benefits: "85% risk prediction accuracy, 65% cost reduction",
+      roi: "420% ROI in 24 months",
     },
   ]
 
-  const practiceAreas = [
+  const regulations = [
     {
-      name: "Litigation",
-      description: "AI-powered litigation support and case management",
-      features: ["Discovery automation", "Case strategy analysis", "Evidence management"],
+      name: "Dodd-Frank Act",
+      description: "Comprehensive financial reform legislation",
+      coverage: "Systemic risk, consumer protection, derivatives trading",
     },
     {
-      name: "Corporate Law",
-      description: "Corporate legal operations and transaction support",
-      features: ["M&A due diligence", "Contract management", "Compliance monitoring"],
+      name: "Basel III",
+      description: "International banking regulatory framework",
+      coverage: "Capital requirements, liquidity standards, leverage ratios",
     },
     {
-      name: "Family Law",
-      description: "Family law practice management and client service",
-      features: ["Case documentation", "Settlement analysis", "Client communication"],
+      name: "GDPR & CCPA",
+      description: "Data privacy and protection regulations",
+      coverage: "Customer data privacy, consent management, breach notifications",
     },
     {
-      name: "Real Estate",
-      description: "Real estate transaction and property law support",
-      features: ["Title analysis", "Contract review", "Closing automation"],
+      name: "SOX Compliance",
+      description: "Sarbanes-Oxley Act requirements",
+      coverage: "Financial reporting, internal controls, audit requirements",
     },
     {
-      name: "Employment Law",
-      description: "Employment law compliance and case management",
-      features: ["Policy analysis", "Compliance tracking", "Case documentation"],
+      name: "AML/BSA",
+      description: "Anti-Money Laundering and Bank Secrecy Act",
+      coverage: "Suspicious activity monitoring, customer due diligence",
     },
     {
-      name: "Intellectual Property",
-      description: "IP portfolio management and prosecution support",
-      features: ["Patent analysis", "Trademark monitoring", "IP portfolio tracking"],
+      name: "Securities Regulations",
+      description: "SEC and FINRA compliance requirements",
+      coverage: "Trading compliance, investment advisory, market conduct",
     },
   ]
 
   const stats = [
-    { number: "2,500+", label: "Law Firms", icon: Scale },
-    { number: "$1.8M", label: "Average Annual Savings", icon: DollarSign },
-    { number: "40%", label: "Increase in Billable Hours", icon: Clock },
-    { number: "75%", label: "Faster Legal Research", icon: Search },
+    { number: "800+", label: "Financial Institutions", icon: Landmark },
+    { number: "$3.2M", label: "Average Annual Savings", icon: DollarSign },
+    { number: "99%", label: "Regulatory Compliance", icon: Shield },
+    { number: "65%", label: "Risk Reduction", icon: AlertTriangle },
   ]
 
   return (
@@ -182,24 +187,24 @@ export default function LawFirmsPage() {
         <section className="pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs
-              items={[{ label: "Industries", href: "/industries" }, { label: "Law Firms" }]}
+              items={[{ label: "Industries", href: "/industries" }, { label: "Financial Services" }]}
               className="mb-8"
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
-                  <Scale className="w-4 h-4 mr-2" />
-                  Law Firm AI Solutions
+                  <Landmark className="w-4 h-4 mr-2" />
+                  Financial Services Legal AI
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-                  AI-Powered
-                  <span className="block">Legal Practice</span>
-                  <span className="block">Management</span>
+                  AI Legal Solutions
+                  <span className="block">for Financial</span>
+                  <span className="block">Institutions</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Transform your law firm with AI-powered legal research, case management, document automation, and
-                  client service tools. Increase billable hours by 40% while reducing operational costs.
+                  Navigate complex financial regulations with AI-powered compliance monitoring, risk management, and
+                  automated legal operations designed specifically for banks and financial services.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg">
@@ -224,36 +229,36 @@ export default function LawFirmsPage() {
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-black">Law Firm Dashboard</h3>
+                        <h3 className="text-lg font-semibold text-black">Financial Compliance Dashboard</h3>
                         <div className="flex items-center gap-2 text-green-600">
-                          <TrendingUp className="w-5 h-5" />
-                          <span className="text-sm font-medium">+40% Efficiency</span>
+                          <CheckCircle className="w-5 h-5" />
+                          <span className="text-sm font-medium">99% Compliant</span>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">247</div>
-                          <div className="text-sm text-gray-600">Active Cases</div>
+                          <div className="text-2xl font-bold text-black">$2.4M</div>
+                          <div className="text-sm text-gray-600">Penalties Avoided</div>
                         </div>
                         <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">1,847</div>
-                          <div className="text-sm text-gray-600">Billable Hours</div>
+                          <div className="text-2xl font-bold text-black">847</div>
+                          <div className="text-sm text-gray-600">Loans Processed</div>
                         </div>
                       </div>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <Search className="w-5 h-5 text-black" />
-                            <span className="text-sm">Research Completed</span>
+                            <Shield className="w-5 h-5 text-black" />
+                            <span className="text-sm">Basel III Compliance</span>
                           </div>
-                          <span className="text-xs text-green-600">75% Faster</span>
+                          <span className="text-xs text-green-600">Current</span>
                         </div>
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <FileText className="w-5 h-5 text-black" />
-                            <span className="text-sm">Documents Generated</span>
+                            <Eye className="w-5 h-5 text-black" />
+                            <span className="text-sm">AML Monitoring</span>
                           </div>
-                          <span className="text-xs text-green-600">80% Faster</span>
+                          <span className="text-xs text-green-600">Active</span>
                         </div>
                       </div>
                     </div>
@@ -268,9 +273,9 @@ export default function LawFirmsPage() {
         <section className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results for Law Firms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results in Financial Services</h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Measurable impact across law firms of all sizes and practice areas
+                Measurable impact across banks, credit unions, and financial institutions
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -291,9 +296,11 @@ export default function LawFirmsPage() {
         <section id="use-cases" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">6 AI-Powered Use Cases for Law Firms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+                6 AI-Powered Use Cases for Financial Services
+              </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive AI solutions designed specifically for legal practice management and client service
+                Comprehensive AI solutions designed specifically for banks, credit unions, and financial institutions
               </p>
             </div>
 
@@ -338,29 +345,25 @@ export default function LawFirmsPage() {
           </div>
         </section>
 
-        {/* Practice Areas Section */}
+        {/* Regulations Section */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Practice Area Specializations</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Financial Regulations Covered</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized AI solutions tailored for different legal practice areas and specializations
+                Comprehensive coverage of all major financial regulations and compliance requirements
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {practiceAreas.map((area, index) => (
+              {regulations.map((regulation, index) => (
                 <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-black mb-2">{area.name}</h3>
-                    <p className="text-sm text-gray-600 mb-4">{area.description}</p>
-                    <div className="space-y-2">
-                      {area.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                    <h3 className="text-lg font-bold text-black mb-2">{regulation.name}</h3>
+                    <p className="text-sm text-gray-600 mb-3">{regulation.description}</p>
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs font-medium text-black mb-1">Coverage:</p>
+                      <p className="text-xs text-gray-700">{regulation.coverage}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -375,7 +378,7 @@ export default function LawFirmsPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Implementation Process</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Our proven methodology ensures successful AI implementation in law firms of all sizes
+                Our proven methodology ensures successful AI implementation in financial institutions
               </p>
             </div>
 
@@ -383,23 +386,23 @@ export default function LawFirmsPage() {
               {[
                 {
                   step: "1",
-                  title: "Practice Assessment",
-                  description: "Comprehensive analysis of current legal practice operations and workflows",
+                  title: "Financial Assessment",
+                  description: "Comprehensive analysis of current financial compliance and risk management",
                 },
                 {
                   step: "2",
-                  title: "Custom Configuration",
-                  description: "Tailored AI solution setup based on your practice areas and client needs",
+                  title: "Regulatory Mapping",
+                  description: "Custom configuration based on your specific regulatory requirements",
                 },
                 {
                   step: "3",
-                  title: "Team Training",
-                  description: "Comprehensive training for attorneys and staff on AI tools and workflows",
+                  title: "Secure Integration",
+                  description: "Bank-grade security integration with existing financial systems",
                 },
                 {
                   step: "4",
-                  title: "Ongoing Support",
-                  description: "Continuous optimization, performance monitoring, and dedicated legal support",
+                  title: "Continuous Monitoring",
+                  description: "Ongoing compliance monitoring and dedicated financial services support",
                 },
               ].map((step, index) => (
                 <div key={index} className="text-center">
@@ -417,9 +420,9 @@ export default function LawFirmsPage() {
         {/* CTA Section */}
         <section className="py-16 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Law Firm?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Financial Legal Operations?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join 2,500+ law firms already increasing efficiency and profitability with AI-powered legal solutions.
+              Join 800+ financial institutions already achieving perfect compliance with AI-powered legal solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">

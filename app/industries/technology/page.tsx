@@ -3,174 +3,167 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import {
-  Scale,
-  Search,
-  FileText,
-  Users,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  Brain,
-  Target,
-  TrendingUp,
-  DollarSign,
-} from "lucide-react"
+import { Laptop, Shield, FileText, Database, Lock, CheckCircle, ArrowRight, BarChart3, Globe, Eye } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Legal Solutions for Law Firms | Legal Practice Management AI | Vidhaana",
+  title: "AI Legal Solutions for Technology Companies | Tech Legal Compliance AI | Vidhaana",
   description:
-    "Transform your law firm with AI-powered legal research, case management, document automation, and client service tools. Increase billable hours by 40% and reduce costs by 60%.",
+    "Specialized AI legal solutions for technology companies. Data privacy compliance, IP management, software licensing, and tech contract automation for startups and enterprises.",
   keywords: [
-    "law firm AI solutions",
-    "legal practice management",
-    "AI legal research",
-    "law firm automation",
-    "legal case management AI",
-    "attorney productivity tools",
-    "legal document automation",
-    "law firm efficiency",
-    "legal billing optimization",
-    "AI legal assistant for lawyers",
+    "technology legal AI",
+    "tech company compliance",
+    "data privacy automation",
+    "IP management AI",
+    "software licensing legal",
+    "tech contract management",
+    "GDPR compliance automation",
+    "technology legal operations",
+    "startup legal AI",
+    "enterprise legal technology",
   ],
   alternates: {
-    canonical: "https://vidhaana.com/industries/law-firms",
+    canonical: "https://vidhaana.com/industries/technology",
   },
 }
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "AI Legal Solutions for Law Firms",
-  description: "AI-powered solutions to enhance legal practice efficiency and client service for law firms",
+  name: "AI Legal Solutions for Technology Companies",
+  description: "Specialized AI legal solutions for technology companies and startups",
   provider: {
     "@type": "Organization",
     name: "Vidhaana",
   },
-  areaServed: "Legal Services Industry",
+  areaServed: "Technology Industry",
 }
 
-export default function LawFirmsPage() {
+export default function TechnologyPage() {
   const useCases = [
     {
-      icon: Search,
-      title: "AI-Powered Legal Research",
+      icon: Shield,
+      title: "Data Privacy & GDPR Compliance",
       description:
-        "Revolutionary legal research capabilities that analyze case law, statutes, and regulations with unprecedented speed and accuracy.",
+        "Comprehensive data privacy management ensuring compliance with GDPR, CCPA, and global privacy regulations for tech companies.",
       features: [
-        "Natural language case search",
-        "Precedent identification",
-        "Citation analysis",
-        "Research memo generation",
+        "Automated privacy impact assessments",
+        "Data mapping and classification",
+        "Consent management automation",
+        "Breach notification systems",
       ],
-      benefits: "75% faster legal research, 90% accuracy improvement",
-      roi: "400% ROI through time savings",
+      benefits: "100% privacy compliance, 90% faster privacy assessments",
+      roi: "500% ROI through avoided penalties",
+    },
+    {
+      icon: Lock,
+      title: "Intellectual Property Management",
+      description:
+        "AI-powered IP portfolio management including patent analysis, trademark monitoring, and trade secret protection.",
+      features: [
+        "Patent landscape analysis",
+        "Trademark monitoring",
+        "IP portfolio optimization",
+        "Infringement detection",
+      ],
+      benefits: "80% faster IP analysis, 95% infringement detection accuracy",
+      roi: "400% ROI through IP protection",
     },
     {
       icon: FileText,
-      title: "Document Automation & Drafting",
+      title: "Software Licensing & Contracts",
       description:
-        "Intelligent document creation and review with AI-powered templates, clause libraries, and automated formatting.",
+        "Specialized contract management for software licenses, SaaS agreements, and technology partnerships.",
       features: [
-        "Smart document templates",
-        "Automated clause insertion",
-        "Contract review and analysis",
-        "Document version control",
+        "License compliance tracking",
+        "SaaS agreement analysis",
+        "API terms management",
+        "Partnership contract optimization",
       ],
-      benefits: "80% faster document creation, 95% error reduction",
-      roi: "350% ROI in first year",
+      benefits: "85% faster contract processing, 100% license compliance",
+      roi: "350% ROI in 18 months",
     },
     {
-      icon: Users,
-      title: "Case Management & Analytics",
+      icon: Database,
+      title: "Regulatory Compliance Automation",
       description:
-        "Comprehensive case management with AI insights, outcome prediction, and performance analytics for better case strategy.",
-      features: ["Case outcome prediction", "Timeline management", "Evidence organization", "Performance analytics"],
-      benefits: "60% better case outcomes, 50% improved efficiency",
-      roi: "450% ROI through better results",
+        "Automated compliance monitoring for technology regulations including SOC 2, ISO 27001, and industry standards.",
+      features: [
+        "SOC 2 compliance monitoring",
+        "ISO 27001 certification support",
+        "Security audit automation",
+        "Compliance reporting",
+      ],
+      benefits: "99% regulatory compliance, 70% faster audits",
+      roi: "450% ROI through streamlined compliance",
     },
     {
-      icon: Clock,
-      title: "Time Tracking & Billing Optimization",
+      icon: Globe,
+      title: "International Expansion Legal Support",
       description:
-        "Intelligent time tracking and billing optimization with automated time entry and billing code suggestions.",
+        "Legal guidance for international expansion including cross-border data transfers and local compliance requirements.",
       features: [
-        "Automated time tracking",
-        "Billing code optimization",
-        "Revenue analytics",
-        "Client billing automation",
+        "Cross-border data transfer analysis",
+        "Local compliance mapping",
+        "International contract templates",
+        "Regulatory change monitoring",
       ],
-      benefits: "40% increase in billable hours, 30% revenue growth",
-      roi: "500% ROI through increased revenue",
+      benefits: "75% faster international expansion, 100% compliance",
+      roi: "380% ROI through accelerated growth",
     },
     {
-      icon: Brain,
-      title: "Client Communication & Service",
+      icon: Eye,
+      title: "Employment & HR Legal Compliance",
       description:
-        "Enhanced client service with AI-powered communication tools, status updates, and intelligent client portals.",
+        "Specialized employment law support for tech companies including remote work policies and equity compensation.",
       features: [
-        "Automated client updates",
-        "Intelligent client portals",
-        "Communication scheduling",
-        "Client satisfaction tracking",
+        "Remote work policy compliance",
+        "Equity compensation analysis",
+        "Employment contract automation",
+        "HR policy management",
       ],
-      benefits: "95% client satisfaction, 70% faster response times",
-      roi: "300% ROI through client retention",
-    },
-    {
-      icon: Target,
-      title: "Practice Area Specialization",
-      description:
-        "Specialized AI tools for different practice areas including litigation, corporate law, family law, and more.",
-      features: [
-        "Practice-specific workflows",
-        "Specialized legal databases",
-        "Custom AI models",
-        "Industry-specific templates",
-      ],
-      benefits: "85% practice efficiency improvement, specialized expertise",
-      roi: "380% ROI through specialization",
+      benefits: "90% HR compliance, 60% faster policy updates",
+      roi: "300% ROI through reduced HR legal costs",
     },
   ]
 
-  const practiceAreas = [
+  const techRegulations = [
     {
-      name: "Litigation",
-      description: "AI-powered litigation support and case management",
-      features: ["Discovery automation", "Case strategy analysis", "Evidence management"],
+      name: "GDPR",
+      description: "General Data Protection Regulation",
+      coverage: "EU data privacy and protection requirements",
     },
     {
-      name: "Corporate Law",
-      description: "Corporate legal operations and transaction support",
-      features: ["M&A due diligence", "Contract management", "Compliance monitoring"],
+      name: "CCPA",
+      description: "California Consumer Privacy Act",
+      coverage: "California data privacy and consumer rights",
     },
     {
-      name: "Family Law",
-      description: "Family law practice management and client service",
-      features: ["Case documentation", "Settlement analysis", "Client communication"],
+      name: "SOC 2",
+      description: "Service Organization Control 2",
+      coverage: "Security, availability, and confidentiality controls",
     },
     {
-      name: "Real Estate",
-      description: "Real estate transaction and property law support",
-      features: ["Title analysis", "Contract review", "Closing automation"],
+      name: "ISO 27001",
+      description: "Information Security Management",
+      coverage: "Information security management systems",
     },
     {
-      name: "Employment Law",
-      description: "Employment law compliance and case management",
-      features: ["Policy analysis", "Compliance tracking", "Case documentation"],
+      name: "COPPA",
+      description: "Children's Online Privacy Protection Act",
+      coverage: "Children's online privacy protection",
     },
     {
-      name: "Intellectual Property",
-      description: "IP portfolio management and prosecution support",
-      features: ["Patent analysis", "Trademark monitoring", "IP portfolio tracking"],
+      name: "DMCA",
+      description: "Digital Millennium Copyright Act",
+      coverage: "Copyright protection for digital content",
     },
   ]
 
   const stats = [
-    { number: "2,500+", label: "Law Firms", icon: Scale },
-    { number: "$1.8M", label: "Average Annual Savings", icon: DollarSign },
-    { number: "40%", label: "Increase in Billable Hours", icon: Clock },
-    { number: "75%", label: "Faster Legal Research", icon: Search },
+    { number: "3,000+", label: "Tech Companies", icon: Laptop },
+    { number: "$2.1M", label: "Average Annual Savings", icon: BarChart3 },
+    { number: "100%", label: "Privacy Compliance", icon: Shield },
+    { number: "80%", label: "Faster IP Analysis", icon: Lock },
   ]
 
   return (
@@ -182,24 +175,24 @@ export default function LawFirmsPage() {
         <section className="pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs
-              items={[{ label: "Industries", href: "/industries" }, { label: "Law Firms" }]}
+              items={[{ label: "Industries", href: "/industries" }, { label: "Technology" }]}
               className="mb-8"
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
-                  <Scale className="w-4 h-4 mr-2" />
-                  Law Firm AI Solutions
+                  <Laptop className="w-4 h-4 mr-2" />
+                  Technology Legal AI
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-                  AI-Powered
-                  <span className="block">Legal Practice</span>
-                  <span className="block">Management</span>
+                  AI Legal Solutions
+                  <span className="block">for Technology</span>
+                  <span className="block">Companies</span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Transform your law firm with AI-powered legal research, case management, document automation, and
-                  client service tools. Increase billable hours by 40% while reducing operational costs.
+                  Navigate complex technology regulations with AI-powered data privacy compliance, IP management, and
+                  specialized legal operations designed for startups and enterprises.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-3 text-lg">
@@ -224,36 +217,36 @@ export default function LawFirmsPage() {
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold text-black">Law Firm Dashboard</h3>
+                        <h3 className="text-lg font-semibold text-black">Tech Compliance Dashboard</h3>
                         <div className="flex items-center gap-2 text-green-600">
-                          <TrendingUp className="w-5 h-5" />
-                          <span className="text-sm font-medium">+40% Efficiency</span>
+                          <CheckCircle className="w-5 h-5" />
+                          <span className="text-sm font-medium">100% Compliant</span>
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">247</div>
-                          <div className="text-sm text-gray-600">Active Cases</div>
+                          <div className="text-2xl font-bold text-black">847</div>
+                          <div className="text-sm text-gray-600">Data Subjects</div>
                         </div>
                         <div className="p-3 bg-gray-50 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-black">1,847</div>
-                          <div className="text-sm text-gray-600">Billable Hours</div>
+                          <div className="text-2xl font-bold text-black">0</div>
+                          <div className="text-sm text-gray-600">Privacy Breaches</div>
                         </div>
                       </div>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <Search className="w-5 h-5 text-black" />
-                            <span className="text-sm">Research Completed</span>
+                            <Shield className="w-5 h-5 text-black" />
+                            <span className="text-sm">GDPR Compliance</span>
                           </div>
-                          <span className="text-xs text-green-600">75% Faster</span>
+                          <span className="text-xs text-green-600">Current</span>
                         </div>
                         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                           <div className="flex items-center gap-3">
-                            <FileText className="w-5 h-5 text-black" />
-                            <span className="text-sm">Documents Generated</span>
+                            <Lock className="w-5 h-5 text-black" />
+                            <span className="text-sm">IP Portfolio</span>
                           </div>
-                          <span className="text-xs text-green-600">80% Faster</span>
+                          <span className="text-xs text-green-600">Protected</span>
                         </div>
                       </div>
                     </div>
@@ -268,9 +261,9 @@ export default function LawFirmsPage() {
         <section className="py-16 bg-black text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results for Law Firms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results in Technology</h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Measurable impact across law firms of all sizes and practice areas
+                Measurable impact across startups, scale-ups, and enterprise technology companies
               </p>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -291,9 +284,11 @@ export default function LawFirmsPage() {
         <section id="use-cases" className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">6 AI-Powered Use Cases for Law Firms</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+                6 AI-Powered Use Cases for Technology Companies
+              </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive AI solutions designed specifically for legal practice management and client service
+                Comprehensive AI solutions designed specifically for technology companies and digital businesses
               </p>
             </div>
 
@@ -338,29 +333,25 @@ export default function LawFirmsPage() {
           </div>
         </section>
 
-        {/* Practice Areas Section */}
+        {/* Regulations Section */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Practice Area Specializations</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Technology Regulations Covered</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Specialized AI solutions tailored for different legal practice areas and specializations
+                Comprehensive coverage of all major technology regulations and compliance requirements
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {practiceAreas.map((area, index) => (
+              {techRegulations.map((regulation, index) => (
                 <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-black mb-2">{area.name}</h3>
-                    <p className="text-sm text-gray-600 mb-4">{area.description}</p>
-                    <div className="space-y-2">
-                      {area.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          <span className="text-sm text-gray-700">{feature}</span>
-                        </div>
-                      ))}
+                    <h3 className="text-lg font-bold text-black mb-2">{regulation.name}</h3>
+                    <p className="text-sm text-gray-600 mb-3">{regulation.description}</p>
+                    <div className="bg-gray-50 p-3 rounded-lg">
+                      <p className="text-xs font-medium text-black mb-1">Coverage:</p>
+                      <p className="text-xs text-gray-700">{regulation.coverage}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -375,7 +366,7 @@ export default function LawFirmsPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Implementation Process</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Our proven methodology ensures successful AI implementation in law firms of all sizes
+                Our proven methodology ensures successful AI implementation in technology companies
               </p>
             </div>
 
@@ -383,23 +374,23 @@ export default function LawFirmsPage() {
               {[
                 {
                   step: "1",
-                  title: "Practice Assessment",
-                  description: "Comprehensive analysis of current legal practice operations and workflows",
+                  title: "Technology Assessment",
+                  description: "Comprehensive analysis of current technology stack and compliance requirements",
                 },
                 {
                   step: "2",
-                  title: "Custom Configuration",
-                  description: "Tailored AI solution setup based on your practice areas and client needs",
+                  title: "Privacy & Security Setup",
+                  description: "Custom configuration for data privacy and security compliance",
                 },
                 {
                   step: "3",
-                  title: "Team Training",
-                  description: "Comprehensive training for attorneys and staff on AI tools and workflows",
+                  title: "Integration & Testing",
+                  description: "Secure integration with existing tech infrastructure and thorough testing",
                 },
                 {
                   step: "4",
-                  title: "Ongoing Support",
-                  description: "Continuous optimization, performance monitoring, and dedicated legal support",
+                  title: "Scaling Support",
+                  description: "Ongoing optimization and support for rapid scaling and growth",
                 },
               ].map((step, index) => (
                 <div key={index} className="text-center">
@@ -417,9 +408,9 @@ export default function LawFirmsPage() {
         {/* CTA Section */}
         <section className="py-16 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Law Firm?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Scale Your Tech Legal Operations?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join 2,500+ law firms already increasing efficiency and profitability with AI-powered legal solutions.
+              Join 3,000+ technology companies already ensuring perfect compliance with AI-powered legal solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-white text-black hover:bg-gray-200 px-8 py-3 text-lg">

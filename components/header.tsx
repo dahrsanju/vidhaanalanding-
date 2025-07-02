@@ -89,11 +89,6 @@ export default function Header() {
                 priority
                 className={`transition-all duration-300 ${isScrolled ? "h-12 w-12" : "h-16 w-16"}`}
               />
-              <span
-                className={`ml-3 font-bold text-black transition-all duration-300 ${isScrolled ? "text-lg" : "text-xl"}`}
-              >
-                Vidhaana
-              </span>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Primary Navigation">

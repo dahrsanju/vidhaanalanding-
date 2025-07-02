@@ -10,10 +10,6 @@ import {
   Landmark,
   Stethoscope,
   Home,
-  UserCheck,
-  Package,
-  Monitor,
-  GraduationCap,
   ArrowRight,
   Sparkles,
   CheckCircle,
@@ -29,165 +25,62 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://vidhaana.com/solutions" },
 }
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "AI Legal Solutions by Industry",
-  description: "Industry-specific AI legal solutions and services",
-  url: "https://vidhaana.com/solutions",
-}
-
 export default function SolutionsPage() {
   const industries = [
     {
       icon: Building2,
       title: "Corporate Legal",
-      description:
-        "Streamline corporate legal operations with AI-powered contract management and compliance monitoring.",
-      useCases: [
-        "Automated contract review and risk assessment",
-        "Regulatory compliance monitoring and alerts",
-        "Legal document generation and templates",
-        "Corporate governance policy management",
-        "M&A due diligence automation",
-      ],
-      benefits: ["70% faster contract processing", "95% compliance accuracy", "60% cost reduction"],
+      description: "Streamline corporate operations with AI contract management and compliance monitoring.",
+      keyFeatures: ["M&A Due Diligence", "Contract Lifecycle Management", "Regulatory Compliance"],
+      benefits: "70% faster contract processing, 95% compliance accuracy",
       href: "/industries/corporate-legal",
     },
     {
       icon: Scale,
       title: "Law Firms",
-      description: "Enhance legal practice efficiency with AI research, case analysis, and client management tools.",
-      useCases: [
-        "Automated legal research and case law analysis",
-        "Brief and motion drafting assistance",
-        "Client intake and case management",
-        "Billing optimization and time tracking",
-        "Precedent analysis and citation checking",
-      ],
-      benefits: ["80% faster research", "50% more billable hours", "Enhanced case outcomes"],
+      description: "Enhance legal practice efficiency with AI research, case analysis, and client management.",
+      keyFeatures: ["Legal Research Automation", "Brief Drafting", "Case Management"],
+      benefits: "80% faster research, 50% more billable hours",
       href: "/industries/law-firms",
     },
     {
       icon: Users,
-      title: "B2C Consumer",
-      description: "Democratize legal access with AI-powered consumer legal guidance and document preparation.",
-      useCases: [
-        "Personal legal document creation (wills, contracts)",
-        "Consumer rights guidance and protection",
-        "Small claims court preparation",
-        "Tenant rights and landlord dispute resolution",
-        "Family law guidance and mediation support",
-      ],
-      benefits: ["90% cost savings vs attorneys", "24/7 accessibility", "Plain English explanations"],
+      title: "Consumer Legal",
+      description: "Democratize legal access with AI-powered consumer guidance and document preparation.",
+      keyFeatures: ["Personal Document Creation", "Consumer Rights Guidance", "Small Claims Support"],
+      benefits: "90% cost savings vs attorneys, 24/7 accessibility",
       href: "/industries/consumer",
     },
     {
       icon: Landmark,
       title: "Financial Services",
-      description: "Navigate complex financial regulations with AI compliance monitoring and risk management.",
-      useCases: [
-        "Regulatory compliance automation (SOX, GDPR, PCI)",
-        "Loan agreement analysis and risk scoring",
-        "Anti-money laundering (AML) monitoring",
-        "Securities law compliance checking",
-        "Financial contract optimization",
-      ],
-      benefits: ["99% compliance rate", "75% faster loan processing", "Risk reduction by 65%"],
+      description: "Navigate complex regulations with AI compliance monitoring and risk management.",
+      keyFeatures: ["Regulatory Compliance", "Loan Agreement Analysis", "AML Monitoring"],
+      benefits: "99% compliance rate, 75% faster loan processing",
       href: "/industries/financial-services",
     },
     {
       icon: Stethoscope,
       title: "Healthcare",
-      description: "Ensure healthcare compliance with AI-powered HIPAA monitoring and medical legal guidance.",
-      useCases: [
-        "HIPAA compliance monitoring and breach prevention",
-        "Medical malpractice risk assessment",
-        "Healthcare contract and vendor agreement review",
-        "Patient consent form optimization",
-        "Medical licensing and credentialing support",
-      ],
-      benefits: ["100% HIPAA compliance", "$2.5M penalties avoided", "50% faster credentialing"],
+      description: "Ensure healthcare compliance with AI-powered HIPAA monitoring and risk assessment.",
+      keyFeatures: ["HIPAA Compliance", "Malpractice Risk Assessment", "Healthcare Contracts"],
+      benefits: "100% HIPAA compliance, $2.5M penalties avoided",
       href: "/industries/healthcare",
     },
     {
       icon: Home,
       title: "Real Estate",
-      description: "Streamline property transactions with AI contract analysis and regulatory compliance.",
-      useCases: [
-        "Purchase agreement review and risk analysis",
-        "Lease agreement optimization and compliance",
-        "Title search automation and verification",
-        "Zoning and regulatory compliance checking",
-        "Property dispute resolution guidance",
-      ],
-      benefits: ["85% faster closings", "40% fewer disputes", "Comprehensive risk coverage"],
+      description: "Streamline property transactions with AI contract analysis and compliance checking.",
+      keyFeatures: ["Purchase Agreement Analysis", "Lease Optimization", "Title Search Automation"],
+      benefits: "85% faster closings, 40% fewer disputes",
       href: "/industries/real-estate",
-    },
-    {
-      icon: UserCheck,
-      title: "Human Resources",
-      description: "Optimize HR operations with AI-powered employment law compliance and policy management.",
-      useCases: [
-        "Employment contract generation and review",
-        "Workplace policy compliance monitoring",
-        "Discrimination and harassment risk assessment",
-        "Benefits administration legal guidance",
-        "Termination and severance agreement optimization",
-      ],
-      benefits: ["90% policy compliance", "70% fewer HR disputes", "Streamlined onboarding"],
-      href: "/industries/human-resources",
-    },
-    {
-      icon: Package,
-      title: "Procurement & Supply Chain",
-      description: "Enhance procurement efficiency with AI contract analysis and supplier risk management.",
-      useCases: [
-        "Vendor contract analysis and negotiation support",
-        "Supply chain compliance monitoring",
-        "International trade law guidance",
-        "Procurement policy optimization",
-        "Supplier risk assessment and mitigation",
-      ],
-      benefits: ["60% faster procurement cycles", "Enhanced supplier compliance", "Risk mitigation"],
-      href: "/industries/procurement",
-    },
-    {
-      icon: Monitor,
-      title: "Technology & SaaS",
-      description: "Navigate tech regulations with AI-powered privacy compliance and IP protection.",
-      useCases: [
-        "Privacy policy and terms of service optimization",
-        "Data protection compliance (GDPR, CCPA)",
-        "Software licensing and IP protection",
-        "SaaS agreement template generation",
-        "Cybersecurity legal compliance monitoring",
-      ],
-      benefits: ["Full privacy compliance", "IP protection optimization", "Faster product launches"],
-      href: "/industries/technology",
-    },
-    {
-      icon: GraduationCap,
-      title: "Education",
-      description: "Support educational institutions with AI compliance monitoring and policy management.",
-      useCases: [
-        "FERPA compliance monitoring and student privacy",
-        "Title IX policy management and compliance",
-        "Faculty contract and tenure agreement review",
-        "Student disciplinary procedure guidance",
-        "Educational technology compliance (COPPA, CIPA)",
-      ],
-      benefits: ["100% regulatory compliance", "Streamlined policy management", "Risk reduction"],
-      href: "/industries/education",
     },
   ]
 
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-
-      {/* Hero */}
-      <section className="pt-32 pb-16 bg-white">
+    <div className="bg-white overflow-hidden">
+      {/* Hero - Compact */}
+      <section className="pt-28 pb-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "Solutions" }]} className="mb-6" />
 
@@ -196,46 +89,46 @@ export default function SolutionsPage() {
               <Sparkles className="w-4 h-4 mr-2" />
               Industry-Specific Solutions
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
               AI Legal Solutions
               <span className="block text-black">Tailored for Your Industry</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Discover how our AI-powered legal assistant transforms operations across 10 key industries with
-              specialized use cases and proven results.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Discover how our AI-powered legal assistant transforms operations across key industries with specialized
+              use cases and proven results.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Key Benefits */}
-      <section className="py-16 bg-gray-50">
+      {/* Key Benefits - Compact */}
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {[
               {
                 icon: Brain,
                 title: "Industry-Specific AI",
-                description: "Trained on sector-specific legal requirements and regulations",
+                description: "Trained on sector-specific legal requirements",
               },
               {
                 icon: Zap,
                 title: "Proven Results",
-                description: "Average 70% cost reduction and 95% accuracy across all industries",
+                description: "Average 70% cost reduction across all industries",
               },
               {
                 icon: Target,
                 title: "Tailored Use Cases",
-                description: "3-5 specialized AI applications designed for each industry",
+                description: "Specialized AI applications for each sector",
               },
             ].map((benefit, index) => (
               <Card key={index} className="border-2 border-black text-center">
-                <CardContent className="p-8">
-                  <div className="inline-flex p-4 rounded-2xl bg-black text-white mb-4">
-                    <benefit.icon className="w-8 h-8" />
+                <CardContent className="p-6">
+                  <div className="inline-flex p-3 rounded-2xl bg-black text-white mb-4">
+                    <benefit.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-black">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-black">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -243,59 +136,47 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Industries Grid */}
-      <section className="py-16 bg-white">
+      {/* Industries Grid - Compact */}
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Solutions by Industry</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Solutions by Industry</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Explore AI-powered legal solutions designed specifically for your industry's unique challenges.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
-              <Card key={index} className="border-2 border-black hover:shadow-2xl transition-all duration-300 group">
-                <CardHeader>
+              <Card key={index} className="border-2 border-black hover:shadow-lg transition-all duration-300 group">
+                <CardHeader className="pb-4">
                   <div className="flex items-center space-x-4">
-                    <div className="inline-flex p-4 rounded-2xl bg-black text-white group-hover:scale-110 transition-transform">
-                      <industry.icon className="h-8 w-8" />
+                    <div className="inline-flex p-3 rounded-2xl bg-black text-white group-hover:scale-110 transition-transform">
+                      <industry.icon className="h-6 w-6" />
                     </div>
-                    <div>
-                      <CardTitle className="text-xl font-bold text-black">{industry.title}</CardTitle>
-                    </div>
+                    <CardTitle className="text-xl font-bold text-black">{industry.title}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <p className="text-gray-600 leading-relaxed">{industry.description}</p>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-600 text-sm leading-relaxed">{industry.description}</p>
 
                   <div>
-                    <h4 className="font-semibold mb-3 text-black">AI-Powered Use Cases:</h4>
-                    <ul className="space-y-2">
-                      {industry.useCases.map((useCase, useCaseIndex) => (
-                        <li key={useCaseIndex} className="flex items-start text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 mr-2 text-green-600 flex-shrink-0 mt-0.5" />
-                          {useCase}
+                    <h4 className="font-semibold mb-2 text-black text-sm">Key Features:</h4>
+                    <ul className="space-y-1">
+                      {industry.keyFeatures.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-xs text-gray-600">
+                          <CheckCircle className="w-3 h-3 mr-2 text-green-600 flex-shrink-0" />
+                          {feature}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="bg-gray-50 p-4 rounded-xl">
-                    <h4 className="font-semibold mb-2 text-black text-sm">Key Benefits:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {industry.benefits.map((benefit, benefitIndex) => (
-                        <span
-                          key={benefitIndex}
-                          className="bg-black text-white px-3 py-1 rounded-full text-xs font-medium"
-                        >
-                          {benefit}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="bg-gray-50 p-3 rounded-lg">
+                    <p className="text-xs font-medium text-black">{industry.benefits}</p>
                   </div>
 
-                  <Button asChild className="w-full bg-black text-white hover:bg-gray-800">
+                  <Button asChild className="w-full bg-black text-white hover:bg-gray-800 text-sm">
                     <Link href={industry.href} className="flex items-center justify-center">
                       Learn More
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -308,16 +189,14 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-black text-white">
+      {/* Stats - Compact */}
+      <section className="py-12 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results Across All Industries</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Consistent performance and measurable outcomes across every sector we serve
-            </p>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">Proven Results Across All Industries</h2>
+            <p className="text-lg text-gray-300">Consistent performance and measurable outcomes</p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { number: "10", label: "Industries Served" },
               { number: "45+", label: "AI Use Cases" },
@@ -325,23 +204,23 @@ export default function SolutionsPage() {
               { number: "95%", label: "Accuracy Rate" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-gray-300">{stat.label}</div>
+                <div className="text-3xl lg:text-4xl font-bold mb-1">{stat.number}</div>
+                <div className="text-gray-300 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
+      {/* CTA - Compact */}
+      <section className="py-12 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Ready to Transform Your Industry?</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Discover how AI-powered legal solutions can revolutionize your industry's operations and outcomes.
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Ready to Transform Your Industry?</h2>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Discover how AI-powered legal solutions can revolutionize your industry's operations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-4 text-lg h-auto">
+            <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 px-8 py-3">
               <Link href="/contact" className="flex items-center">
                 Get Started Today
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -351,13 +230,13 @@ export default function SolutionsPage() {
               asChild
               variant="outline"
               size="lg"
-              className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 text-lg h-auto bg-transparent"
+              className="border-2 border-black text-black hover:bg-black hover:text-white px-8 py-3 bg-transparent"
             >
-              <Link href="/use-cases">View All Use Cases</Link>
+              <Link href="/use-cases">View Use Cases</Link>
             </Button>
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

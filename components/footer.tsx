@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Mail, Phone } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -11,28 +12,33 @@ export default function Footer() {
               <Image src="/logo.svg" alt="Vidhaana Logo" width={32} height={32} className="h-8 w-auto filter invert" />
               <span className="text-xl font-bold">Vidhaana</span>
             </div>
-            <p className="text-gray-300 max-w-md">
+            <p className="text-gray-300 text-sm max-w-md mb-4">
               Professional AI-powered legal assistance providing accessible and reliable legal guidance for individuals
               and businesses across all industries.
             </p>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center gap-2 text-gray-300">
+                <Mail className="w-4 h-4" />
+                <span>support@vidhaana.com</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <Phone className="w-4 h-4" />
+                <span>+1 (555) 123-4567</span>
+              </div>
+            </div>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Solutions</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/solutions" className="text-gray-300 hover:text-white transition-colors">
-                  Solutions
+                  All Solutions
                 </Link>
               </li>
               <li>
                 <Link href="/industries" className="text-gray-300 hover:text-white transition-colors">
-                  Industries
+                  By Industry
                 </Link>
               </li>
               <li>
@@ -50,7 +56,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
@@ -71,7 +77,7 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/legal-disclaimer" className="text-gray-300 hover:text-white transition-colors">
                   Legal Disclaimer
@@ -91,8 +97,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-300">© {new Date().getFullYear()} Vidhaana. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-300 text-sm">© {new Date().getFullYear()} Vidhaana. All rights reserved.</p>
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <div className="flex items-center gap-4 text-xs text-gray-400">
+              <span>SOC 2 Certified</span>
+              <span>GDPR Compliant</span>
+              <span>99.9% Uptime</span>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

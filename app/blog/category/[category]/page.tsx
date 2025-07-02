@@ -57,15 +57,6 @@ const blogPosts = [
     publishDate: "2024-01-10",
     readTime: "10 min read",
   },
-  {
-    slug: "contract-intelligence-ai-risk-assessment",
-    title: "Contract Intelligence: AI-Powered Risk Assessment Strategies",
-    excerpt: "Learn how artificial intelligence identifies contract risks and provides actionable insights.",
-    author: "James Thompson",
-    category: "contract-management",
-    publishDate: "2024-01-08",
-    readTime: "7 min read",
-  },
 ]
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {

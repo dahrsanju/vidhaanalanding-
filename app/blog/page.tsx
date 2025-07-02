@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/breadcrumbs"
-import { Calendar, User, ArrowRight, Search, Tag } from "lucide-react"
+import { Calendar, User, ArrowRight, Search, Tag, Clock, TrendingUp } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "AI Legal Technology Blog | Expert Insights & Industry Trends | Vidhaana",
@@ -127,17 +127,29 @@ export default function BlogPage() {
     "Case Studies",
   ]
 
+  const trendingTopics = [
+    "AI Legal Automation",
+    "Contract Intelligence",
+    "Regulatory Compliance",
+    "Legal Analytics",
+    "Document Processing",
+  ]
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <div className="bg-white min-h-screen">
         {/* Hero Section */}
-        <section className="pt-28 pb-16 monochrome-gradient">
+        <section className="pt-28 pb-16 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs items={[{ label: "Blog" }]} className="mb-8" />
 
             <div className="text-center">
+              <div className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium mb-6">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                Latest Insights
+              </div>
               <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
                 AI Legal Technology
                 <span className="block text-black">Insights & Trends</span>
@@ -165,15 +177,16 @@ export default function BlogPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Featured Article</h2>
+              <p className="text-lg text-gray-600">Don't miss our most popular and insightful content</p>
             </div>
 
-            <Card className="monochrome-card max-w-4xl mx-auto">
+            <Card className="border-2 border-black max-w-4xl mx-auto shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <span className="px-3 py-1 bg-black text-white text-sm font-medium rounded-full">
                     {featuredPost.category}
                   </span>
-                  <span className="text-sm text-gray-600">Featured</span>
+                  <span className="px-3 py-1 bg-gray-200 text-black text-sm font-medium rounded-full">Featured</span>
                 </div>
 
                 <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">{featuredPost.title}</h3>
@@ -189,10 +202,13 @@ export default function BlogPage() {
                       <Calendar className="w-4 h-4" />
                       <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
                     </div>
-                    <span>{featuredPost.readTime}</span>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{featuredPost.readTime}</span>
+                    </div>
                   </div>
 
-                  <Button asChild className="monochrome-button">
+                  <Button asChild className="bg-black text-white hover:bg-gray-800">
                     <Link href={`/blog/${featuredPost.slug}`} className="flex items-center">
                       Read Article
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -210,11 +226,16 @@ export default function BlogPage() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {/* Main Content */}
               <div className="lg:col-span-3">
-                <h2 className="text-3xl font-bold text-black mb-8">Latest Articles</h2>
+                <div className="flex items-center justify-between mb-8">
+                  <h2 className="text-3xl font-bold text-black">Latest Articles</h2>
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <span>{blogPosts.length} articles</span>
+                  </div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {blogPosts.map((post, index) => (
-                    <Card key={index} className="monochrome-card">
+                    <Card key={index} className="border-2 border-gray-200 hover:border-black transition-colors">
                       <CardHeader>
                         <div className="flex items-center gap-2 mb-2">
                           <Tag className="w-4 h-4 text-gray-600" />
@@ -232,7 +253,10 @@ export default function BlogPage() {
                             <User className="w-4 h-4" />
                             <span>{post.author}</span>
                           </div>
-                          <span>{post.readTime}</span>
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4" />
+                            <span>{post.readTime}</span>
+                          </div>
                         </div>
 
                         <div className="flex items-center justify-between">
@@ -245,7 +269,7 @@ export default function BlogPage() {
                             asChild
                             variant="outline"
                             size="sm"
-                            className="monochrome-button-outline bg-transparent"
+                            className="border-black text-black hover:bg-black hover:text-white bg-transparent"
                           >
                             <Link href={`/blog/${post.slug}`} className="flex items-center">
                               Read More
@@ -261,17 +285,29 @@ export default function BlogPage() {
                 {/* Pagination */}
                 <div className="flex justify-center mt-12">
                   <div className="flex items-center gap-2">
-                    <Button variant="outline" className="monochrome-button-outline bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
+                    >
                       Previous
                     </Button>
-                    <Button className="monochrome-button">1</Button>
-                    <Button variant="outline" className="monochrome-button-outline bg-transparent">
+                    <Button className="bg-black text-white hover:bg-gray-800">1</Button>
+                    <Button
+                      variant="outline"
+                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
+                    >
                       2
                     </Button>
-                    <Button variant="outline" className="monochrome-button-outline bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
+                    >
                       3
                     </Button>
-                    <Button variant="outline" className="monochrome-button-outline bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="border-black text-black hover:bg-black hover:text-white bg-transparent"
+                    >
                       Next
                     </Button>
                   </div>
@@ -282,7 +318,7 @@ export default function BlogPage() {
               <div className="lg:col-span-1">
                 <div className="space-y-8">
                   {/* Categories */}
-                  <Card className="monochrome-card">
+                  <Card className="border-2 border-gray-200">
                     <CardHeader>
                       <CardTitle className="text-lg font-bold text-black">Categories</CardTitle>
                     </CardHeader>
@@ -292,7 +328,7 @@ export default function BlogPage() {
                           <Link
                             key={index}
                             href={`/blog/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="block text-gray-600 hover:text-black transition-colors py-1"
+                            className="block text-gray-600 hover:text-black transition-colors py-1 border-b border-gray-100 last:border-b-0"
                           >
                             {category}
                           </Link>
@@ -301,8 +337,30 @@ export default function BlogPage() {
                     </CardContent>
                   </Card>
 
+                  {/* Trending Topics */}
+                  <Card className="border-2 border-gray-200">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-bold text-black flex items-center">
+                        <TrendingUp className="w-4 h-4 mr-2" />
+                        Trending Topics
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {trendingTopics.map((topic, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-gray-200 text-black text-sm rounded-full hover:bg-black hover:text-white transition-colors cursor-pointer"
+                          >
+                            {topic}
+                          </span>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
                   {/* Newsletter Signup */}
-                  <Card className="monochrome-card">
+                  <Card className="border-2 border-gray-200">
                     <CardHeader>
                       <CardTitle className="text-lg font-bold text-black">Stay Updated</CardTitle>
                     </CardHeader>
@@ -316,13 +374,13 @@ export default function BlogPage() {
                           placeholder="Your email address"
                           className="w-full px-3 py-2 border-2 border-black rounded focus:outline-none focus:ring-2 focus:ring-black"
                         />
-                        <Button className="w-full monochrome-button">Subscribe</Button>
+                        <Button className="w-full bg-black text-white hover:bg-gray-800">Subscribe</Button>
                       </div>
                     </CardContent>
                   </Card>
 
                   {/* Popular Posts */}
-                  <Card className="monochrome-card">
+                  <Card className="border-2 border-gray-200">
                     <CardHeader>
                       <CardTitle className="text-lg font-bold text-black">Popular Posts</CardTitle>
                     </CardHeader>

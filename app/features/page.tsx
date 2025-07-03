@@ -174,23 +174,62 @@ export default function FeaturesPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="pt-28 pb-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="pt-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: "Features" }]} className="mb-8" />
 
-          <div className="text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-black text-white rounded-full text-sm font-medium mb-8 shadow-lg">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Advanced AI Technology
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center px-6 py-3 bg-black text-white rounded-full text-sm font-medium mb-8 shadow-lg">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Advanced AI Technology
+              </div>
+              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
+                Cutting-Edge AI Features
+                <span className="block text-black">Built for Legal Excellence</span>
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto lg:mx-0 mb-12 leading-relaxed">
+                Discover the advanced artificial intelligence capabilities that power our legal assistant, designed
+                specifically for comprehensive legal assistance and professional workflows.
+              </p>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6 leading-tight">
-              Cutting-Edge AI Features
-              <span className="block text-black">Built for Legal Excellence</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Discover the advanced artificial intelligence capabilities that power our legal assistant, designed
-              specifically for comprehensive legal assistance and professional workflows.
-            </p>
+
+            {/* Right Column - Visual from HomePage */}
+            <div className="relative">
+              <div className="relative bg-black rounded-3xl p-6 shadow-2xl">
+                <div className="bg-white rounded-2xl p-4 shadow-lg">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-gray-600 rounded-full"></div>
+                    <div className="w-3 h-3 bg-black rounded-full"></div>
+                    <span className="text-sm text-gray-500 ml-2">Vidhaana AI Assistant</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="bg-gray-100 rounded-lg p-3">
+                      <p className="text-sm text-gray-700">
+                        "Can you review this employment contract for potential risks?"
+                      </p>
+                    </div>
+                    <div className="bg-gray-50 rounded-lg p-3 border-l-4 border-black">
+                      <p className="text-sm text-black font-medium">AI Analysis Complete ✓</p>
+                      <p className="text-xs text-gray-600 mt-1">
+                        Found 3 potential risks • Suggested 5 improvements • 95% confidence
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Stats */}
+                <div className="absolute -top-3 -right-3 bg-white rounded-xl p-3 shadow-lg border border-gray-200">
+                  <div className="text-xl font-bold text-black">70%</div>
+                  <div className="text-xs text-gray-600">Cost Reduction</div>
+                </div>
+                <div className="absolute -bottom-3 -left-3 bg-white rounded-xl p-3 shadow-lg border border-gray-200">
+                  <div className="text-xl font-bold text-black">95%</div>
+                  <div className="text-xs text-gray-600">Accuracy Rate</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

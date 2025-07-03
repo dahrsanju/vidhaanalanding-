@@ -3,14 +3,14 @@
 import type React from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { LogoFallback } from "./logo-fallback"
 
 export default function HeaderEnhanced() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,31 +20,15 @@ export default function HeaderEnhanced() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null)
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [])
-
   const navigation = [
     { name: "Home", href: "/" },
     {
       name: "Solutions",
       href: "/solutions",
       dropdown: [
+        { name: "AI Platform", href: "/solutions/ai-platform" },
         { name: "Compliance Automation", href: "/solutions/compliance-automation" },
         { name: "Contract Management", href: "/solutions/contract-management" },
-        { name: "Document Analysis", href: "/features/document-analysis" },
-        { name: "Legal Analytics", href: "/solutions/legal-analytics" },
-        { name: "Risk Assessment", href: "/solutions/risk-assessment" },
       ],
     },
     {
@@ -62,28 +46,24 @@ export default function HeaderEnhanced() {
     {
       name: "Features",
       href: "/features",
-      dropdown: [
-        { name: "AI Document Analysis", href: "/features/document-analysis" },
-        { name: "Legal Research", href: "/features/legal-research" },
-        { name: "Compliance Monitoring", href: "/features/compliance" },
-        { name: "Contract Intelligence", href: "/features/contracts" },
-      ],
+      dropdown: [{ name: "Document Analysis", href: "/features/document-analysis" }],
     },
     { name: "Pricing", href: "/pricing" },
   ]
 
-  const handleDropdownToggle = (itemName: string, event: React.MouseEvent) => {
-    event.preventDefault()
-    event.stopPropagation()
-    setActiveDropdown(activeDropdown === itemName ? null : itemName)
-  }
-
   const handleDropdownHover = (itemName: string) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout)
+      setDropdownTimeout(null)
+    }
     setActiveDropdown(itemName)
   }
 
   const handleDropdownLeave = () => {
-    setActiveDropdown(null)
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 150)
+    setDropdownTimeout(timeout)
   }
 
   return (
@@ -108,15 +88,15 @@ export default function HeaderEnhanced() {
 
             <nav className="hidden lg:flex items-center space-x-6" role="navigation" aria-label="Primary Navigation">
               {navigation.map((item) => (
-                <div key={item.name} className="relative" ref={item.dropdown ? dropdownRef : undefined}>
+                <div key={item.name} className="relative">
                   {item.dropdown ? (
                     <div
                       className="relative"
                       onMouseEnter={() => handleDropdownHover(item.name)}
                       onMouseLeave={handleDropdownLeave}
                     >
-                      <button
-                        onClick={(e) => handleDropdownToggle(item.name, e)}
+                      <Link
+                        href={item.href}
                         className="flex items-center text-black hover:text-gray-600 font-medium transition-all duration-200 border-b-2 border-transparent hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded px-2 py-1 cursor-pointer"
                         aria-expanded={activeDropdown === item.name}
                         aria-haspopup="true"
@@ -127,7 +107,7 @@ export default function HeaderEnhanced() {
                             activeDropdown === item.name ? "rotate-180" : ""
                           }`}
                         />
-                      </button>
+                      </Link>
 
                       {activeDropdown === item.name && (
                         <div className="absolute top-full left-0 mt-2 w-56 bg-white border-2 border-black rounded-lg shadow-xl z-50 animate-in fade-in-0 zoom-in-95 duration-200">
@@ -196,7 +176,11 @@ export default function HeaderEnhanced() {
                     </Link>
                     {item.dropdown && (
                       <button
-                        onClick={(e) => handleDropdownToggle(`mobile-${item.name}`, e)}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          setActiveDropdown(activeDropdown === `mobile-${item.name}` ? null : `mobile-${item.name}`)
+                        }}
                         className="p-2 text-black hover:bg-gray-50 rounded"
                         aria-expanded={activeDropdown === `mobile-${item.name}`}
                       >

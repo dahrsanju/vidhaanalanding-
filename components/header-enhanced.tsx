@@ -4,7 +4,7 @@ import type React from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { useState, useEffect } from "react"
-import { LogoFallback } from "./logo-fallback"
+import { LogoComponent } from "./logo-component"
 
 export default function HeaderEnhanced() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -79,12 +79,7 @@ export default function HeaderEnhanced() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
-            >
-              <LogoFallback variant="header" scrolled={isScrolled} priority={true} width={180} height={60} />
-            </Link>
+            <LogoComponent variant="header" scrolled={isScrolled} showTagline={true} />
 
             <nav className="hidden lg:flex items-center space-x-6" role="navigation" aria-label="Primary Navigation">
               {navigation.map((item) => (

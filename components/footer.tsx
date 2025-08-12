@@ -21,16 +21,16 @@ export default function Footer() {
                 }}
               />
             </div>
-            <p className="text-gray-300 text-sm max-w-md mb-4">
+            <p className="text-white text-sm max-w-md mb-4">
               Professional AI-powered legal assistance providing accessible and reliable legal guidance for individuals
               and businesses across all industries.
             </p>
             <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-gray-300">
+              <div className="flex items-center gap-2 text-white">
                 <Mail className="w-4 h-4" />
                 <span>support@vidhaana.com</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-300">
+              <div className="flex items-center gap-2 text-white">
                 <Phone className="w-4 h-4" />
                 <span>+1 (555) 123-4567</span>
               </div>
@@ -38,17 +38,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Solutions</h3>
+            <h3 className="font-semibold mb-4 text-white">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/solutions" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/solutions" className="text-white hover:text-gray-200 transition-colors">
                   All Solutions
                 </Link>
               </li>
               <li>
                 <Link
                   href="/solutions/compliance-automation"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-white hover:text-gray-200 transition-colors"
                 >
                   Compliance Automation
                 </Link>
@@ -56,13 +56,13 @@ export default function Footer() {
               <li>
                 <Link
                   href="/solutions/contract-management"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-white hover:text-gray-200 transition-colors"
                 >
                   Contract Management
                 </Link>
               </li>
               <li>
-                <Link href="/features/document-analysis" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/features/document-analysis" className="text-white hover:text-gray-200 transition-colors">
                   Document Analysis
                 </Link>
               </li>
@@ -70,25 +70,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Industries</h3>
+            <h3 className="font-semibold mb-4 text-white">Industries</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/industries" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/industries" className="text-white hover:text-gray-200 transition-colors">
                   All Industries
                 </Link>
               </li>
               <li>
-                <Link href="/industries/corporate-legal" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/industries/corporate-legal" className="text-white hover:text-gray-200 transition-colors">
                   Corporate Legal
                 </Link>
               </li>
               <li>
-                <Link href="/use-cases" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/use-cases" className="text-white hover:text-gray-200 transition-colors">
                   Use Cases
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services" className="text-white hover:text-gray-200 transition-colors">
                   Services
                 </Link>
               </li>
@@ -96,25 +96,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Features</h3>
+            <h3 className="font-semibold mb-4 text-white">Features</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/features" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/features" className="text-white hover:text-gray-200 transition-colors">
                   All Features
                 </Link>
               </li>
               <li>
-                <Link href="/features/document-analysis" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/features/document-analysis" className="text-white hover:text-gray-200 transition-colors">
                   Document Analysis
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/pricing" className="text-white hover:text-gray-200 transition-colors">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/contact" className="text-white hover:text-gray-200 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -122,25 +122,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="font-semibold mb-4 text-white">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/about" className="text-white hover:text-gray-200 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/blog" className="text-white hover:text-gray-200 transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/privacy" className="text-white hover:text-gray-200 transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/terms" className="text-white hover:text-gray-200 transition-colors">
                   Terms of Service
                 </Link>
               </li>
@@ -148,10 +148,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300 text-sm">© {new Date().getFullYear()} Vidhaana. All rights reserved.</p>
+        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-white text-sm">© {new Date().getFullYear()} Vidhaana. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <div className="flex items-center gap-4 text-xs text-gray-400">
+            <div className="flex items-center gap-4 text-xs text-white">
               <span>SOC 2 Certified</span>
               <span>GDPR Compliant</span>
               <span>99.9% Uptime</span>

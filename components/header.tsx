@@ -41,13 +41,35 @@ export default function Header() {
       name: "Solutions",
       href: "/solutions",
       dropdown: [
-        { name: "By Industry", href: "/industries" },
-        { name: "Use Cases", href: "/use-cases" },
-        { name: "Features", href: "/features" },
+        { name: "All Solutions", href: "/solutions" },
+        { name: "Compliance Automation", href: "/solutions/compliance-automation" },
+        { name: "Contract Management", href: "/solutions/contract-management" },
+        { name: "Document Analysis", href: "/solutions/document-analysis" },
+      ],
+    },
+    {
+      name: "Industries",
+      href: "/industries",
+      dropdown: [
+        { name: "All Industries", href: "/industries" },
+        { name: "Corporate Legal", href: "/industries/corporate-legal" },
+        { name: "Healthcare", href: "/industries/healthcare" },
+        { name: "Finance", href: "/industries/financial-services" },
+        { name: "Technology", href: "/industries/technology" },
+        { name: "Real Estate", href: "/industries/real-estate" },
+      ],
+    },
+    {
+      name: "Features",
+      href: "/features",
+      dropdown: [
+        { name: "All Features", href: "/features" },
+        { name: "Document Analysis", href: "/features/document-analysis" },
+        { name: "AI Legal Assistant", href: "/features/ai-assistant" },
+        { name: "Compliance Monitoring", href: "/features/compliance" },
       ],
     },
     { name: "Pricing", href: "/pricing" },
-    { name: "About", href: "/about" },
   ]
 
   const handleDropdownToggle = (itemName: string, event: React.MouseEvent) => {
@@ -81,28 +103,10 @@ export default function Header() {
               href="/"
               className="flex items-center focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
             >
-              <Image
-                src="/logo.svg"
-                alt="Vidhaana AI Legal Assistant"
-                width={180}
-                height={60}
-                priority={true}
-                className={`transition-all duration-300 object-contain ${
-                  isScrolled ? "h-8 w-auto sm:h-10 md:h-12" : "h-10 w-auto sm:h-12 md:h-14 lg:h-16"
-                }`}
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  width: "auto",
-                }}
-                onError={(e) => {
-                  console.error("Logo failed to load:", e)
-                  // Fallback to text if image fails
-                  e.currentTarget.style.display = "none"
-                  e.currentTarget.parentElement!.innerHTML =
-                    '<span class="text-xl font-bold text-black">Vidhaana</span>'
-                }}
-              />
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-black">VIDHAANA</span>
+                <span className="text-sm text-gray-600">Precision. Process. Powered by AI.</span>
+              </div>
             </Link>
 
             <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Primary Navigation">

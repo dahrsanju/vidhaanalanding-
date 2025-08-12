@@ -1,62 +1,67 @@
 "use client"
 
-import Image from "next/image"
-import { useState } from "react"
+import Link from "next/link"
 
-interface LogoProps {
-  width?: number
-  height?: number
-  className?: string
-  priority?: boolean
-  alt?: string
+interface LogoComponentProps {
   variant?: "header" | "footer" | "default"
   scrolled?: boolean
+  showTagline?: boolean
 }
 
-export function Logo({
-  width = 180,
-  height = 60,
-  className = "",
-  priority = false,
-  alt = "Vidhaana AI Legal Assistant",
-  variant = "default",
-  scrolled = false,
-}: LogoProps) {
-  const [imageError, setImageError] = useState(false)
-
-  // Define responsive sizing based on variant and scroll state
+export function LogoComponent({ 
+  variant = "header", 
+  scrolled = false, 
+  showTagline = true 
+}: LogoComponentProps) {
   const getLogoClasses = () => {
-    const baseClasses = "transition-all duration-300 logo-responsive"
-
+    const baseClasses = "font-bold text-black transition-all duration-300"
+    
     switch (variant) {
       case "header":
         return `${baseClasses} ${
-          scrolled
-            ? "h-8 w-auto sm:h-10 md:h-12 logo-header-scrolled"
-            : "h-10 w-auto sm:h-12 md:h-14 lg:h-16 logo-header"
+          scrolled 
+            ? "text-xl sm:text-2xl" 
+            : "text-2xl sm:text-3xl lg:text-4xl"
         }`
       case "footer":
-        return `${baseClasses} logo-footer filter brightness-0 invert`
+        return `${baseClasses} text-lg`
       default:
-        return `${baseClasses} ${className}`
+        return `${baseClasses} text-2xl`
+    }
+  }
+
+  const getTaglineClasses = () => {
+    const baseClasses = "text-gray-600 font-normal transition-all duration-300"
+    
+    switch (variant) {
+      case "header":
+        return `${baseClasses} ${
+          scrolled 
+            ? "text-xs sm:text-sm" 
+            : "text-sm sm:text-base"
+        }`
+      case "footer":
+        return `${baseClasses} text-sm`
+      default:
+        return `${baseClasses} text-sm`
     }
   }
 
   return (
-    <Image
-      src={imageError ? "/placeholder.svg?height=60&width=180&text=Vidhaana" : "/logo.svg"}
-      alt={alt}
-      width={width}
-      height={height}
-      priority={priority}
-      className={getLogoClasses()}
-      style={{
-        maxWidth: "100%",
-        height: "auto",
-        objectFit: "contain",
-      }}
-      onError={() => setImageError(true)}
-      onLoad={() => setImageError(false)}
-    />
+    <Link
+      href="/"
+      className="flex flex-col focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded transition-transform hover:scale-105"
+    >
+      <div className="flex flex-col">
+        <span className={getLogoClasses()}>
+          VIDHAANA
+        </span>
+        {showTagline && (
+          <span className={getTaglineClasses()}>
+            Precision. Process. Powered by AI.
+          </span>
+        )}
+      </div>
+    </Link>
   )
 }

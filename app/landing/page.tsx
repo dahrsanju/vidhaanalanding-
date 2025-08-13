@@ -42,16 +42,82 @@ export default function LandingPage() {
     phone: "",
     message: "",
   })
+  const [contactErrors, setContactErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  })
   const [activeHighlight, setActiveHighlight] = useState("legal-chatbot")
   const [expandedCase, setExpandedCase] = useState<number | null>(null)
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
 
 
+  const validateContactForm = () => {
+    const errors = {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    }
+
+    // Name validation
+    if (!contactForm.name.trim()) {
+      errors.name = "Name is required"
+    }
+
+    // Email validation
+    if (!contactForm.email.trim()) {
+      errors.email = "Email is required"
+    } else if (!/\S+@\S+\.\S+/.test(contactForm.email)) {
+      errors.email = "Please enter a valid email address"
+    }
+
+    // Phone validation
+    if (!contactForm.phone.trim()) {
+      errors.phone = "Phone number is required"
+    } else if (!/^\d+$/.test(contactForm.phone)) {
+      errors.phone = "Phone number can only contain digits"
+    } else if (contactForm.phone.length > 20) {
+      errors.phone = "Phone number cannot exceed 20 digits"
+    }
+
+    // Message validation
+    if (!contactForm.message.trim()) {
+      errors.message = "Message is required"
+    } else if (contactForm.message.trim().length < 10) {
+      errors.message = "Message must be at least 10 characters long"
+    }
+
+    setContactErrors(errors)
+    return !Object.values(errors).some(error => error !== "")
+  }
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    
+    if (!validateContactForm()) {
+      return
+    }
+    
     console.log("Contact form submitted:", contactForm)
     setIsContactOpen(false)
     window.location.href = "/home"
+  }
+
+  const handleInputChange = (field: string, value: string) => {
+    let processedValue = value
+    
+    // Special handling for phone field - only allow digits and limit to 20 characters
+    if (field === "phone") {
+      processedValue = value.replace(/\D/g, '').slice(0, 20)
+    }
+    
+    setContactForm({ ...contactForm, [field]: processedValue })
+    // Clear error when user starts typing
+    if (contactErrors[field as keyof typeof contactErrors]) {
+      setContactErrors({ ...contactErrors, [field]: "" })
+    }
   }
 
   return (
@@ -130,11 +196,15 @@ export default function LandingPage() {
                                 <Input
                                   id="mobile-name"
                                   value={contactForm.name}
-                                  onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                                  required
-                              className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2"
+                                  onChange={(e) => handleInputChange("name", e.target.value)}
+                                  className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2 ${
+                                    contactErrors.name ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                                  }`}
                                   placeholder="Enter your full name"
                                 />
+                                {contactErrors.name && (
+                                  <p className="text-red-500 text-xs mt-1">{contactErrors.name}</p>
+                                )}
                               </div>
                           <div>
                             <Label htmlFor="mobile-email" className="text-black font-medium text-xs text-left block">Email Address *</Label>
@@ -142,11 +212,15 @@ export default function LandingPage() {
                                   id="mobile-email"
                                   type="email"
                                   value={contactForm.email}
-                                  onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                                  required
-                              className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2"
+                                  onChange={(e) => handleInputChange("email", e.target.value)}
+                                  className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2 ${
+                                    contactErrors.email ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                                  }`}
                                   placeholder="Enter your email"
                                 />
+                                {contactErrors.email && (
+                                  <p className="text-red-500 text-xs mt-1">{contactErrors.email}</p>
+                                )}
                               </div>
                           <div>
                             <Label htmlFor="mobile-phone" className="text-black font-medium text-xs text-left block">Phone Number *</Label>
@@ -154,22 +228,41 @@ export default function LandingPage() {
                                   id="mobile-phone"
                                   type="tel"
                                   value={contactForm.phone}
-                                  onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                              required
-                              className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2"
+                                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                                  className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2 ${
+                                    contactErrors.phone ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                                  }`}
                                   placeholder="Enter your phone number"
                                 />
+                                <div className="flex justify-between items-center mt-1">
+                                  {contactErrors.phone && (
+                                    <p className="text-red-500 text-xs">{contactErrors.phone}</p>
+                                  )}
+                                  <p className={`text-xs ml-auto ${contactForm.phone.length > 0 ? 'text-gray-400' : 'text-transparent'}`}>
+                                    {contactForm.phone.length}/20 digits
+                                  </p>
+                                </div>
                               </div>
                           <div>
                             <Label htmlFor="mobile-message" className="text-black font-medium text-xs text-left block">Message *</Label>
                                 <Textarea
                                   id="mobile-message"
                                   value={contactForm.message}
-                                  onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                              rows={3}
-                              className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2 resize-none"
-                              placeholder="Please describe your legal question or concern in detail..."
+                                  onChange={(e) => handleInputChange("message", e.target.value)}
+                                  rows={3}
+                                  className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-2 resize-none ${
+                                    contactErrors.message ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                                  }`}
+                                  placeholder="Please describe your legal question or concern in detail..."
                                 />
+                                <div className="flex justify-between items-center mt-1">
+                                  {contactErrors.message && (
+                                    <p className="text-red-500 text-xs">{contactErrors.message}</p>
+                                  )}
+                                  <p className={`text-xs ml-auto ${contactForm.message.length < 10 ? 'text-gray-400' : 'text-green-600'}`}>
+                                    {contactForm.message.length}/10 characters
+                                  </p>
+                                </div>
                               </div>
                               <Button 
                                 type="submit" 
@@ -210,11 +303,15 @@ export default function LandingPage() {
                       <Input
                         id="name"
                         value={contactForm.name}
-                        onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
-                        required
-                    className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5"
+                        onChange={(e) => handleInputChange("name", e.target.value)}
+                        className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5 ${
+                          contactErrors.name ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                        }`}
                         placeholder="Enter your full name"
                       />
+                      {contactErrors.name && (
+                        <p className="text-red-500 text-xs mt-1">{contactErrors.name}</p>
+                      )}
                     </div>
                 <div>
                   <Label htmlFor="email" className="text-black font-medium text-xs">Email Address *</Label>
@@ -222,11 +319,15 @@ export default function LandingPage() {
                         id="email"
                         type="email"
                         value={contactForm.email}
-                        onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
-                        required
-                    className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5"
+                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5 ${
+                          contactErrors.email ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                        }`}
                         placeholder="Enter your email"
                       />
+                      {contactErrors.email && (
+                        <p className="text-red-500 text-xs mt-1">{contactErrors.email}</p>
+                      )}
                     </div>
                 <div>
                   <Label htmlFor="phone" className="text-black font-medium text-xs">Phone Number *</Label>
@@ -234,22 +335,41 @@ export default function LandingPage() {
                         id="phone"
                         type="tel"
                         value={contactForm.phone}
-                        onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
-                    required
-                    className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5"
+                        onChange={(e) => handleInputChange("phone", e.target.value)}
+                        className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5 ${
+                          contactErrors.phone ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                        }`}
                         placeholder="Enter your phone number"
                       />
+                      <div className="flex justify-between items-center mt-1">
+                        {contactErrors.phone && (
+                          <p className="text-red-500 text-xs">{contactErrors.phone}</p>
+                        )}
+                        <p className={`text-xs ml-auto ${contactForm.phone.length > 0 ? 'text-gray-400' : 'text-transparent'}`}>
+                          {contactForm.phone.length}/20 digits
+                        </p>
+                      </div>
                     </div>
                 <div>
                   <Label htmlFor="message" className="text-black font-medium text-xs">Message *</Label>
                       <Textarea
                         id="message"
                         value={contactForm.message}
-                        onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
-                    rows={1}
-                    className="mt-1 border border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20 transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5 resize-none"
-                    placeholder="Please describe your legal question or concern in detail..."
+                        onChange={(e) => handleInputChange("message", e.target.value)}
+                        rows={1}
+                        className={`mt-1 border transition-all duration-300 bg-white text-black placeholder-gray-500 text-xs py-0.5 resize-none ${
+                          contactErrors.message ? "border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500/20" : "border-gray-300 focus:border-black focus:ring-1 focus:ring-black/20"
+                        }`}
+                        placeholder="Please describe your legal question or concern in detail..."
                       />
+                      <div className="flex justify-between items-center mt-1">
+                        {contactErrors.message && (
+                          <p className="text-red-500 text-xs">{contactErrors.message}</p>
+                        )}
+                        <p className={`text-xs ml-auto ${contactForm.message.length < 10 ? 'text-gray-400' : 'text-green-600'}`}>
+                          {contactForm.message.length}/10 characters
+                        </p>
+                      </div>
                     </div>
                     <Button 
                       type="submit" 
@@ -305,13 +425,13 @@ export default function LandingPage() {
                   description: "Legal research professionals"
                 }
             ].map((item, index) => (
-                <div key={index} className="bg-white border-2 border-black rounded-xl p-2 sm:p-3 text-center shadow-lg hover:shadow-xl transition-all duration-300 w-24 sm:w-28 lg:w-32 h-36 sm:h-40 lg:h-48 flex flex-col animate-slide-in-from-right" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div key={index} className="bg-white border-2 border-black rounded-xl p-2 sm:p-3 text-center shadow-lg hover:shadow-xl transition-all duration-300 w-24 sm:w-28 lg:w-32 h-36 sm:h-40 lg:h-48 flex flex-col animate-slide-in-from-right group cursor-pointer" style={{ animationDelay: `${index * 0.2}s` }}>
                   <div className="flex-1 flex flex-col justify-center">
                     <div className="w-full h-16 sm:h-20 lg:h-24 mb-2 sm:mb-3 rounded-2xl overflow-hidden">
                       <img 
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover rounded-2xl"
+                        className="w-full h-full object-cover rounded-2xl transition-transform duration-300 group-hover:scale-110"
                       />
                 </div>
                     <div className="flex-1 flex flex-col justify-center">
@@ -428,7 +548,7 @@ export default function LandingPage() {
             <div className="lg:w-2/3">
               <div className="bg-white border border-gray-300 rounded-lg p-4 sm:p-6 lg:p-8 h-full">
                 {activeHighlight === "legal-chatbot" && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8 group">
                     <div className="lg:w-2/3">
                       <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 font-inter">Legal Chatbot 24x7</h3>
                       <p className="text-black text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 font-inter">
@@ -440,7 +560,7 @@ export default function LandingPage() {
                         <img 
                           src="/images/chatbot.jpg" 
                           alt="Legal Chatbot Interface" 
-                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 rounded-2xl shadow-lg lg:mr-8"
+                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 rounded-2xl shadow-lg lg:mr-8 transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -448,7 +568,7 @@ export default function LandingPage() {
                 )}
 
                 {activeHighlight === "document-generator" && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8 group">
                     <div className="lg:w-2/3">
                       <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 font-inter">Document Generator</h3>
                       <p className="text-black text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 font-inter">
@@ -460,7 +580,7 @@ export default function LandingPage() {
                         <img 
                           src="/images/documentgenrator.jpg" 
                           alt="Person typing on laptop with digital document overlays" 
-                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8"
+                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8 transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -468,7 +588,7 @@ export default function LandingPage() {
                 )}
 
                 {activeHighlight === "case-summary" && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8 group">
                     <div className="lg:w-2/3">
                       <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 font-inter">Case Summary from PDFs</h3>
                       <p className="text-black text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 font-inter">
@@ -480,7 +600,7 @@ export default function LandingPage() {
                         <img 
                           src="/images/casesummery.jpg" 
                           alt="Business Report document with charts and graphs on wooden desk" 
-                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8"
+                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8 transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -488,7 +608,7 @@ export default function LandingPage() {
                 )}
 
                 {activeHighlight === "multi-jurisdiction" && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8 group">
                     <div className="lg:w-2/3">
                       <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 font-inter">Multi-jurisdiction Support</h3>
                       <p className="text-black text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 font-inter">
@@ -500,7 +620,7 @@ export default function LandingPage() {
                         <img 
                           src="/images/multijuridiction.jpg" 
                           alt="Multi-jurisdiction legal support illustration" 
-                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8"
+                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8 transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -508,7 +628,7 @@ export default function LandingPage() {
                 )}
 
                 {activeHighlight === "secure-confidential" && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8 group">
                     <div className="lg:w-2/3">
                       <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 font-inter">100% Secure & Confidential</h3>
                       <p className="text-black text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 font-inter">
@@ -520,7 +640,7 @@ export default function LandingPage() {
                         <img 
                           src="/images/secure.jpg" 
                           alt="Professional with digital security shield and binary code overlay" 
-                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8"
+                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8 transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -528,7 +648,7 @@ export default function LandingPage() {
                 )}
 
                 {activeHighlight === "multilingual" && (
-                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-4 sm:mt-8 group">
                     <div className="lg:w-2/3">
                       <h3 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 font-inter">Multilingual Support</h3>
                       <p className="text-black text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 font-inter">
@@ -540,7 +660,7 @@ export default function LandingPage() {
                         <img 
                           src="/images/multilingualsupport.jpg" 
                           alt="Young woman with headset and international flags, working on laptop" 
-                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8"
+                          className="w-48 sm:w-56 lg:w-64 h-48 sm:h-56 lg:h-64 object-cover rounded-2xl shadow-lg lg:mr-8 transition-transform duration-300 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -735,7 +855,7 @@ export default function LandingPage() {
                     </button>
                   </div>
                   <p className="text-sm sm:text-base text-black leading-relaxed text-justify sm:text-left">
-                    A mid-size law firm deployed AI to search case precedents for corporate disputes. It retrieved relevant judgments within seconds instead of hours of manual research. This helped win a high-value arbitration by presenting overlooked precedents.
+                    A mid-size law firm deployed AI to search case precedents for corporate disputes, retrieving relevant judgments within seconds instead of hours of manual research. This helped the firm win a high-value arbitration by presenting previously overlooked precedents.
                   </p>
                 </div>
               )}
@@ -875,91 +995,91 @@ export default function LandingPage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
             {/* Law Firms */}
-            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full">
+            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full group cursor-pointer transform hover:scale-105">
               <div className="w-full h-32 sm:h-28 lg:h-32 mb-3 sm:mb-4 overflow-hidden rounded-xl">
                 <img 
                   src="/images/lawfirms.jpg" 
                   alt="Professional legal consultation with scales of justice and gavel" 
-                  className="w-full h-full object-top sm:object-cover lg:object-cover"
+                  className="w-full h-full object-top sm:object-cover lg:object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter">Law Firms</h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter transition-colors duration-300 group-hover:text-blue-600">Law Firms</h3>
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-700">
                 Use AI to speed up contract review and legal research
               </p>
             </div>
 
             {/* Banking */}
-            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full">
+            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full group cursor-pointer transform hover:scale-105">
               <div className="w-full h-32 sm:h-28 lg:h-32 mb-3 sm:mb-4 overflow-hidden rounded-xl">
                 <img 
                   src="/images/banking.jpg" 
                   alt="Digital banking and financial services illustration" 
-                  className="w-full h-full object-top sm:object-cover lg:object-cover"
+                  className="w-full h-full object-top sm:object-cover lg:object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter">Banking</h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter transition-colors duration-300 group-hover:text-blue-600">Banking</h3>
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-700">
                 Leverage AI for regulatory compliance and fraud detection
               </p>
             </div>
 
             {/* Healthcare */}
-            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full">
+            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full group cursor-pointer transform hover:scale-105">
               <div className="w-full h-32 sm:h-28 lg:h-32 mb-3 sm:mb-4 overflow-hidden rounded-xl">
                 <img 
                   src="/images/health care.jpg" 
                   alt="Medical professional providing care to elderly patient" 
-                  className="w-full h-full object-top sm:object-cover lg:object-cover"
+                  className="w-full h-full object-top sm:object-cover lg:object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter">Healthcare</h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter transition-colors duration-300 group-hover:text-blue-600">Healthcare</h3>
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-700">
                 Apply AI to manage compliance patient consent forms
               </p>
             </div>
 
             {/* Real Estate */}
-            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full">
+            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full group cursor-pointer transform hover:scale-105">
               <div className="w-full h-32 sm:h-28 lg:h-32 mb-3 sm:mb-4 overflow-hidden rounded-xl">
                 <img 
                   src="/images/realstate.jpg" 
                   alt="Miniature cityscape representing urban development and real estate" 
-                  className="w-full h-full object-top sm:object-cover lg:object-cover"
+                  className="w-full h-full object-top sm:object-cover lg:object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter">Real Estate</h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter transition-colors duration-300 group-hover:text-blue-600">Real Estate</h3>
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-700">
                 Use AI to analyze leases and ensure zoning law compliance
               </p>
             </div>
 
             {/* E-Commerce */}
-            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full">
+            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full group cursor-pointer transform hover:scale-105">
               <div className="w-full h-32 sm:h-28 lg:h-32 mb-3 sm:mb-4 overflow-hidden rounded-xl">
                 <img 
                   src="/images/ecommerce.jpg" 
                   alt="Isometric e-commerce illustration with laptop, shopping cart, and digital payment elements" 
-                  className="w-full h-full object-top sm:object-cover lg:object-cover"
+                  className="w-full h-full object-top sm:object-cover lg:object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter">E-Commerce</h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter transition-colors duration-300 group-hover:text-blue-600">E-Commerce</h3>
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-700">
                 Implement AI for data privacy and intellectual protection
               </p>
             </div>
 
             {/* Government */}
-            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full">
+            <div className="rounded-2xl border border-gray-300 p-4 sm:p-6 text-center hover:shadow-md transition-all duration-300 bg-white hover:bg-[#F3F5FD] h-64 sm:h-72 lg:h-80 w-full group cursor-pointer transform hover:scale-105">
               <div className="w-full h-32 sm:h-28 lg:h-32 mb-3 sm:mb-4 overflow-hidden rounded-xl">
                 <img 
                   src="/images/government.jpg" 
                   alt="Grand government building with golden dome and official architecture" 
-                  className="w-full h-full object-top sm:object-cover lg:object-cover"
+                  className="w-full h-full object-top sm:object-cover lg:object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter">Government</h3>
-              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter">
+              <h3 className="text-base sm:text-lg font-bold text-black mb-2 font-inter transition-colors duration-300 group-hover:text-blue-600">Government</h3>
+              <p className="text-black text-xs sm:text-sm leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-700">
                 Deploy AI for policy drafting and public legal assistance
               </p>
             </div>
@@ -976,7 +1096,7 @@ export default function LandingPage() {
         {/* Responsive grid layout */}
         <div className="flex flex-col sm:flex-row items-start justify-center gap-4 sm:gap-6">
           {/* Testimonial Card 1 - Akhil Sharma */}
-          <div className="relative isolate h-[250px] sm:h-[300px] w-full sm:w-[300px] lg:w-[350px]">
+          <div className="relative isolate h-[250px] sm:h-[300px] w-full sm:w-[300px] lg:w-[350px] group cursor-pointer transform hover:scale-105 transition-all duration-300">
             {/* back rounded frame */}
             <div className="pointer-events-none absolute inset-0 rounded-[20px] border border-black/70" />
             {/* second rounded frame at bottom (slightly offset) */}
@@ -988,14 +1108,14 @@ export default function LandingPage() {
                 <img 
                   src="/images/akhil.jpg" 
                   alt="Akhil Sharma - Professional headshot" 
-                  className="w-full h-full object-contain rounded-[10px] bg-gray-100"
+                  className="w-full h-full object-contain rounded-[10px] bg-gray-100 transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             </div>
 
             {/* inner speech bubble */}
-            <div className="absolute left-[80px] sm:left-[60px] top-[35px] sm:top-[45px] z-0 w-[calc(100%-90px)] sm:w-[250px] rounded-[18px] border border-black/60 bg-black px-4 sm:px-6 py-4 sm:py-6 shadow-sm">
-              <p className="text-[14px] sm:text-[18px] leading-snug text-white">
+            <div className="absolute left-[80px] sm:left-[60px] top-[35px] sm:top-[45px] z-0 w-[calc(100%-90px)] sm:w-[250px] rounded-[18px] border border-black/60 bg-black px-4 sm:px-6 py-4 sm:py-6 shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:border-black/80">
+              <p className="text-[14px] sm:text-[18px] leading-snug text-white transition-colors duration-300 group-hover:text-gray-100">
                 Legal AI cut our contract review time in half, letting us focus on strategic cases
               </p>
 
@@ -1020,13 +1140,13 @@ export default function LandingPage() {
               
               {/* client name below stars */}
               <div className="mt-3 sm:mt-4 text-center">
-                <div className="text-[14px] sm:text-[16px] font-semibold text-white">Akhil Sharma</div>
+                <div className="text-[14px] sm:text-[16px] font-semibold text-white transition-colors duration-300 group-hover:text-blue-200">Akhil Sharma</div>
               </div>
             </div>
           </div>
 
           {/* Testimonial Card 2 - Priya Menon */}
-          <div className="relative isolate h-[250px] sm:h-[300px] w-full sm:w-[300px] lg:w-[350px]">
+          <div className="relative isolate h-[250px] sm:h-[300px] w-full sm:w-[300px] lg:w-[350px] group cursor-pointer transform hover:scale-105 transition-all duration-300">
             {/* back rounded frame */}
             <div className="pointer-events-none absolute inset-0 rounded-[20px] border border-black/70" />
             {/* second rounded frame at bottom (slightly offset) */}
@@ -1038,14 +1158,14 @@ export default function LandingPage() {
                 <img 
                   src="/images/priya.jpg" 
                   alt="Priya Menon - Professional headshot" 
-                  className="w-full h-full object-contain rounded-[10px] bg-gray-100"
+                  className="w-full h-full object-contain rounded-[10px] bg-gray-100 transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             </div>
 
             {/* inner speech bubble */}
-            <div className="absolute left-[80px] sm:left-[60px] top-[35px] sm:top-[45px] z-0 w-[calc(100%-90px)] sm:w-[250px] rounded-[18px] border border-black/60 bg-black px-4 sm:px-6 py-4 sm:py-6 shadow-sm">
-              <p className="text-[14px] sm:text-[18px] leading-snug text-white">
+            <div className="absolute left-[80px] sm:left-[60px] top-[35px] sm:top-[45px] z-0 w-[calc(100%-90px)] sm:w-[250px] rounded-[18px] border border-black/60 bg-black px-4 sm:px-6 py-4 sm:py-6 shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:border-black/80">
+              <p className="text-[14px] sm:text-[18px] leading-snug text-white transition-colors duration-300 group-hover:text-gray-100">
                 With AI-powered legal research, we now resolve client queries in minutes
               </p>
 
@@ -1070,13 +1190,13 @@ export default function LandingPage() {
               
               {/* client name below stars */}
               <div className="mt-3 sm:mt-4 text-center">
-                <div className="text-[14px] sm:text-[16px] font-semibold text-white">Priya Menon</div>
+                <div className="text-[14px] sm:text-[16px] font-semibold text-white transition-colors duration-300 group-hover:text-blue-200">Priya Menon</div>
               </div>
             </div>
           </div>
 
           {/* Testimonial Card 3 - Rajiv Mehta */}
-          <div className="relative isolate h-[250px] sm:h-[300px] w-full sm:w-[300px] lg:w-[350px]">
+          <div className="relative isolate h-[250px] sm:h-[300px] w-full sm:w-[300px] lg:w-[350px] group cursor-pointer transform hover:scale-105 transition-all duration-300">
             {/* back rounded frame */}
             <div className="pointer-events-none absolute inset-0 rounded-[20px] border border-black/70" />
             {/* second rounded frame at bottom (slightly offset) */}
@@ -1088,14 +1208,14 @@ export default function LandingPage() {
                 <img 
                   src="/images/rajiv.jpg" 
                   alt="Rajiv Mehta - Professional headshot" 
-                  className="w-full h-full object-contain rounded-[10px] bg-gray-100"
+                  className="w-full h-full object-contain rounded-[10px] bg-gray-100 transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             </div>
 
             {/* inner speech bubble */}
-            <div className="absolute left-[80px] sm:left-[60px] top-[35px] sm:top-[45px] z-0 w-[calc(100%-90px)] sm:w-[250px] rounded-[18px] border border-black/60 bg-black px-4 sm:px-6 py-4 sm:py-6 shadow-sm">
-              <p className="text-[14px] sm:text-[18px] leading-snug text-white">
+            <div className="absolute left-[80px] sm:left-[60px] top-[35px] sm:top-[45px] z-0 w-[calc(100%-90px)] sm:w-[250px] rounded-[18px] border border-black/60 bg-black px-4 sm:px-6 py-4 sm:py-6 shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:border-black/80">
+              <p className="text-[14px] sm:text-[18px] leading-snug text-white transition-colors duration-300 group-hover:text-gray-100">
                 The AI compliance checks saved us from costly regulatory penalties
               </p>
 
@@ -1120,7 +1240,7 @@ export default function LandingPage() {
               
               {/* client name below stars */}
               <div className="mt-3 sm:mt-4 text-center">
-                <div className="text-[14px] sm:text-[16px] font-semibold text-white">Rajiv Mehta</div>
+                <div className="text-[14px] sm:text-[16px] font-semibold text-white transition-colors duration-300 group-hover:text-blue-200">Rajiv Mehta</div>
               </div>
             </div>
           </div>
